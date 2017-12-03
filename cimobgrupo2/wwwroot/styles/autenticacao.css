@@ -9,7 +9,6 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	/*background: url("../images/bg1.jpg");*/
 	font-family: "Helvetica", Times, serif;
 }
 
@@ -30,7 +29,7 @@ body {
 #autenticacao{
 	background-color: #efefe7;
 	clear: both;
-	height: calc(100% - 157px);
+	height: calc(100% - 200px);
 	overflow: auto;
 }
 

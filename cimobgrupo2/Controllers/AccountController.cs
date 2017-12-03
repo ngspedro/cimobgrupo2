@@ -115,7 +115,7 @@ namespace cimobgrupo2.Controllers
             return View(model);
         }
 
-        [HttpPost]
+        [HttpPost] 
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {

@@ -7,6 +7,6 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li>
-        <img src="~/images/user.png" />Nuno Pedro (<a href="#" onclick="logoutForm.submit();"id="sair">Sair</a>)
+        <img src="~/images/user.png" /> @UserManager.GetUserName(User) (<a href="#" onclick="logoutForm.submit();"id="sair">Sair</a>)
     </li>
 }

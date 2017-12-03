@@ -1,36 +1,19 @@
 ﻿@model RegisterViewModel
+
 @{
-    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
+    ViewData["topo"] = "Registo";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-default">Register</button>
-        </form>
-    </div>
-</div>
-
-@section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
-}
+<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+    <input asp-for="Nome" type="text" placeholder="Nome Completo" name="nome"> <br />
+    <input asp-for="DataNascimento" type="text" placeholder="Data de Nascimento" onfocus="(this.type='date')" name="datanascimento"> <br />
+    <input asp-for="Email" type="text" placeholder="Email" name="email"> <br />
+    <input asp-for="Contato" type="text" placeholder="Contato" name="contato"> <br />
+    <br />
+    <input asp-for="Username" id="username" type="text" placeholder="Username"> <br />
+    <input asp-for="Password" id="password" type="password" placeholder="Password"> <br />
+    <input asp-for="ConfirmPassword" id="password" type="password" placeholder="Confirmar Password"> <br />
+    <button type="submit">Registar</button>
+</form>
+    <button onclick="location.href='@Url.Action("Login", "Account")'">Cancelar</button>

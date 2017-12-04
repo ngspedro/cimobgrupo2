@@ -27,10 +27,7 @@ namespace cimobgrupo2
         public void ConfigureServices(IServiceCollection services)
         {
              services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            /* services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(@"Server=tcp:eswt4g2.database.windows.net,1433;Initial Catalog=eswt4g2;Persist Security Info=False;User ID=ngspedro;Password=@Abc1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")); */
+                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {

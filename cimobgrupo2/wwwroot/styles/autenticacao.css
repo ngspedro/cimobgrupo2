@@ -14,36 +14,43 @@ body {
 
 #topo {
 	margin: 0 15%;
+    width: 100%;
+    clear: both;
 }
 
 #topo h1 {
 	float: left;
 	line-height: 157px;
 	font-size: 40px;
+    float: left;
+    width: 50%;
 }
 
 #logo {
-	float: right;
+	float: left;
+    margin-left: 10%;
+}
+#autenticacao {
+    background-color: #efefe7;
+    clear: both;
+    height: calc(100% - 187px);
+    overflow: auto;
+    position: relative;
 }
 
-#autenticacao{
-	background-color: #efefe7;
-	clear: both;
-	height: calc(100% - 200px);
-	overflow: auto;
+#imageBottom {
+    width:100%;
+    height: auto;
+    float: left;
 }
 
-#autenticacao img {
-	max-width: 75%;
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
+#imageBottom img {
+    max-width: 75%;
+    float: right;
 }
 
 #form {
-	margin-left: 15%;
-	margin-top: 4%;
-	width: 400px;
+	width: 50%;
     text-align: center;
 	float: left;
 }
@@ -52,8 +59,11 @@ body {
     text-align: left;
 }
 
-#form *{
-	margin: 5px 0;
+#form *:not(#rememberme) {
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 2%;
+    width: 400px;
 }
 
 #form input:not(#rememberme) {

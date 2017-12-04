@@ -26,8 +26,11 @@ namespace cimobgrupo2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            /* services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(@"Server=tcp:eswt4g2.database.windows.net,1433;Initial Catalog=eswt4g2;Persist Security Info=False;User ID=ngspedro;Password=@Abc1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")); */
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

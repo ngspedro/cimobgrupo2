@@ -9,6 +9,8 @@
     Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
     ViewData["topo"] = "Autenticação";
 }
+
+<p>@ViewBag.created</p>
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <input asp-for="Username" id="username" type="text" placeholder="Username"> <br />
     <input asp-for="Password" id="password" type="password" placeholder="Password"> <br />

@@ -1,10 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Confirm email";
+    Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
+    ViewData["topo"] = "Registo";
 }
 
-<h2>@ViewData["Title"]</h2>
 <div>
     <p>
-        Thank you for confirming your email.
+        Obrigado por ativar a sua conta. Clique <a href="@Url.Action("Login", "Account")"> aqui </a> para fazer login.
     </p>
 </div>

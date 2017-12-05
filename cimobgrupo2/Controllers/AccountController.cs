@@ -105,9 +105,11 @@ namespace cimobgrupo2.Controllers
                     var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                     await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
+
+                    TempData["Message"] = "Conta criada com sucesso. Note que esta tem que ser ativada no email antes de poder ser utilizada.";
                     //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Login");
                 }
                 AddErrors(result);
             }

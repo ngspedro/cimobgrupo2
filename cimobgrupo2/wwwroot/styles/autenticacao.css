@@ -1,100 +1,88 @@
-*{
-	margin: 0;
+* {
+    margin: 0;
 }
 
 html, body {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "Helvetica", Times, serif;
+    margin: 0;
+    padding: 0;
+    /*background: url("../images/bg1.jpg");*/
+    font-family: "Helvetica", Times, serif;
 }
 
 #topo {
-	margin: 0 15%;
-    width: 100%;
-    clear: both;
+    margin: 0 15%;
 }
 
 #topo h1 {
-	float: left;
-	line-height: 157px;
-	font-size: 40px;
     float: left;
-    width: 50%;
+    line-height: 117px;
+    font-size: 40px;
 }
 
 #logo {
-	float: left;
-    margin-left: 10%;
-}
-#autenticacao {
-    background-color: #efefe7;
-    clear: both;
-    height: calc(100% - 187px);
-    overflow: auto;
-    position: relative;
-}
-
-#imageBottom {
-    width:100%;
-    height: auto;
-    float: left;
-}
-
-#imageBottom img {
-    max-width: 75%;
     float: right;
 }
 
+#autenticacao {
+    background-color: #efefe7;
+    clear: both;
+    height: calc(100% - 157px);
+    overflow: auto;
+}
+
+#autenticacao img {
+    max-width: 60%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
 #form {
-	width: 50%;
-    text-align: center;
-	float: left;
-}
-
-.text-danger{
-    text-align: left;
-}
-
-#form *:not(#rememberme) {
-    margin: 0 auto;
-    margin-top: 10px;
-    padding-top: 2%;
+    margin-left: 15%;
+    margin-top: 3%;
     width: 400px;
+    float: left;
+    z-index: 100;
+    position: relative;
+}
+
+#form * {
+    margin: 5px 0;
 }
 
 #form input:not(#rememberme) {
     width: 100%;
     border: 1px solid #ccc;
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#form input:not(#username):not(#password){
-padding: 12px 12px;
+#form input:not(#username):not(#password) {
+    padding: 12px 12px;
 }
 
-#username{
-	background: white url("../images/user2.png") no-repeat scroll 7px 7px;
-	padding: 12px 40px;
+#username {
+    background: white url("../images/user2.png") no-repeat scroll 7px 7px;
+    padding: 12px 40px;
 }
 
-#password{
-	background: white url("../images/pw.png") no-repeat scroll 7px 7px;
-	padding: 12px 40px;	
+#password {
+    background: white url("../images/pw.png") no-repeat scroll 7px 7px;
+    padding: 12px 40px;
 }
 
 button {
-	width: 100%;
+    width: 100%;
     background-color: #496886;
     color: white;
     padding: 14px 20px;
     border: none;
     cursor: pointer;
-	box-sizing: border-box;
-	font-size: 14px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 button:hover {
@@ -102,14 +90,15 @@ button:hover {
 }
 
 #outros {
-	color: black;
+    color: black;
+    text-align: center;
 }
+
 #outros a {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 #outros a:hover {
-	opacity: 0.8;
+    opacity: 0.8;
 }
-

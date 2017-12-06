@@ -13,8 +13,8 @@
 <p>@TempData["Message"]</p>
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <input asp-for="Username" id="username" type="text" placeholder="Username"> <br />
-    <input asp-for="Password" id="password" type="password" placeholder="Password"> <br />
-    @Html.DisplayNameFor(m => m.RememberMe) <input asp-for="RememberMe" id="rememberme" />
+    <input asp-for="Password" id="password" type="password" placeholder="Password"> <br /> 
+    <input asp-for="RememberMe" id="rememberme" /> @Html.DisplayNameFor(m => m.RememberMe)
     <button type="submit">Login</button>
 </form>
 

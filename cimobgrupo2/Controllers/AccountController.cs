@@ -169,8 +169,7 @@ namespace cimobgrupo2.Controllers
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
-                await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                await _emailSender.SendEmailForgotPasswordAsync(model.Email, callbackUrl);
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
 
@@ -187,13 +186,14 @@ namespace cimobgrupo2.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult ResetPassword(string code = null)
+        public IActionResult ResetPassword(string userId = null, string code = null)
         {
-            if (code == null)
+            if (code == null || userId == null)
             {
-                throw new ApplicationException("A code must be supplied for password reset.");
+                //throw new ApplicationException("A code/userID must be supplied for password reset.");
+                return RedirectToAction(nameof(Login));
             }
-            var model = new ResetPasswordViewModel { Code = code };
+            var model = new ResetPasswordViewModel { UserId = userId, Code = code };
             return View(model);
         }
 
@@ -206,7 +206,7 @@ namespace cimobgrupo2.Controllers
             {
                 return View(model);
             }
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.FindByIdAsync(model.UserId);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
@@ -228,7 +228,7 @@ namespace cimobgrupo2.Controllers
             return View();
         }
     
-        #region Helpers
+            #region Helpers
 
         private void AddErrors(IdentityResult result)
         {

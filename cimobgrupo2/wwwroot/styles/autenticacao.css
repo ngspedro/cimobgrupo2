@@ -35,7 +35,7 @@ body {
 }
 
 #autenticacao img {
-    max-width: 60%;
+    max-width: 70%;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -50,46 +50,39 @@ body {
     position: relative;
 }
 
-#form * {
-    margin: 5px 0;
-}
 
-#form input:not(#rememberme) {
-    width: 100%;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.form-control {
+    padding: 18px;
 }
-
-#form input:not(#username):not(#password) {
-    padding: 12px 12px;
-}
-
-#username {
+.username {
     background: white url("../images/user2.png") no-repeat scroll 7px 7px;
-    padding: 12px 40px;
+    padding: 18px 40px;
 }
 
-#password {
+.password {
     background: white url("../images/pw.png") no-repeat scroll 7px 7px;
-    padding: 12px 40px;
+    padding: 18px 40px;
 }
 
 button {
     width: 100%;
     background-color: #496886;
     color: white;
-    padding: 14px 20px;
+    padding: 10px 18px;
     border: none;
     cursor: pointer;
     box-sizing: border-box;
     font-size: 14px;
+    border-radius: 2px;
 }
 
 button:hover {
     opacity: 0.8;
 }
 
+
 #outros {
+    margin-top: 5px;
     color: black;
     text-align: center;
 }

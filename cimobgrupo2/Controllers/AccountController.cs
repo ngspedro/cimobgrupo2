@@ -191,7 +191,7 @@ namespace cimobgrupo2.Controllers
             if (code == null || userId == null)
             {
                 //throw new ApplicationException("A code/userID must be supplied for password reset.");
-                return RedirectToAction(nameof(Login));
+                //return RedirectToAction(nameof(Login));
             }
             var model = new ResetPasswordViewModel { UserId = userId, Code = code };
             return View(model);

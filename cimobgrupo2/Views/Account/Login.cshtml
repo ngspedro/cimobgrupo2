@@ -12,10 +12,17 @@
 
 <p>@TempData["Message"]</p>
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-    <input asp-for="Username" id="username" type="text" placeholder="Username"> <br />
-    <input asp-for="Password" id="password" type="password" placeholder="Password"> <br /> 
-    <input asp-for="RememberMe" id="rememberme" /> @Html.DisplayNameFor(m => m.RememberMe)
-    <button type="submit">Login</button>
+    <div class="form-group">
+        <input type="text" asp-for="Username" placeholder="Username" class="form-control username">
+    </div>
+    <div class="form-groups">
+        <input type="password" asp-for="Password" placeholder="Password" class="form-control password">
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" asp-for="RememberMe"> @Html.DisplayNameFor(m => m.RememberMe)</label>
+    </div>
+
+        <button type="submit" >Login</button>
 </form>
 
 <div id="outros">

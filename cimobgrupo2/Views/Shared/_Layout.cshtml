@@ -4,17 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CIMOB</title>
-    
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="~/styles/style.css">
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+
+        <script src="~/lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+        <script src="~/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="~/js/site.js"></script>
 </head>
 <body>
     <img id="logo" src="~/images/logo.png" alt="logo" />
@@ -30,6 +25,5 @@
     <div id="conteudo">
         @RenderBody()
     </div>
-
 </body>
 </html>

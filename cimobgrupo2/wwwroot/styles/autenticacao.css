@@ -31,29 +31,25 @@ body {
     background-color: #efefe7;
     clear: both;
     height: calc(100% - 157px);
-    overflow: auto;
 }
 
 #autenticacao img {
-    max-width: 70%;
+    max-width: 50%;
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
 
-#form {
-    margin-left: 15%;
+.container {
     margin-top: 3%;
-    width: 400px;
-    float: left;
     z-index: 1000;
     position: relative;
 }
 
-
 .form-control {
     padding: 18px;
 }
+
 .username {
     background: white url("../images/user2.png") no-repeat scroll 7px 7px;
     padding: 18px 40px;
@@ -94,4 +90,18 @@ button:hover {
 
 #outros a:hover {
     opacity: 0.8;
+}
+
+@media(max-width:720px) {
+    #autenticacao {
+        height: calc(100% - 304px);
+    }
+
+    #autenticacao img {
+        display: none;
+    }
+
+    #logo {
+        float: left;
+    }
 }

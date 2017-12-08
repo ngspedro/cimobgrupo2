@@ -25,6 +25,8 @@ body {
 
 #logo {
     float: right;
+    min-width: 270px;
+    min-height: 157px;
 }
 
 #autenticacao {

@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using cimobgrupo2.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,13 +20,19 @@
 <body>
     <img id="logo" src="~/images/logo.png" alt="logo" />
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
-        <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Programas</a></li>
-            <li><a href="#">Minha Candidatura</a></li>
-            <li><a href="#">Definições de Conta</a></li>
-            @{ Html.RenderPartial("_LoginPartial"); }
-        </ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav custom">
+                    <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-paperclip"></span> Minha Candidatura</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> @UserManager.GetUserName(User)</a></li>
+                    <li><a href="#" onclick="logoutForm.submit();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                </ul>
+            </div>
+        </nav>
     </form>
     <div id="conteudo">
         @RenderBody()

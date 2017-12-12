@@ -9,5 +9,10 @@ namespace cimobgrupo2.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+        public String Nome { get; set; }
+        public String DataNascimento { get; set; }
+        public String Contato { get; set; }
+
+        //username email password ja tem
     }
 }

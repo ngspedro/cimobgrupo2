@@ -95,7 +95,12 @@ namespace cimobgrupo2.Controllers
             
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Username, Email = model.Email };
+                var user = new ApplicationUser {
+                    Nome = model.Nome,
+                    DataNascimento = model.DataNascimento,
+                    Email = model.Email,
+                    Contato = model.Contato,
+                    UserName = model.Username };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

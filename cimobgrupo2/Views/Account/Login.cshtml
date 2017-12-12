@@ -9,7 +9,16 @@
     Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
 }
 
-<p>@TempData["Message"]</p>
+@{
+    if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Sucesso!</strong><br /> @TempData["Message"]
+        </div>
+    }
+}
+
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <div class="form-group">
         <input type="text" asp-for="Username" placeholder="Username" class="form-control username">

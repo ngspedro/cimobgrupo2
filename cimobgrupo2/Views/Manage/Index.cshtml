@@ -1,0 +1,85 @@
+﻿@model IndexViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Definições de Conta</h1>
+@{
+    if ((String)TempData["result"] == "success")
+    {
+        <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Sucesso!</strong> Definições de conta alteradas com sucesso.
+        </div>
+
+    }
+    else if ((String)TempData["result"] != null)
+    {
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Erro!</strong> Erro ao alterar definições de conta.
+        </div>
+    }
+}
+<div asp-validation-summary="All" class="col-md-12 col-lg-12 text-danger"></div>
+<form asp-controller="Manage" asp-action="ChangeDetails" method="post">
+    <div class="col-md-6 col-lg-6">
+        <div class="form-group">
+            <label asp-for="ChangeDetails.Nome"></label>
+            <input type="text" asp-for="ChangeDetails.Nome" placeholder="Nome Completo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="ChangeDetails.DataNascimento"></label>
+            <input type="text" asp-for="ChangeDetails.DataNascimento" placeholder="Data de Nascimento" class="form-control" id="editdatanascimentopicker">
+        </div>
+        <div class="form-group">
+            <label asp-for="ChangeDetails.Email"></label>
+            <input type="text" asp-for="ChangeDetails.Email" placeholder="Email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="ChangeDetails.Contato"></label>
+            <input type="text" asp-for="ChangeDetails.Contato" placeholder="Contato" class="form-control">
+        </div>
+        <div class="form-group clearfix">
+            <button type="submit" class="pull-right">Confirmar</button>
+            <button type="button" onclick="location.href='@Url.Action("Index", "Manage")'" class="pull-right">Anular</button>
+            
+        </div>
+    </div>
+</form>
+
+
+    <div class="col-md-6 col-lg-6">
+        <form asp-controller="Manage" asp-action="ChangePassword" method="post">
+            <div class="form-group">
+                <label asp-for="ChangePassword.OldPassword"></label>
+                <input asp-for="ChangePassword.OldPassword" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ChangePassword.NewPassword"></label>
+                <input asp-for="ChangePassword.NewPassword" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ChangePassword.ConfirmPassword"></label>
+                <input asp-for="ChangePassword.ConfirmPassword" class="form-control" />
+            </div>
+            <div class="form-group clearfix">
+                <button type="submit" class="pull-right">Confirmar</button>
+            </div>
+        </form>
+        <form asp-controller="Manage" asp-action="DeleteAccount" method="post">
+            <label asp-for="DeleteAccount.Password"></label>
+            <div class="input-group">
+                <input asp-for="DeleteAccount.Password" class="form-control width100" />
+                <span class="input-group-btn">
+                    <button class="btn" style="border: 1px solid black; color:white;" type="submit">Apagar Conta</button>
+                </span>
+            </div>
+       </form>
+</div>
+
+
+        <script type="text/javascript">
+            $(function () {
+                $('#editdatanascimentopicker').datepicker();
+            });
+        </script>

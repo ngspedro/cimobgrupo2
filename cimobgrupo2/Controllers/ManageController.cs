@@ -142,16 +142,49 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-       
-        #region Helpers
-
-        private void AddErrors(IdentityResult result)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAccount(IndexViewModel model)
         {
+            TempData["result"] = "error";
+            var user = await _userManager.GetUserAsync(User);
+            model.ChangeDetails = new ChangeDetailsViewModel
+            {
+                Nome = user.Nome,
+                DataNascimento = user.DataNascimento,
+                Email = user.Email,
+                Contato = user.Contato
+            };
+
+
+            if (!ModelState.IsValid)
+            {
+                return View("Index", model);
+            }
+
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            if (await _userManager.CheckPasswordAsync(user, model.DeleteAccount.Password))
+                await _userManager.DeleteAsync(user);
+            else
+                return RedirectToAction("Index", model);
+            
+            TempData["Message"] = "Conta eliminada.";
+            return RedirectToAction("Login", "Account");
+        }
+
+            #region Helpers
+
+            private void AddErrors(IdentityResult result)
+            {
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, error.Description);
             }
-        }
+            }
 
         #endregion
     }

@@ -3,6 +3,7 @@
 @using Microsoft.AspNetCore.Http
 @using Microsoft.AspNetCore.Http.Authentication
 @model LoginViewModel
+
 @inject SignInManager<ApplicationUser> SignInManager
 
 @{
@@ -21,13 +22,14 @@
 
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <div class="form-group">
-        <input type="text" asp-for="Username" placeholder="Username" class="form-control username">
+        <input type="text" asp-for="Username" placeholder="Username" class="form-control username"  id="Username" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Username"]">
+        
     </div>
     <div class="form-groups">
-        <input type="password" asp-for="Password" placeholder="Password" class="form-control password">
+        <input type="password" asp-for="Password" placeholder="Password" class="form-control password" id="Password" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Password"]">
     </div>
     <div class="checkbox">
-        <label><input type="checkbox" asp-for="RememberMe"> @Html.DisplayNameFor(m => m.RememberMe)</label>
+        <label id="RememberMe" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["RememberMe"]"><input type="checkbox" asp-for="RememberMe"> @Html.DisplayNameFor(m => m.RememberMe)</label>
     </div>
 
         <button type="submit" >Login</button>

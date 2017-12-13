@@ -6,27 +6,27 @@
 
 <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
     <div class="form-group">
-        <input type="text" asp-for="Nome" placeholder="Nome Completo" class="form-control">
+        <input type="text" asp-for="Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]">
     </div>
     <div class="form-group">
-        <input type="text" asp-for="DataNascimento" placeholder="Data de Nascimento" class="form-control" id="datanascimentopicker">
+        <input type="text" asp-for="DataNascimento" placeholder="Data de Nascimento" class="form-control" id="DataNascimentoPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["DataNascimentoPicker"]">
     </div>
     <div class="form-group">
-        <input type="text" asp-for="Email" placeholder="Email" class="form-control">
+        <input type="text" asp-for="Email" placeholder="Email" class="form-control" id="Email" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Email"]">
     </div>
     <div class="form-group">
-        <input type="text" asp-for="Contato" placeholder="Contato" class="form-control">
+        <input type="text" asp-for="Contato" placeholder="Contato" class="form-control" id="Contato" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Contato"]">
     </div>
 
     <br />
     <div class="form-group">
-        <input type="text" asp-for="Username" id="username" placeholder="Username" class="form-control username">
+        <input type="text" asp-for="Username" placeholder="Username" class="form-control username" id="Username" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Username"]">
     </div>
     <div class="form-group">
-        <input type="password" asp-for="Password" id="password" placeholder="Password" class="form-control password">
+        <input type="password" asp-for="Password" placeholder="Password" class="form-control password" id="Password" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Password"]">
     </div>
     <div class="form-group">
-        <input type="password" asp-for="ConfirmPassword" id="password" placeholder="Confirmar Password" class="form-control password">
+        <input type="password" asp-for="ConfirmPassword" placeholder="Confirmar Password" class="form-control password" id="ConfirmarPassword" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["ConfirmarPassword"]">
     </div>
     <div class="form-group">
         <button type="submit">Registar</button>
@@ -38,6 +38,6 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#datanascimentopicker').datepicker();
+        $('#DataNascimentoPicker').datepicker();
     });
 </script>

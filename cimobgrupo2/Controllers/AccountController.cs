@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using cimobgrupo2.Models;
 using cimobgrupo2.Models.AccountViewModels;
 using cimobgrupo2.Services;
+using cimobgrupo2.Data;
 
 namespace cimobgrupo2.Controllers
 {
@@ -20,6 +21,7 @@ namespace cimobgrupo2.Controllers
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
+        private readonly List<AjudaInput> _AjudasInput;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -29,12 +31,14 @@ namespace cimobgrupo2.Controllers
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _AjudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Account").ToList();
         }
 
         [TempData]
@@ -47,6 +51,7 @@ namespace cimobgrupo2.Controllers
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
+            SetHelpTooltipsLogin();
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -74,6 +79,7 @@ namespace cimobgrupo2.Controllers
                 }
             }
 
+            SetHelpTooltipsLogin();
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -82,6 +88,7 @@ namespace cimobgrupo2.Controllers
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
         {
+            SetHelpTooltipsRegisto();
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -119,6 +126,7 @@ namespace cimobgrupo2.Controllers
                 AddErrors(result);
             }
 
+            SetHelpTooltipsRegisto();
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -153,6 +161,7 @@ namespace cimobgrupo2.Controllers
         [AllowAnonymous]
         public IActionResult ForgotPassword()
         {
+            SetHelpTooltipsForgotPassword();
             return View();
         }
 
@@ -178,6 +187,7 @@ namespace cimobgrupo2.Controllers
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
 
+            SetHelpTooltipsForgotPassword();
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -198,6 +208,7 @@ namespace cimobgrupo2.Controllers
                 //throw new ApplicationException("A code/userID must be supplied for password reset.");
                 //return RedirectToAction(nameof(Login));
             }
+            SetHelpTooltipsResetPassword();
             var model = new ResetPasswordViewModel { UserId = userId, Code = code };
             return View(model);
         }
@@ -222,6 +233,7 @@ namespace cimobgrupo2.Controllers
             {
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
+            SetHelpTooltipsResetPassword();
             AddErrors(result);
             return View();
         }
@@ -232,8 +244,39 @@ namespace cimobgrupo2.Controllers
         {
             return View();
         }
-    
-            #region Helpers
+
+        #region SetHelpToolTips
+        private void SetHelpTooltipsLogin()
+        {
+            ViewData["Username"] = _AjudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "Username").Texto;
+            ViewData["Password"] = _AjudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "Password").Texto;
+            ViewData["RememberMe"] = _AjudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "RememberMe").Texto;
+        }
+
+        private void SetHelpTooltipsRegisto()
+        {
+            ViewData["Nome"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Nome").Texto;
+            ViewData["DataNascimentoPicker"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "DataNascimentoPicker").Texto;
+            ViewData["Email"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Email").Texto;
+            ViewData["Contato"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Contato").Texto;
+            ViewData["Username"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Username").Texto;
+            ViewData["Password"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Password").Texto;
+            ViewData["ConfirmarPassword"] = _AjudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "ConfirmarPassword").Texto;
+        }
+
+        private void SetHelpTooltipsForgotPassword()
+        {
+            ViewData["Email"] = _AjudasInput.Single(ai => ai.Action == "ForgotPassword" && ai.InputId == "Email").Texto;
+        }
+
+        private void SetHelpTooltipsResetPassword()
+        {
+            ViewData["Password"] = _AjudasInput.Single(ai => ai.Action == "ResetPassword" && ai.InputId == "Password").Texto;
+            ViewData["ConfirmarPassword"] = _AjudasInput.Single(ai => ai.Action == "ResetPassword" && ai.InputId == "ConfirmarPassword").Texto;
+        }
+        #endregion
+
+        #region Helpers
 
         private void AddErrors(IdentityResult result)
         {

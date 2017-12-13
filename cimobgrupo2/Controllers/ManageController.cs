@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using cimobgrupo2.Models;
 using cimobgrupo2.Models.ManageViewModels;
 using cimobgrupo2.Services;
+using cimobgrupo2.Data;
 
 namespace cimobgrupo2.Controllers
 {
@@ -20,6 +21,7 @@ namespace cimobgrupo2.Controllers
     [Route("[controller]/[action]")]
     public class ManageController : Controller
     {
+        private readonly List<AjudaInput> _AjudasInput;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -33,13 +35,15 @@ namespace cimobgrupo2.Controllers
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
           ILogger<ManageController> logger,
-          UrlEncoder urlEncoder)
+          UrlEncoder urlEncoder,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
+            _AjudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Manage").ToList();
         }
 
         [TempData]
@@ -48,6 +52,8 @@ namespace cimobgrupo2.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            SetHelpToolTips();
+
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
@@ -72,6 +78,8 @@ namespace cimobgrupo2.Controllers
         public async Task<IActionResult> ChangeDetails(IndexViewModel model)
         {
             TempData["result"] = "error";
+            SetHelpToolTips();
+
             if (!ModelState.IsValid)
             {
                 return View("Index", model);
@@ -107,6 +115,8 @@ namespace cimobgrupo2.Controllers
         public async Task<IActionResult> ChangePassword(IndexViewModel model)
         {
             TempData["result"] = "error";
+            SetHelpToolTips();
+
             var user = await _userManager.GetUserAsync(User);
             model.ChangeDetails = new ChangeDetailsViewModel
             {
@@ -147,6 +157,8 @@ namespace cimobgrupo2.Controllers
         public async Task<IActionResult> DeleteAccount(IndexViewModel model)
         {
             TempData["result"] = "error";
+            SetHelpToolTips();
+
             var user = await _userManager.GetUserAsync(User);
             model.ChangeDetails = new ChangeDetailsViewModel
             {
@@ -176,9 +188,26 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-            #region Helpers
+        #region SetHelpToolTips
+        private void SetHelpToolTips()
+        {
+            ViewData["Nome"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Nome").Texto;
+            ViewData["DataNascimentoPicker"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "DataNascimentoPicker").Texto;
+            ViewData["Email"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Email").Texto;
+            ViewData["Contato"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Contato").Texto;
 
-            private void AddErrors(IdentityResult result)
+            ViewData["PasswordAntiga"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "PasswordAntiga").Texto;
+            ViewData["NovaPassword"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "NovaPassword").Texto;
+            ViewData["ConfirmarNovaPassword"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "ConfirmarNovaPassword").Texto;
+
+            ViewData["PasswordAtual"] = _AjudasInput.Single(ai => ai.Action == "DeleteAccount" && ai.InputId == "PasswordAtual").Texto;
+        }
+
+        #endregion
+
+        #region Helpers
+
+        private void AddErrors(IdentityResult result)
             {
             foreach (var error in result.Errors)
             {

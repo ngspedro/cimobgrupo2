@@ -30,6 +30,17 @@ namespace cimobgrupo2.Data
                 context.AjudaInputs.Add(new AjudaInput("Account", "ResetPassword", "Password", "Preencha com a nova password. Note que esta tem que ter pelo menos 5 caracteres"));
                 context.AjudaInputs.Add(new AjudaInput("Account", "ResetPassword", "ConfirmarPassword", "Repita a nova password"));
 
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangeDetails", "Nome", "Aqui pode editar o seu nome"));
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangeDetails", "DataNascimentoPicker", "Aqui pode editar a sua data de nascimento"));
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangeDetails", "Email", "Aqui pode editar o seu email. Note que este tem que ser um email válido"));
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangeDetails", "Contato", "Aqui pode editar o contato associado à sua conta"));
+
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangePassword", "PasswordAntiga", "Para alterar a sua password, tem que introduzir neste campo a sua password atual"));
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangePassword", "NovaPassword", "Preencha com a password para a qual deseja alterar"));
+                context.AjudaInputs.Add(new AjudaInput("Manage", "ChangePassword", "ConfirmarNovaPassword", "Confirme a password que introduziu no campo acima"));
+
+                context.AjudaInputs.Add(new AjudaInput("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta"));
+
             }
             context.SaveChanges();
         }

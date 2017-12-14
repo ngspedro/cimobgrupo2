@@ -20,7 +20,7 @@
     <script src="~/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <img id="logo" src="~/images/logo.png" alt="logo" />
+    <a href="@Url.Action("Index", "Home")"><img id="logo" src="~/images/logo.png" alt="logo" /></a>
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">

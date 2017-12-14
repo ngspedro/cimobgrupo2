@@ -58,3 +58,17 @@ button {
 button:hover {
    opacity: 0.8;
 }
+
+fieldset {
+    border: 1px solid black;
+    width: 100%;
+}
+
+fieldset legend {
+    font-size: 14px;
+    font-weight: bold;
+    width: auto;
+    border: 0;
+    margin-left: 20px;
+    padding: 0 15px;
+}

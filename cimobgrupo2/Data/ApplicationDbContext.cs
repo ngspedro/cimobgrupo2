@@ -11,6 +11,7 @@ namespace cimobgrupo2.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<AjudaInput> AjudaInputs { get; set; }
+        public DbSet<Erro> Erros { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

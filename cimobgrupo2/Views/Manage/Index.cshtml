@@ -1,8 +1,9 @@
 ﻿@model IndexViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["titulo"] = "Definições de Conta";
 }
-<h1>Definições de Conta</h1>
+
 @{
     if ((String)TempData["result"] == "success")
     {
@@ -12,11 +13,12 @@
         </div>
 
     }
-    else if ((String)TempData["result"] != null)
+
+    if (ViewData["Error_Code"] != null)
     {
         <div class="alert alert-danger alert-dismissable">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Erro!</strong> Erro ao alterar definições de conta.
+            <strong>ERRO @ViewData["Error_Code"] - </strong> @ViewData["Error_Message"]
         </div>
     }
 }

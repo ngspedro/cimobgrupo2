@@ -21,7 +21,8 @@ namespace cimobgrupo2.Controllers
     [Route("[controller]/[action]")]
     public class ManageController : Controller
     {
-        private readonly List<AjudaInput> _AjudasInput;
+        private readonly List<AjudaInput> _ajudasInput;
+        private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -43,7 +44,8 @@ namespace cimobgrupo2.Controllers
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
-            _AjudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Manage").ToList();
+            _ajudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Manage").ToList();
+            _erros = context.Erros.ToList();
         }
 
         [TempData]
@@ -77,11 +79,12 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeDetails(IndexViewModel model)
         {
-            TempData["result"] = "error";
+            
             SetHelpToolTips();
 
             if (!ModelState.IsValid)
             {
+                SetErrorMessage("003");
                 return View("Index", model);
             }
 
@@ -114,7 +117,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(IndexViewModel model)
         {
-            TempData["result"] = "error";
+            
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -129,6 +132,7 @@ namespace cimobgrupo2.Controllers
 
             if (!ModelState.IsValid)
             {
+                SetErrorMessage("003");
                 return View("Index", model);
             }
             
@@ -156,7 +160,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteAccount(IndexViewModel model)
         {
-            TempData["result"] = "error";
+            
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -171,6 +175,7 @@ namespace cimobgrupo2.Controllers
 
             if (!ModelState.IsValid)
             {
+                SetErrorMessage("003");
                 return View("Index", model);
             }
 
@@ -188,19 +193,26 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        private void SetErrorMessage(String Code)
+        {
+            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
+            ViewData["Error_Code"] = Erro.Codigo;
+            ViewData["Error_Message"] = Erro.Mensagem;
+        }
+
         #region SetHelpToolTips
         private void SetHelpToolTips()
         {
-            ViewData["Nome"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Nome").Texto;
-            ViewData["DataNascimentoPicker"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "DataNascimentoPicker").Texto;
-            ViewData["Email"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Email").Texto;
-            ViewData["Contato"] = _AjudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Contato").Texto;
+            ViewData["Nome"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Nome").Texto;
+            ViewData["DataNascimentoPicker"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "DataNascimentoPicker").Texto;
+            ViewData["Email"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Email").Texto;
+            ViewData["Contato"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Contato").Texto;
 
-            ViewData["PasswordAntiga"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "PasswordAntiga").Texto;
-            ViewData["NovaPassword"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "NovaPassword").Texto;
-            ViewData["ConfirmarNovaPassword"] = _AjudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "ConfirmarNovaPassword").Texto;
+            ViewData["PasswordAntiga"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "PasswordAntiga").Texto;
+            ViewData["NovaPassword"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "NovaPassword").Texto;
+            ViewData["ConfirmarNovaPassword"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "ConfirmarNovaPassword").Texto;
 
-            ViewData["PasswordAtual"] = _AjudasInput.Single(ai => ai.Action == "DeleteAccount" && ai.InputId == "PasswordAtual").Texto;
+            ViewData["PasswordAtual"] = _ajudasInput.Single(ai => ai.Action == "DeleteAccount" && ai.InputId == "PasswordAtual").Texto;
         }
 
         #endregion

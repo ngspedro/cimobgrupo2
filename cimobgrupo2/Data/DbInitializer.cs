@@ -42,7 +42,14 @@ namespace cimobgrupo2.Data
                 context.AjudaInputs.Add(new AjudaInput("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta"));
 
             }
-            context.SaveChanges();
+
+            if (!context.Erros.Any())
+            {
+                context.Erros.Add(new Erro("001", "Conta inexistente!"));
+                context.Erros.Add(new Erro("002", "Login falhou. Verifique se preencheu todos os campos!"));
+                context.Erros.Add(new Erro("003", "Verifique se os dados introduzidos estão corretos."));
+            }
+                context.SaveChanges();
         }
     }
 }

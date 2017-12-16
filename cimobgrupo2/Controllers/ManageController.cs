@@ -25,25 +25,17 @@ namespace cimobgrupo2.Controllers
         private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-        private readonly UrlEncoder _urlEncoder;
-
-        private const string AuthenicatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
 
         public ManageController(
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
-          IEmailSender emailSender,
           ILogger<ManageController> logger,
-          UrlEncoder urlEncoder,
             ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
             _logger = logger;
-            _urlEncoder = urlEncoder;
             _ajudas = context.Ajudas.Where(ai => ai.Controller == "Manage").ToList();
             _erros = context.Erros.ToList();
         }

@@ -104,7 +104,7 @@ namespace cimobgrupo2.Controllers
             if (model.ChangeDetails.DataNascimento != null)
                 user.DataNascimento = model.ChangeDetails.DataNascimento;
 
-            if(model.ChangeDetails.Contato != null)
+            if (model.ChangeDetails.Contato != null)
                 user.Contato = model.ChangeDetails.Contato;
 
             await _userManager.UpdateAsync(user);
@@ -136,7 +136,7 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("003");
                 return View("Index", model);
             }
-            
+
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -188,8 +188,13 @@ namespace cimobgrupo2.Controllers
             if (await _userManager.CheckPasswordAsync(user, model.DeleteAccount.Password))
                 await _userManager.DeleteAsync(user);
             else
-                return RedirectToAction("Index", model);
-            
+            {
+                SetErrorMessage("003");
+                AddErrorString("A password inserida não corresponde à password da conta!");
+                return View("Index", model);
+            }
+
+
             TempData["Message"] = "Conta eliminada.";
             return RedirectToAction("Login", "Account");
         }
@@ -225,6 +230,10 @@ namespace cimobgrupo2.Controllers
         #endregion
 
         #region Helpers
+        private void AddErrorString(String result)
+        {
+            ModelState.AddModelError(string.Empty, result);
+        }
 
         private void AddErrors(IdentityResult result)
             {

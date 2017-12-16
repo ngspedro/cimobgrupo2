@@ -21,7 +21,7 @@ namespace cimobgrupo2.Controllers
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
-        private readonly List<AjudaInput> _ajudasInput;
+        private readonly List<Ajuda> _ajudas;
         private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -39,7 +39,7 @@ namespace cimobgrupo2.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            _ajudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Account").ToList();
+            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Account").ToList();
             _erros = context.Erros.ToList();
         }
 
@@ -256,31 +256,31 @@ namespace cimobgrupo2.Controllers
         #region SetHelpToolTips
         private void SetHelpTooltipsLogin()
         {
-            ViewData["Username"] = _ajudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "Username").Texto;
-            ViewData["Password"] = _ajudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "Password").Texto;
-            ViewData["RememberMe"] = _ajudasInput.Single(ai => ai.Action == "Login" && ai.InputId == "RememberMe").Texto;
+            ViewData["Username"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "Username").Texto;
+            ViewData["Password"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "Password").Texto;
+            ViewData["RememberMe"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "RememberMe").Texto;
         }
 
         private void SetHelpTooltipsRegisto()
         {
-            ViewData["Nome"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Nome").Texto;
-            ViewData["DataNascimentoPicker"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "DataNascimentoPicker").Texto;
-            ViewData["Email"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Email").Texto;
-            ViewData["Contato"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Contato").Texto;
-            ViewData["Username"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Username").Texto;
-            ViewData["Password"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "Password").Texto;
-            ViewData["ConfirmarPassword"] = _ajudasInput.Single(ai => ai.Action == "Registo" && ai.InputId == "ConfirmarPassword").Texto;
+            ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Nome").Texto;
+            ViewData["DataNascimentoPicker"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "DataNascimentoPicker").Texto;
+            ViewData["Email"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Email").Texto;
+            ViewData["Contato"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Contato").Texto;
+            ViewData["Username"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Username").Texto;
+            ViewData["Password"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Password").Texto;
+            ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "ConfirmarPassword").Texto;
         }
 
         private void SetHelpTooltipsForgotPassword()
         {
-            ViewData["Email"] = _ajudasInput.Single(ai => ai.Action == "ForgotPassword" && ai.InputId == "Email").Texto;
+            ViewData["Email"] = _ajudas.Single(ai => ai.Action == "ForgotPassword" && ai.Elemento == "Email").Texto;
         }
 
         private void SetHelpTooltipsResetPassword()
         {
-            ViewData["Password"] = _ajudasInput.Single(ai => ai.Action == "ResetPassword" && ai.InputId == "Password").Texto;
-            ViewData["ConfirmarPassword"] = _ajudasInput.Single(ai => ai.Action == "ResetPassword" && ai.InputId == "ConfirmarPassword").Texto;
+            ViewData["Password"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "Password").Texto;
+            ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "ConfirmarPassword").Texto;
         }
         #endregion
 

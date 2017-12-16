@@ -10,7 +10,7 @@ namespace cimobgrupo2.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<AjudaInput> AjudaInputs { get; set; }
+        public DbSet<Ajuda> Ajudas { get; set; }
         public DbSet<Erro> Erros { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

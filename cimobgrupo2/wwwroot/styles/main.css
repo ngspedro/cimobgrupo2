@@ -10,7 +10,7 @@ body {
 }
 
 #logo{
-margin-left: 25px;
+    margin-left: 25px;
 }
 
 .navbar {
@@ -71,4 +71,15 @@ fieldset legend {
     border: 0;
     margin-left: 20px;
     padding: 0 15px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.help {
+    float: right;
+    margin-top: 20px;
+    cursor: pointer;
 }

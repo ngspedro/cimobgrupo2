@@ -5,24 +5,24 @@ using System.Threading.Tasks;
 
 namespace cimobgrupo2.Models
 {
-    public class AjudaInput
+    public class Ajuda
     {
-        public int AjudaInputId { get; set; }
+        public int AjudaId { get; set; }
         public String Controller { get; set; }
         public String Action { get; set; }
-        public String InputId { get; set; }
+        public String Elemento { get; set; }
         public String Texto { get; set; }
 
-        public AjudaInput()
+        public Ajuda()
         {
 
         }
 
-        public AjudaInput(String Controller, String Action, String InputId, String Texto)
+        public Ajuda(String Controller, String Action, String Elemento, String Texto)
         {
             this.Controller = Controller;
             this.Action = Action;
-            this.InputId = InputId;
+            this.Elemento = Elemento;
             this.Texto = Texto;
         }
     }

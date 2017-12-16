@@ -21,7 +21,7 @@ namespace cimobgrupo2.Controllers
     [Route("[controller]/[action]")]
     public class ManageController : Controller
     {
-        private readonly List<AjudaInput> _ajudasInput;
+        private readonly List<Ajuda> _ajudas;
         private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -44,7 +44,7 @@ namespace cimobgrupo2.Controllers
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
-            _ajudasInput = context.AjudaInputs.Where(ai => ai.Controller == "Manage").ToList();
+            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Manage").ToList();
             _erros = context.Erros.ToList();
         }
 
@@ -54,6 +54,7 @@ namespace cimobgrupo2.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            SetHelpModal();
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -79,7 +80,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeDetails(IndexViewModel model)
         {
-            
+            SetHelpModal();
             SetHelpToolTips();
 
             if (!ModelState.IsValid)
@@ -117,7 +118,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(IndexViewModel model)
         {
-            
+            SetHelpModal();
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -160,7 +161,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteAccount(IndexViewModel model)
         {
-            
+            SetHelpModal();
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -200,19 +201,25 @@ namespace cimobgrupo2.Controllers
             ViewData["Error_Message"] = Erro.Mensagem;
         }
 
-        #region SetHelpToolTips
+        #region SetHelp
         private void SetHelpToolTips()
         {
-            ViewData["Nome"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Nome").Texto;
-            ViewData["DataNascimentoPicker"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "DataNascimentoPicker").Texto;
-            ViewData["Email"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Email").Texto;
-            ViewData["Contato"] = _ajudasInput.Single(ai => ai.Action == "ChangeDetails" && ai.InputId == "Contato").Texto;
+            ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "ChangeDetails" && ai.Elemento == "Nome").Texto;
+            ViewData["DataNascimentoPicker"] = _ajudas.Single(ai => ai.Action == "ChangeDetails" && ai.Elemento == "DataNascimentoPicker").Texto;
+            ViewData["Email"] = _ajudas.Single(ai => ai.Action == "ChangeDetails" && ai.Elemento == "Email").Texto;
+            ViewData["Contato"] = _ajudas.Single(ai => ai.Action == "ChangeDetails" && ai.Elemento == "Contato").Texto;
 
-            ViewData["PasswordAntiga"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "PasswordAntiga").Texto;
-            ViewData["NovaPassword"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "NovaPassword").Texto;
-            ViewData["ConfirmarNovaPassword"] = _ajudasInput.Single(ai => ai.Action == "ChangePassword" && ai.InputId == "ConfirmarNovaPassword").Texto;
+            ViewData["PasswordAntiga"] = _ajudas.Single(ai => ai.Action == "ChangePassword" && ai.Elemento == "PasswordAntiga").Texto;
+            ViewData["NovaPassword"] = _ajudas.Single(ai => ai.Action == "ChangePassword" && ai.Elemento == "NovaPassword").Texto;
+            ViewData["ConfirmarNovaPassword"] = _ajudas.Single(ai => ai.Action == "ChangePassword" && ai.Elemento == "ConfirmarNovaPassword").Texto;
 
-            ViewData["PasswordAtual"] = _ajudasInput.Single(ai => ai.Action == "DeleteAccount" && ai.InputId == "PasswordAtual").Texto;
+            ViewData["PasswordAtual"] = _ajudas.Single(ai => ai.Action == "DeleteAccount" && ai.Elemento == "PasswordAtual").Texto;
+        }
+
+        private void SetHelpModal()
+        {
+            ViewData["TituloModalAjuda"] = "Definições de Conta";
+            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == "Index").Texto;
         }
 
         #endregion

@@ -156,7 +156,11 @@ namespace cimobgrupo2.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+
+            if (!result.Succeeded)
+                SetErrorMessage("005");
+
+            return View("ConfirmEmail");
         }
 
         [HttpGet]
@@ -237,6 +241,9 @@ namespace cimobgrupo2.Controllers
             {
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
+            else
+                SetErrorMessage("005");
+
             SetHelpTooltipsResetPassword();
             AddErrors(result);
             return View();

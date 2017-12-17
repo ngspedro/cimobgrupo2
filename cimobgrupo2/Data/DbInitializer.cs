@@ -56,6 +56,7 @@ namespace cimobgrupo2.Data
                 context.Erros.Add(new Erro("002", "Login falhou. Verifique se preencheu todos os campos!"));
                 context.Erros.Add(new Erro("003", "Verifique se os dados introduzidos estão corretos."));
                 context.Erros.Add(new Erro("004", "Registo falhou. Já existe uma conta com esse username."));
+                context.Erros.Add(new Erro("005", "Ocorreu um erro inesperado! Tente novamente mais tarde."));
             }
                 context.SaveChanges();
         }

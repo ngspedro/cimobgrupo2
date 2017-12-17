@@ -113,7 +113,19 @@ namespace cimobgrupo2.Controllers
             SetHelpModal();
             SetHelpToolTips();
 
+            if (!ModelState.IsValid)
+            {
+                SetErrorMessage("003");
+                return View("Index", model);
+            }
+
             var user = await _userManager.GetUserAsync(User);
+
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
             model.ChangeDetails = new ChangeDetailsViewModel
             {
                 Nome = user.Nome,
@@ -122,21 +134,10 @@ namespace cimobgrupo2.Controllers
                 Contato = user.Contato
             };
 
-
-            if (!ModelState.IsValid)
-            {
-                SetErrorMessage("003");
-                return View("Index", model);
-            }
-
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
-
             var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.ChangePassword.OldPassword, model.ChangePassword.NewPassword);
             if (!changePasswordResult.Succeeded)
             {
+                SetErrorMessage("005");
                 AddErrors(changePasswordResult);
                 return View("Index", model);
             }
@@ -156,15 +157,6 @@ namespace cimobgrupo2.Controllers
             SetHelpModal();
             SetHelpToolTips();
 
-            var user = await _userManager.GetUserAsync(User);
-            model.ChangeDetails = new ChangeDetailsViewModel
-            {
-                Nome = user.Nome,
-                DataNascimento = user.DataNascimento,
-                Email = user.Email,
-                Contato = user.Contato
-            };
-
 
             if (!ModelState.IsValid)
             {
@@ -172,10 +164,20 @@ namespace cimobgrupo2.Controllers
                 return View("Index", model);
             }
 
+            var user = await _userManager.GetUserAsync(User);
+            
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
+
+            model.ChangeDetails = new ChangeDetailsViewModel
+            {
+                Nome = user.Nome,
+                DataNascimento = user.DataNascimento,
+                Email = user.Email,
+                Contato = user.Contato
+            };
 
             if (await _userManager.CheckPasswordAsync(user, model.DeleteAccount.Password))
                 await _userManager.DeleteAsync(user);

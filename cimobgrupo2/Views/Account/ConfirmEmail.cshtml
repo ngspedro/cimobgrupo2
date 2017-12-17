@@ -3,8 +3,15 @@
     ViewData["topo"] = "Registo";
 }
 
-<div>
-    <p>
-        Obrigado por ativar a sua conta. Clique <a href="@Url.Action("Login", "Account")"> aqui </a> para fazer login.
-    </p>
-</div>
+@{
+    if (ViewData["Error_Code"] != null)
+    {
+        <div>
+            <p>
+                Obrigado por ativar a sua conta. Clique <a href="@Url.Action("Login", "Account")"> aqui </a> para fazer login.
+            </p>
+        </div>
+    }
+}
+
+

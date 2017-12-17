@@ -120,8 +120,11 @@ namespace cimobgrupo2.Controllers
                     //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
                     return RedirectToAction("Login");
-                } 
-                AddErrors(result);
+                } else
+                {
+                    SetErrorMessage("004");
+                    AddErrors(result);
+                }
             } else
                 SetErrorMessage("003");
 

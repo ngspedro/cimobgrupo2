@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CIMOB</title>
 
+    @Html.Partial("_Favicons")
     <link rel="stylesheet" type="text/css" href="~/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="~/lib/jquery-ui-1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="~/styles/autenticacao.css">
@@ -50,7 +51,7 @@
         </div>
         <img id="autenticacaoImg" class="img-responsive" src="~/images/autenticacao.png" />
     </div>
-    @Html.Partial("_helpModal")
+    @Html.Partial("_HelpModal")
     <script type="text/javascript" src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)
 </body>

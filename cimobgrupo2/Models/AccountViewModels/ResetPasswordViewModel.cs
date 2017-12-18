@@ -8,8 +8,8 @@ namespace cimobgrupo2.Models.AccountViewModels
 {
     public class ResetPasswordViewModel
     {
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Nova Password obrigatória.")]
+        [StringLength(100)]
         [DataType(DataType.Password)]
         [Display(Name = "Nova Password:")]
         public string Password { get; set; }

@@ -138,7 +138,7 @@ namespace cimobgrupo2.Controllers
             if (!changePasswordResult.Succeeded)
             {
                 SetErrorMessage("005");
-                AddErrors(changePasswordResult);
+                AddErrorString("A password inserida não corresponde à password da conta!");
                 return View("Index", model);
             }
 

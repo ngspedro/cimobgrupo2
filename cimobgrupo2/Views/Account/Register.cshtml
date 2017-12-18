@@ -2,31 +2,39 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
+    ViewData["Topo"] = "Registo";
 }
 
-<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+<form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="RegistoForm">
     <div class="form-group">
         <input type="text" asp-for="Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]">
+        <span asp-validation-for="Nome" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="text" asp-for="DataNascimento" placeholder="Data de Nascimento" class="form-control" id="DataNascimentoPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["DataNascimentoPicker"]">
+        <span asp-validation-for="DataNascimento" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="text" asp-for="Email" placeholder="Email" class="form-control" id="Email" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Email"]">
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="text" asp-for="Contato" placeholder="Contato" class="form-control" id="Contato" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Contato"]">
+        <span asp-validation-for="Contato" class="text-danger"></span>
     </div>
 
     <br />
     <div class="form-group">
         <input type="text" asp-for="Username" placeholder="Username" class="form-control username" id="Username" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Username"]">
+        <span asp-validation-for="Username" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="password" asp-for="Password" placeholder="Password" class="form-control password" id="Password" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Password"]">
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="password" asp-for="ConfirmPassword" placeholder="Confirmar Password" class="form-control password" id="ConfirmarPassword" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["ConfirmarPassword"]">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
     <div class="form-group">
         <button type="submit">Registar</button>
@@ -38,6 +46,16 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#DataNascimentoPicker').datepicker();
-    });
+        $('#DataNascimentoPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+            .change(dateChanged)
+            .on('changeDate', dateChanged);;
+    });  
+
+    function dateChanged(ev) {
+        $("#RegistoForm").validate().element("#DataNascimentoPicker");
+    }
 </script>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -8,21 +8,22 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutAutenticacao.cshtml";
+    ViewData["Topo"] = "Autenticação";
 }
 
 <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
     <div class="form-group">
         <input type="text" asp-for="Username" placeholder="Username" class="form-control username"  id="Username" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Username"]">
-        
+        <span asp-validation-for="Username" class="text-danger"></span>
     </div>
-    <div class="form-groups">
+    <div class="form-group">
         <input type="password" asp-for="Password" placeholder="Password" class="form-control password" id="Password" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Password"]">
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
-    <div class="checkbox">
-        <label id="RememberMe" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["RememberMe"]"><input type="checkbox" asp-for="RememberMe"> @Html.DisplayNameFor(m => m.RememberMe)</label>
-    </div>
-
-        <button type="submit" >Login</button>
+   
+    <div class="form-group">
+        <button type="submit">Login</button>
+        </div>
 </form>
 
 <div id="outros">
@@ -30,3 +31,7 @@
     &#9679;
     <a href="@Url.Action("ForgotPassword","Account")">Recuperar Password</a>
 </div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -21,7 +21,7 @@ namespace cimobgrupo2.Models.ManageViewModels
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar Nova Password:")]
-        [Compare("NewPassword", ErrorMessage = "As passwords não coincidem!")]
+        [Compare("NewPassword", ErrorMessage = "As passwords não coincidem.")]
         public string ConfirmPassword { get; set; }
 
         public string StatusMessage { get; set; }

@@ -13,16 +13,18 @@ namespace cimobgrupo2.Models.ManageViewModels
         public String Nome { get; set; }
 
         [Required(ErrorMessage = "Data de Nascimento obrigatória.")]
+        [RegularExpression(@"^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$", ErrorMessage = "Data de Nascimento inválida.")]
         [Display(Name = "Data de Nascimento:")]
-        public String DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
 
         [Required(ErrorMessage = "Email obrigatório.")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email inválido.")]
         [Display(Name = "Email:")]
-        public String Email { get; set; }
+        public string Email { get; set; }
 
-        [Required(ErrorMessage = "Contato obrigatório.")]
+        [Required(ErrorMessage = "Contacto obrigatório.")]
+        [RegularExpression(@"^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$", ErrorMessage = "Contacto inválido.")]
         [Display(Name = "Contato:")]
-        public String Contato { get; set; }
+        public string Contato { get; set; }
     }
 }

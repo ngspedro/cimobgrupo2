@@ -14,8 +14,5 @@ namespace cimobgrupo2.Models.AccountViewModels
         [Required(ErrorMessage = "Password obrigatória.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        [Display(Name = "Remember me")]
-        public bool RememberMe { get; set; }
     }
 }

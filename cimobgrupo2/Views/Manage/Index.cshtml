@@ -22,28 +22,31 @@
         </div>
     }
 }
-
-<div asp-validation-summary="All" class="col-md-12 col-lg-12 text-danger"></div>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <div class="col-md-6 col-lg-6">
     <fieldset>
         <legend>Detalhes de Conta</legend>
-        <form asp-controller="Manage" asp-action="ChangeDetails" method="post">
+        <form asp-controller="Manage" asp-action="ChangeDetails" method="post" id="ChangeDetailsForm">
             <div class="col-md-12 col-lg-12">
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Nome"></label>
                     <input type="text" asp-for="ChangeDetails.Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]">
+                    <span asp-validation-for="ChangeDetails.Nome" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.DataNascimento"></label>
                     <input type="text" asp-for="ChangeDetails.DataNascimento" placeholder="Data de Nascimento" class="form-control" id="DataNascimentoPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["DataNascimentoPicker"]">
+                    <span asp-validation-for="ChangeDetails.DataNascimento" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Email"></label>
                     <input type="text" asp-for="ChangeDetails.Email" placeholder="Email" class="form-control" id="Email" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Email"]">
+                    <span asp-validation-for="ChangeDetails.Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Contato"></label>
                     <input type="text" asp-for="ChangeDetails.Contato" placeholder="Contato" class="form-control" id="Contato" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Contato"]">
+                    <span asp-validation-for="ChangeDetails.Contato" class="text-danger"></span>
                 </div>
                 <div class="form-group clearfix">
                     <button type="submit" class="pull-right">Confirmar</button>
@@ -65,14 +68,17 @@
                     <div class="form-group">
                         <label asp-for="ChangePassword.OldPassword"></label>
                         <input asp-for="ChangePassword.OldPassword" class="form-control" id="PasswordAntiga" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAntiga"]" />
+                        <span asp-validation-for="ChangePassword.OldPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ChangePassword.NewPassword"></label>
                         <input asp-for="ChangePassword.NewPassword" class="form-control" id="NovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["NovaPassword"]" />
+                        <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ChangePassword.ConfirmPassword"></label>
                         <input asp-for="ChangePassword.ConfirmPassword" class="form-control" id="ConfirmarNovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["ConfirmarNovaPassword"]" />
+                        <span asp-validation-for="ChangePassword.ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group clearfix">
                         <button type="submit" class="pull-right">Confirmar</button>
@@ -92,15 +98,25 @@
                             <button class="btn" style="border: 1px solid black; color:white;" type="submit">Apagar Conta</button>
                         </span>
                     </div>
+                    <span asp-validation-for="DeleteAccount.Password" class="text-danger"></span>
                 </form>
                 <br /></div>
         </fieldset>
         <br />
 </div>
 
+<script type="text/javascript">
+     $(function () {
+     $('#DataNascimentoPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+          .change(dateChanged)
+          .on('changeDate', dateChanged);;
+     });
 
-    <script type="text/javascript">
-        $(function () {
-            $('#DataNascimentoPicker').datepicker();
-        });
-    </script>
+     function dateChanged(ev) {
+         $("#ChangeDetailsForm").validate().element("#DataNascimentoPicker");
+     }
+</script>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

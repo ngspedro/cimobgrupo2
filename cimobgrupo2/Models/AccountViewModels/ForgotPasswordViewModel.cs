@@ -8,8 +8,8 @@ namespace cimobgrupo2.Models.AccountViewModels
 {
     public class ForgotPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Email obrigatório.")]
+        [EmailAddress(ErrorMessage = "Email inválido.")]
         [Display(Name = "Email:")]
         public string Email { get; set; }
     }

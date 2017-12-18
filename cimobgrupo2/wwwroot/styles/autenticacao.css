@@ -36,7 +36,7 @@ body {
 }
 
 #autenticacaoImg {
-    max-width: 50%;
+    max-width: 40%;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -112,6 +112,10 @@ body {
     cursor: pointer;
 }
 
+.icon:hover {
+    opacity: 0.8;
+}
+
 @media(max-width:800px) {
     #autenticacaoImg {
         display: none;
@@ -132,7 +136,7 @@ body {
     }
 
     #topo h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 

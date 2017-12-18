@@ -51,6 +51,7 @@ namespace cimobgrupo2.Controllers
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             SetHelpTooltipsLogin();
+            SetHelpModal("Login");
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -78,6 +79,7 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("002");
 
             SetHelpTooltipsLogin();
+            SetHelpModal("Login");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -87,6 +89,7 @@ namespace cimobgrupo2.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             SetHelpTooltipsRegisto();
+            SetHelpModal("Register");
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -129,6 +132,7 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("003");
 
             SetHelpTooltipsRegisto();
+            SetHelpModal("Register");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -168,6 +172,7 @@ namespace cimobgrupo2.Controllers
         public IActionResult ForgotPassword()
         {
             SetHelpTooltipsForgotPassword();
+            SetHelpModal("RecoverPassword");
             return View();
         }
 
@@ -195,6 +200,7 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("003");
 
             SetHelpTooltipsForgotPassword();
+            SetHelpModal("RecoverPassword");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -216,6 +222,7 @@ namespace cimobgrupo2.Controllers
                 //return RedirectToAction(nameof(Login));
             }
             SetHelpTooltipsResetPassword();
+            SetHelpModal("RecoverPassword");
             var model = new ResetPasswordViewModel { UserId = userId, Code = code };
             return View(model);
         }
@@ -245,6 +252,7 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("005");
 
             SetHelpTooltipsResetPassword();
+            SetHelpModal("RecoverPassword");
             AddErrors(result);
             return View();
         }
@@ -263,7 +271,7 @@ namespace cimobgrupo2.Controllers
             ViewData["Error_Message"] = Erro.Mensagem;
         }
 
-        #region SetHelpToolTips
+        #region SetHelp
         private void SetHelpTooltipsLogin()
         {
             ViewData["Username"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "Username").Texto;
@@ -291,6 +299,11 @@ namespace cimobgrupo2.Controllers
         {
             ViewData["Password"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "Password").Texto;
             ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "ConfirmarPassword").Texto;
+        }
+
+        private void SetHelpModal(String Action)
+        {
+            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == Action && ai.Elemento == "ModalAjuda").Texto;
         }
         #endregion
 

@@ -1,9 +1,9 @@
 ﻿@{
-    String tituloModal = "Ajuda";
+    String tituloModal = "Ajuda - " + ViewData["Titulo"];
     String textoModal = "Esta página não tem ajuda disponível.";
+
     if (ViewData["TextoModalAjuda"] != null)
     {
-        tituloModal += " - " + ViewData["TituloModalAjuda"];
         textoModal = (String)ViewData["TextoModalAjuda"];
     }
 }
@@ -21,7 +21,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

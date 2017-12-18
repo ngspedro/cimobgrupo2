@@ -44,15 +44,35 @@ namespace cimobgrupo2.Data
 
                 //modals
                 context.Ajudas.Add(new Ajuda("Manage", "Index", "ModalAjuda", 
-                    "Esta página permite-lhe alterar os dados da sua conta.<br /> Uma das secções permite-lhe alterar apenas os detalhes da sua conta (nome, contato, etc.), " +
-                    "outra permite-lhe alterar a sua password e tem ainda uma terceira secção onde pode eliminar a sua conta, caso pretenda.<br /> <br /> Qualquer dúvida que tenha sobre o preenchimento " +
-                    "de qualquer um dos campos, passe o rato por cima e consulte as orientações detalhadamente para cada um deles."
+                    "<p>Esta página permite-lhe alterar os dados da sua conta.</p>" +
+                    "<p>Uma das secções permite-lhe alterar apenas os detalhes da sua conta (nome, contato, etc.),  " +
+                    "outra permite-lhe alterar a sua password e tem ainda uma terceira secção onde pode eliminar a sua conta, caso pretenda.</p> <br />" +
+                    "<p> Qualquer dúvida que tenha sobre o preenchimento de qualquer um dos campos, passe o rato por cima e consulte as orientações detalhadamente para cada um deles.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Account", "Login", "ModalAjuda",
+                    "<p>Esta página permite-lhe introduzir os seus dados e aceder ao sistema. Para tal precisa de estar registado.</p><br />" +
+                    "<strong><p>Observações:</p></strong>  " +
+                    "<ul><li>Caso não possua uma conta, pode criá-la clicando em registar;</li>" +
+                    "<li>Caso possua uma conta mas não se lembre da sua password, pode sempre recuperá-la através da opção de recuperação da mesma;" +
+                    "<li>Caso se tenha acabado de registar mas não estiver a conseguir aceder, lembre-se que tem que a ativar no email que nos forneceu;</li></ul>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Account", "Register", "ModalAjuda",
+                    "<p>Esta página permite-lhe criar uma conta de acesso ao sistema.</p>" + 
+                    "<p>Para tal basta preencher o formulário corretamente com a sua informação e submeter o mesmo.</p>" +
+                    "<p><strong>Nota:</strong> Depois da submissão do formulário terá que ativar a conta no email que nos forneceu, clicando no link fornecido para o efeito.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Account", "RecoverPassword", "ModalAjuda",
+                    "<p>Esta página permite-lhe recuperar a password de acesso à sua conta.</p>" +
+                    "<p>Para tal basta preencher o formulário com o email associado à sua conta, de seguida será-lhe enviado um link para re-definir a mesma.</p>"
                     ));
             }
 
             if (!context.Erros.Any())
             {
-                context.Erros.Add(new Erro("001", "Conta inexistente!"));
+                context.Erros.Add(new Erro("001", "Credenciais Inválidas."));
                 context.Erros.Add(new Erro("002", "Login falhou. Verifique se preencheu todos os campos!"));
                 context.Erros.Add(new Erro("003", "Verifique se os dados introduzidos estão corretos."));
                 context.Erros.Add(new Erro("004", "Registo falhou. Já existe uma conta com esse username."));

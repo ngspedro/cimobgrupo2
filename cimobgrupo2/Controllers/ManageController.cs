@@ -217,8 +217,7 @@ namespace cimobgrupo2.Controllers
 
         private void SetHelpModal()
         {
-            ViewData["TituloModalAjuda"] = "Definições de Conta";
-            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == "Index").Texto;
+            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == "Index" && ai.Elemento == "ModalAjuda").Texto;
         }
 
         #endregion

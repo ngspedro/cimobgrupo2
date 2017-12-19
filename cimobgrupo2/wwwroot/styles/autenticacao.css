@@ -11,10 +11,12 @@ body {
     padding: 0;
     /*background: url("../images/bg1.jpg");*/
     font-family: "Helvetica", Times, serif;
+    background-color: #efefe7;
 }
 
 #topo {
-    margin: 0 20%;
+    background-color: white;
+    width: 100%;
 }
 
 #topo h1 {
@@ -24,15 +26,12 @@ body {
 }
 
 #logo {
-    float: right;
     min-width: 270px;
     min-height: 157px;
 }
 
 #autenticacao {
-    background-color: #efefe7;
     clear: both;
-    height: calc(100% - 157px);
 }
 
 #autenticacaoImg {
@@ -106,6 +105,9 @@ body {
 .icon {
     width: 20px;
     height: 20px;
+    margin-top: -2px;
+    z-index: 999;
+    position: relative;
 }
 
 .help {
@@ -116,32 +118,22 @@ body {
     opacity: 0.8;
 }
 
-@media(max-width:800px) {
+@media(max-width: 1060px) {
+    .custom {
+        padding-right: 75px;
+    }
+}
+
+@media(max-width:600px) {
     #autenticacaoImg {
         display: none;
     }
 }
 
-
-
-@media(max-width:560px) {
-    #autenticacao {
-        height: calc(100% - 304px);
-    }
-}
-
-@media(max-width:997px) {
-    #topo {
-        margin: 0 10%;
-    }
-
+@media(max-width:520px) {
     #topo h1 {
+        line-height: normal;
         font-size: 24px;
     }
 }
 
-@media(max-width:680px) {
-    #logo {
-        float: left;
-    }
-}

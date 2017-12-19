@@ -14,33 +14,60 @@ namespace cimobgrupo2.Data
             if (!context.Ajudas.Any())
             {
                 //inputs
-                context.Ajudas.Add(new Ajuda("Account", "Login", "Username", "Username associado à conta"));
-                context.Ajudas.Add(new Ajuda("Account", "Login", "Password", "Password associada à conta"));
-                context.Ajudas.Add(new Ajuda("Account", "Login", "RememberMe", "Seleccione esta opção caso pretende que o login fique feito mesmo após fechar o navegador"));
+                context.Ajudas.Add(new Ajuda("Account", "Login", "Username", "Username associado à conta."));
+                context.Ajudas.Add(new Ajuda("Account", "Login", "Password", "Password associada à conta."));
+                context.Ajudas.Add(new Ajuda("Account", "Login", "RememberMe", "Seleccione esta opção caso pretende que o login fique feito mesmo após fechar o navegador."));
 
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "Nome", "Preencha com o seu nome"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "DataNascimentoPicker", "Preencha com a sua data de nascimento"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "Email", "Preencha com um email válido"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "Contato", "Preencha com o seu contato"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "Username", "Preencha com o username de acesso à conta que pretende"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "Password", "Preencha com a password que pretende. Note que esta tem que ter pelo menos 5 caracteres"));
-                context.Ajudas.Add(new Ajuda("Account", "Registo", "ConfirmarPassword", "Repita a password que introduziu acima"));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "Nome", "Preencha com o seu nome."));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "DataNascimentoPicker", 
+                    "Preencha com a sua data de nascimento." +
+                    "<br />" +
+                    "<strong>Nota:</strong> Esta tem que estar no formato dd/mm/yyyy"));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "Email", 
+                    "Preencha com um email válido." +
+                    "<br /> " +
+                    "<strong>Nota:</strong> Terá que ativá-lo antes de poder aceder à sua conta."));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "Contato", 
+                    "Preencha com o seu contato." +
+                    "<br />" +
+                    "<strong>Nota:</strong> É obrigatório que este seja um número português válido. Isto é, composto por 9 digitos (não é necessária a introdução de qualquer indicativo)"));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "Username", "Preencha com o username de acesso à conta que pretende."));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "Password", 
+                    "Preencha com a password que pretende." +
+                    "<br />" +
+                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                context.Ajudas.Add(new Ajuda("Account", "Registo", "ConfirmarPassword", "Repita a password que introduziu acima."));
 
-                context.Ajudas.Add(new Ajuda("Account", "ForgotPassword", "Email", "Preencha com o email pertencente à conta cuja password pretende recuperar"));
+                context.Ajudas.Add(new Ajuda("Account", "ForgotPassword", "Email", "Preencha com o email pertencente à conta cuja password pretende recuperar."));
 
-                context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "Password", "Preencha com a nova password. Note que esta tem que ter pelo menos 5 caracteres"));
-                context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "ConfirmarPassword", "Repita a nova password"));
+                context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "Password", 
+                    "Preencha com a nova password." +
+                    "<br />" +
+                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "ConfirmarPassword", "Repita a nova password."));
 
-                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Nome", "Aqui pode editar o seu nome"));
-                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "DataNascimentoPicker", "Aqui pode editar a sua data de nascimento"));
-                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Email", "Aqui pode editar o seu email. Note que este tem que ser um email válido"));
-                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Contato", "Aqui pode editar o contato associado à sua conta"));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Nome", "Aqui pode editar o seu nome."));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "DataNascimentoPicker", 
+                    "Aqui pode editar a sua data de nascimento." +
+                    "<br />" +
+                    "<strong>Nota:</strong> Esta tem que estar no formato dd/mm/yyyy"));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Email", 
+                    "Aqui pode editar o seu email. " +
+                    "<br />" +
+                    "<strong>Nota:</strong> Este tem que ser um email válido. (example@example.com)"));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Contato", 
+                    "Aqui pode editar o contato associado à sua conta." +
+                    "<br />" +
+                    "<strong>Nota:</strong> É obrigatório que este seja um número português válido. Isto é, composto por 9 digitos (não é necessária a introdução de qualquer indicativo)"));
 
-                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "PasswordAntiga", "Para alterar a sua password, tem que introduzir neste campo a sua password atual"));
-                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "NovaPassword", "Preencha com a password para a qual deseja alterar"));
-                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "ConfirmarNovaPassword", "Confirme a password que introduziu no campo acima"));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "PasswordAntiga", "Para alterar a sua password, tem que introduzir neste campo a sua password atual."));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "NovaPassword", 
+                    "Preencha com a password para a qual deseja alterar." +
+                    "<br />" +
+                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "ConfirmarNovaPassword", "Confirme a password que introduziu no campo acima."));
 
-                context.Ajudas.Add(new Ajuda("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta"));
+                context.Ajudas.Add(new Ajuda("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta."));
 
                 //modals
                 context.Ajudas.Add(new Ajuda("Manage", "Index", "ModalAjuda", 

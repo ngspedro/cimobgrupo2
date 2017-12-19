@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({
         trigger: 'hover',
+        html: true,
         container: 'body',
         'placement': function (tt, trigger) {
             var $trigger = $(trigger);

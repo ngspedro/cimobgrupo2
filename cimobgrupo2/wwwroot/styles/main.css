@@ -86,3 +86,9 @@ fieldset legend {
     margin-top: 20px;
     cursor: pointer;
 }
+
+.tooltip-inner {
+    max-width: 300px;
+    padding: 10px 15px;
+    text-align: left;
+}

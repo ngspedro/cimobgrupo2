@@ -30,22 +30,22 @@
             <div class="col-md-12 col-lg-12">
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Nome"></label>
-                    <input type="text" asp-for="ChangeDetails.Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]">
+                    <input type="text" asp-for="ChangeDetails.Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]" data-html="true">
                     <span asp-validation-for="ChangeDetails.Nome" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.DataNascimento"></label>
-                    <input type="text" asp-for="ChangeDetails.DataNascimento" placeholder="Data de Nascimento" class="form-control" id="DataNascimentoPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["DataNascimentoPicker"]">
+                    <input type="text" asp-for="ChangeDetails.DataNascimento" placeholder="Data de Nascimento" class="form-control" id="DataNascimentoPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["DataNascimentoPicker"]" data-html="true">
                     <span asp-validation-for="ChangeDetails.DataNascimento" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Email"></label>
-                    <input type="text" asp-for="ChangeDetails.Email" placeholder="Email" class="form-control" id="Email" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Email"]">
+                    <input type="text" asp-for="ChangeDetails.Email" placeholder="Email" class="form-control" id="Email" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Email"]" data-html="true">
                     <span asp-validation-for="ChangeDetails.Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ChangeDetails.Contato"></label>
-                    <input type="text" asp-for="ChangeDetails.Contato" placeholder="Contato" class="form-control" id="Contato" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Contato"]">
+                    <input type="text" asp-for="ChangeDetails.Contato" placeholder="Contato" class="form-control" id="Contato" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Contato"]" data-html="true">
                     <span asp-validation-for="ChangeDetails.Contato" class="text-danger"></span>
                 </div>
                 <div class="form-group clearfix">
@@ -67,17 +67,17 @@
                 <form asp-controller="Manage" asp-action="ChangePassword" method="post">
                     <div class="form-group">
                         <label asp-for="ChangePassword.OldPassword"></label>
-                        <input asp-for="ChangePassword.OldPassword" class="form-control" id="PasswordAntiga" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAntiga"]" />
+                        <input asp-for="ChangePassword.OldPassword" class="form-control" id="PasswordAntiga" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAntiga"]" data-html="true" />
                         <span asp-validation-for="ChangePassword.OldPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ChangePassword.NewPassword"></label>
-                        <input asp-for="ChangePassword.NewPassword" class="form-control" id="NovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["NovaPassword"]" />
+                        <input asp-for="ChangePassword.NewPassword" class="form-control" id="NovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["NovaPassword"]" data-html="true" />
                         <span asp-validation-for="ChangePassword.NewPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="ChangePassword.ConfirmPassword"></label>
-                        <input asp-for="ChangePassword.ConfirmPassword" class="form-control" id="ConfirmarNovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["ConfirmarNovaPassword"]" />
+                        <input asp-for="ChangePassword.ConfirmPassword" class="form-control" id="ConfirmarNovaPassword" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["ConfirmarNovaPassword"]" data-html="true" />
                         <span asp-validation-for="ChangePassword.ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group clearfix">
@@ -93,7 +93,7 @@
                 <form asp-controller="Manage" asp-action="DeleteAccount" method="post">
                     <label asp-for="DeleteAccount.Password"></label>
                     <div class="input-group">
-                        <input asp-for="DeleteAccount.Password" class="form-control width100" id="PasswordAtual" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAtual"]" />
+                        <input asp-for="DeleteAccount.Password" class="form-control width100" id="PasswordAtual" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAtual"]" data-html="true" />
                         <span class="input-group-btn">
                             <button class="btn" style="border: 1px solid black; color:white;" type="submit">Apagar Conta</button>
                         </span>

@@ -48,10 +48,11 @@ body {
 }
 
 .form-control {
-    padding: 18px;
+    /*padding: 18px; */
+    height: 40px;
 }
 
-.username {
+/*.username {
     background: white url("../images/user2.png") no-repeat scroll 7px 7px;
     padding: 18px 40px;
 }
@@ -59,7 +60,7 @@ body {
 .password {
     background: white url("../images/pw.png") no-repeat scroll 7px 7px;
     padding: 18px 40px;
-}
+}*/
 
 #mg button {
     width: 100%;
@@ -136,4 +137,3 @@ body {
         font-size: 24px;
     }
 }
-

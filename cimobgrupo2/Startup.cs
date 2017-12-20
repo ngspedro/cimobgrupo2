@@ -26,8 +26,8 @@ namespace cimobgrupo2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("Azure")));
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -54,7 +54,7 @@ namespace cimobgrupo2
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -78,6 +78,61 @@ namespace cimobgrupo2
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             DbInitializer.Initialize(context);
+            CreateRoles(serviceProvider);
+        }
+
+        private void CreateRoles(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            string email = "cimobtestes@testes.com"; //email associado à conta de testes CIMOB
+            Task<IdentityResult> roleResult;
+            
+
+            //Check that there is an Administrator role and create if not
+            Task<bool> hasStudentRole = roleManager.RoleExistsAsync("Estudante");
+            hasStudentRole.Wait();
+
+            if (!hasStudentRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Estudante"));
+                roleResult.Wait();
+            }
+
+            Task<bool> hasCimobRole = roleManager.RoleExistsAsync("CIMOB");
+            hasCimobRole.Wait();
+
+            if (!hasCimobRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("CIMOB"));
+                roleResult.Wait();
+            }
+
+            Task<ApplicationUser> testUser = userManager.FindByEmailAsync(email);
+            testUser.Wait();
+
+            if (testUser.Result == null)
+            {
+                ApplicationUser cimobTeste = new ApplicationUser
+                {
+                    Email = email,
+                    UserName = "testeCimob"
+                };
+
+                Task<IdentityResult> newUser = userManager.CreateAsync(cimobTeste, "@Abc123");
+                newUser.Wait();
+
+                Task<String> code = userManager.GenerateEmailConfirmationTokenAsync(cimobTeste);
+                code.Wait();
+                Task<IdentityResult> resultActivation = userManager.ConfirmEmailAsync(cimobTeste, code.Result);
+                resultActivation.Wait();
+
+                if (newUser.Result.Succeeded && resultActivation.Result.Succeeded)
+                {
+                    Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(cimobTeste, "CIMOB");
+                    newUserRole.Wait();
+                }
+            }
         }
     }
 }

@@ -118,6 +118,8 @@ namespace cimobgrupo2.Controllers
                     var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                     await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
+                   var newUserRole = await _userManager.AddToRoleAsync(user, "Estudante");
+
 
                     TempData["Message"] = "Conta criada com sucesso. Note que esta tem que ser ativada no email antes de poder ser utilizada.";
                     //await _signInManager.SignInAsync(user, isPersistent: false);

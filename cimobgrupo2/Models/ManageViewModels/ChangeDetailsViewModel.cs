@@ -14,6 +14,7 @@ namespace cimobgrupo2.Models.ManageViewModels
 
         [Required(ErrorMessage = "Data de Nascimento obrigatória.")]
         [RegularExpression(@"^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$", ErrorMessage = "Data de Nascimento inválida.")]
+        [Maiores17(ErrorMessage = "Só aceitamos registos a maiores de 17 anos.")]
         [Display(Name = "Data de Nascimento:")]
         public string DataNascimento { get; set; }
 

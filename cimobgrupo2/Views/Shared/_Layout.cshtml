@@ -46,8 +46,8 @@
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="@Url.Action("Index", "Manage")"><span class="glyphicon glyphicon-user"></span> @UserManager.GetUserName(User)</a></li>
-                    <li><a href="#" onclick="logoutForm.submit();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    <li><a href="@Url.Action("Index", "Manage")" id="btnDefinicoes"><span class="glyphicon glyphicon-user"></span> @UserManager.GetUserName(User)</a></li>
+                    <li><a href="#" onclick="logoutForm.submit();" id="btnLogout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
 
 

@@ -49,8 +49,8 @@
                     <span asp-validation-for="ChangeDetails.Contato" class="text-danger"></span>
                 </div>
                 <div class="form-group clearfix">
-                    <button type="submit" class="pull-right">Confirmar</button>
-                    <button type="button" onclick="location.href='@Url.Action("Index", "Manage")'" class="pull-right">Anular</button>
+                    <button type="submit" class="pull-right" id="btnChangeDetails">Confirmar</button>
+                    <button type="button" onclick="location.href='@Url.Action("Index", "Manage")'" class="pull-right" id="btnAnular">Anular</button>
 
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         <span asp-validation-for="ChangePassword.ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group clearfix">
-                        <button type="submit" class="pull-right">Confirmar</button>
+                        <button type="submit" class="pull-right" id="btnChangePassword">Confirmar</button>
                     </div>
                 </form>
             </div>
@@ -95,7 +95,7 @@
                     <div class="input-group">
                         <input asp-for="DeleteAccount.Password" class="form-control width100" id="PasswordAtual" data-toggle="tooltip" data-placement-md="left" data-placement-xs="top" title="@ViewData["PasswordAtual"]" data-html="true" />
                         <span class="input-group-btn">
-                            <button class="btn" style="border: 1px solid black; color:white;" type="submit">Apagar Conta</button>
+                            <button class="btn" style="border: 1px solid black; color:white;" type="submit" id="btnDeleteAccount">Apagar Conta</button>
                         </span>
                     </div>
                     <span asp-validation-for="DeleteAccount.Password" class="text-danger"></span>

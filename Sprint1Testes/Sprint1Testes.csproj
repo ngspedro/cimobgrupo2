@@ -10,9 +10,11 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="2.33.0" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.19.1" />
+    <PackageReference Include="Selenium.Opera.WebDriver" Version="2.30.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.8.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="2.34.0" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="3.8.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftWebDriver" Version="10.0.16299" />
     <PackageReference Include="WebDriverManager" Version="2.2.4" />
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />

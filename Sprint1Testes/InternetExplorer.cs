@@ -1,26 +1,22 @@
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
-using OpenQA.Selenium.Firefox;
+ï»¿using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System;
+using System.Net;
 using Xunit;
 
 namespace Sprint1Testes
 {
-    public class Testes
+    public class InternetExplorer
     {
-        private IWebDriver driver;
-        private WebDriverWait wait;
+        private static String CAMINHO = @"C:\Users\nuno\Desktop\ESW\PROJETO\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0";
+        private InternetExplorerDriver driver;
 
-        #region Firefox
         [Fact]
-        public void LoginFirefox()
+        public void Login()
         {
-                try { 
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Login";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -31,20 +27,20 @@ namespace Sprint1Testes
                 Assert.NotNull(driver.FindElement(By.Id("conteudo")));
                 driver.Close();
                 driver.Dispose();
-            } finally
+            }
+            finally
             {
                 driver.Quit();
             }
-               
+
         }
 
-        
-
         [Fact]
-        public void LoginCredenciaisInvalidasFirefox()
+        public void LoginCredenciaisInvalidas()
         {
-            try {
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Login";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -55,18 +51,20 @@ namespace Sprint1Testes
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-danger")));
                 driver.Close();
                 driver.Dispose();
-        } finally
+            }
+            finally
             {
                 driver.Quit();
             }
 
-}
+        }
 
         [Fact]
-        public void RegistoFirefox()
+        public void Registo()
         {
-            try { 
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Register";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -78,26 +76,28 @@ namespace Sprint1Testes
                 driver.FindElement(By.Id("Password")).SendKeys("selenium");
                 driver.FindElement(By.Id("ConfirmarPassword")).SendKeys("selenium");
                 driver.FindElement(By.Id("btnRegisto")).Click();
-                
+
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
                 driver.Close();
                 driver.Dispose();
-        } finally
+            }
+            finally
             {
                 driver.Quit();
             }
 
-}
+        }
 
         [Fact]
-        public void RegistoNotOver17Firefox()
+        public void RegistoNotOver17()
         {
-            try {
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
-                string url = "http://eswt4g2.azurewebsites.net/Account/Register";
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
+                string url = "https://eswt4g2.azurewebsites.net/Account/Register";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
-                driver.FindElement(By.Id("Nome")).SendKeys("SeleniumNotOver17");
+                driver.FindElement(By.Id("Nome")).SendKeys("SeleniumNotOver17@@");
                 driver.FindElement(By.Id("DataNascimentoPicker")).SendKeys("01/01/2017");
                 driver.FindElement(By.Id("Email")).SendKeys("selenium@selenium.com");
                 driver.FindElement(By.Id("Contato")).SendKeys("911234567");
@@ -109,18 +109,20 @@ namespace Sprint1Testes
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-danger")));
                 driver.Close();
                 driver.Dispose();
-        } finally
+            }
+            finally
             {
                 driver.Quit();
             }
 
-}
+        }
 
         [Fact]
-        public void ChangeAccountDetailsFirefox()
+        public void ChangeAccountDetails()
         {
-             try { 
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Login";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -138,7 +140,7 @@ namespace Sprint1Testes
                 driver.FindElement(By.Id("DataNascimentoPicker")).SendKeys("11/01/2000");
 
                 driver.FindElement(By.Id("btnChangeDetails")).Click();
-                
+
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
 
                 driver.Close();
@@ -152,11 +154,11 @@ namespace Sprint1Testes
         }
 
         [Fact]
-        public void ChangeAccountPasswordFirefox()
+        public void ChangeAccountPassword()
         {
             try
             {
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Login";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -166,13 +168,13 @@ namespace Sprint1Testes
                 driver.FindElement(By.Id("btnLogin")).Click();
 
                 driver.FindElement(By.Id("btnDefinicoes")).Click();
-                
+
                 driver.FindElement(By.Id("PasswordAntiga")).SendKeys("abc1238");
                 driver.FindElement(By.Id("NovaPassword")).SendKeys("abc123");
                 driver.FindElement(By.Id("ConfirmarNovaPassword")).SendKeys("abc123");
 
                 driver.FindElement(By.Id("btnChangePassword")).Click();
-                
+
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
 
                 driver.Close();
@@ -186,11 +188,11 @@ namespace Sprint1Testes
         }
 
         [Fact]
-        public void DeleteAccountFirefox()
+        public void DeleteAccount()
         {
             try
             {
-                driver = new FirefoxDriver(@"C:\Users\Costeira\Documents\Escola\PV\site\CIMOBgrupo2\Sprint1Testes\bin\Debug\netcoreapp2.0");
+                driver = new InternetExplorerDriver(CAMINHO);
                 string url = "http://eswt4g2.azurewebsites.net/Account/Login";
                 driver.Navigate().GoToUrl(url);
                 driver.Manage().Window.Maximize();
@@ -207,13 +209,6 @@ namespace Sprint1Testes
 
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
 
-                //team retrospective
-                //burndown chart
-                //cumulative chart
-                //testes aceitaçao
-                
-                //temos feito reunioes
-                //sprint planning meeting proximo 
                 driver.Close();
                 driver.Dispose();
             }
@@ -221,8 +216,37 @@ namespace Sprint1Testes
             {
                 driver.Quit();
             }
-
         }
-        #endregion
+
+        [Fact]
+        public void DeleteAccountPasswordErrada()
+        {
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
+                string url = "http://eswt4g2.azurewebsites.net/Account/Login";
+                driver.Navigate().GoToUrl(url);
+                driver.Manage().Window.Maximize();
+                driver.FindElement(By.Id("Username")).SendKeys("ngspedro");
+                driver.FindElement(By.Id("Password")).SendKeys("abc123");
+
+                driver.FindElement(By.Id("btnLogin")).Click();
+
+                driver.FindElement(By.Id("btnDefinicoes")).Click();
+
+                driver.FindElement(By.Id("PasswordAtual")).SendKeys("PASSWORDERRADA");
+
+                driver.FindElement(By.Id("btnDeleteAccount")).Click();
+
+                Assert.NotNull(driver.FindElement(By.ClassName("alert-danger")));
+
+                driver.Close();
+                driver.Dispose();
+            }
+            finally
+            {
+                driver.Quit();
+            }
+        }
     }
 }

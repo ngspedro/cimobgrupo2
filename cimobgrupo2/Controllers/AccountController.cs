@@ -127,7 +127,12 @@ namespace cimobgrupo2.Controllers
                     return RedirectToAction("Login");
                 } else
                 {
-                    SetErrorMessage("004");
+                    if (result.Errors.Where(r => r.Code == "DuplicateUsername").ToList().Count != 0){ 
+                        SetErrorMessage("004");
+                    } else
+                    {
+                        SetErrorMessage("003");
+                    }
                     AddErrors(result);
                 }
             } else

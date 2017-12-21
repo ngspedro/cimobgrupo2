@@ -43,6 +43,7 @@ namespace cimobgrupo2
                 config.SignIn.RequireConfirmedEmail = true;
             })
                  .AddEntityFrameworkStores<ApplicationDbContext>()
+                 .AddErrorDescriber<CustomIdentityErrorDescriber>()
                 .AddDefaultTokenProviders();
 
             // Add application services.

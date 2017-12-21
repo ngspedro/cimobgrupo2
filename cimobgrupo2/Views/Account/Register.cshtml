@@ -5,6 +5,7 @@
     ViewData["Titulo"] = "Registo";
 }
 
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="RegistoForm">
     <div class="form-group">
         <input type="text" asp-for="Nome" placeholder="Nome Completo" class="form-control" id="Nome" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]">

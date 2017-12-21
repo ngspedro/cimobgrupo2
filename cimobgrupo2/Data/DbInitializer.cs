@@ -35,7 +35,13 @@ namespace cimobgrupo2.Data
                 context.Ajudas.Add(new Ajuda("Account", "Registo", "Password", 
                     "Preencha com a password que pretende." +
                     "<br />" +
-                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                    "<strong>Nota:</strong> " +
+                    "<br /><ul>" +
+                    "<li>Tem que ter pelo menos 6 caracteres.</li>" +
+                    "<li>Tem que ter pelo menos um número.</li>" +
+                    "<li>Tem que ter pelo menos uma maiúscula</li>" +
+                    "<li>Tem que ter pelo menos um caracter especial.</li>" +
+                    "</ul>"));
                 context.Ajudas.Add(new Ajuda("Account", "Registo", "ConfirmarPassword", "Repita a password que introduziu acima."));
 
                 context.Ajudas.Add(new Ajuda("Account", "ForgotPassword", "Email", "Preencha com o email pertencente à conta cuja password pretende recuperar."));
@@ -43,7 +49,13 @@ namespace cimobgrupo2.Data
                 context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "Password", 
                     "Preencha com a nova password." +
                     "<br />" +
-                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                    "<strong>Nota:</strong> " +
+                    "<br /><ul>" +
+                    "<li>Tem que ter pelo menos 6 caracteres.</li>" +
+                    "<li>Tem que ter pelo menos um número.</li>" +
+                    "<li>Tem que ter pelo menos uma maiúscula</li>" +
+                    "<li>Tem que ter pelo menos um caracter especial.</li>" +
+                    "</ul>"));
                 context.Ajudas.Add(new Ajuda("Account", "ResetPassword", "ConfirmarPassword", "Repita a nova password."));
 
                 context.Ajudas.Add(new Ajuda("Manage", "ChangeDetails", "Nome", "Aqui pode editar o seu nome."));
@@ -64,7 +76,13 @@ namespace cimobgrupo2.Data
                 context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "NovaPassword", 
                     "Preencha com a password para a qual deseja alterar." +
                     "<br />" +
-                    "<strong>Nota:</strong> Esta tem que ter pelo menos 5 caracteres."));
+                    "<strong>Nota:</strong> " +
+                    "<br /><ul>" +
+                    "<li>Tem que ter pelo menos 6 caracteres.</li>" +
+                    "<li>Tem que ter pelo menos um número.</li>" +
+                    "<li>Tem que ter pelo menos uma maiúscula</li>" +
+                    "<li>Tem que ter pelo menos um caracter especial.</li>" +
+                    "</ul>"));
                 context.Ajudas.Add(new Ajuda("Manage", "ChangePassword", "ConfirmarNovaPassword", "Confirme a password que introduziu no campo acima."));
 
                 context.Ajudas.Add(new Ajuda("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta."));

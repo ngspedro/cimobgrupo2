@@ -1,15 +1,15 @@
-*{
-	margin: 0;
+* {
+    margin: 0;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	/*background: url("../images/bg1.jpg");*/
-	font-family: "Segoe UI", Times, serif;
+    margin: 0;
+    padding: 0;
+    /*background: url("../images/bg1.jpg");*/
+    font-family: "Segoe UI", Times, serif;
 }
 
-#logo{
+#logo {
     margin-left: 25px;
 }
 
@@ -19,28 +19,29 @@ body {
     border-radius: 0;
 }
 
-.navbar .container-fluid {
-    background-color: #496886;
-}
+    .navbar .container-fluid {
+        background-color: #496886;
+    }
 
 .navbar-nav li a {
     color: white !important;
 }
 
-.navbar-nav li a:hover {
-    color: black !important;
-}
+    .navbar-nav li a:hover {
+        color: black !important;
+    }
 
 #conteudo {
     margin-top: -10px;
 }
 
-#conteudo h1 {
-  font-size: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #2d2d2d;
-  margin-left: 13px;
-}
+    #conteudo h1 {
+        font-size: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #2d2d2d;
+        margin-left: 13px;
+        margin-bottom: 20px;
+    }
 
 button {
     background-color: #496886;
@@ -55,31 +56,37 @@ button {
     margin-left: 5px;
 }
 
-button:hover {
-   opacity: 0.8;
-}
+    button:hover {
+        opacity: 0.8;
+    }
 
 fieldset {
+    position: relative;
     border: 1px solid black;
     width: 100%;
+    padding-top: 20px;
 }
 
-fieldset legend {
-    font-size: 14px;
-    font-weight: bold;
-    width: auto;
-    border: 0;
-    margin-left: 20px;
-    padding: 0 15px;
-}
+    fieldset legend {
+        position: absolute;
+        top: -12px;
+        font-size: 14px;
+        font-weight: bold;
+        width: auto;
+        border: 0;
+        margin-left: 20px;
+        padding: 0 15px;
+        background-color: white;
+    }
 
 .icon {
     width: 20px;
     height: 20px;
 }
-.icon:hover {
-    opacity: 0.8;
-}
+
+    .icon:hover {
+        opacity: 0.8;
+    }
 
 .help {
     float: right;

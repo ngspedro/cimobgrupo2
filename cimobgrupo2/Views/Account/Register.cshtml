@@ -59,25 +59,5 @@
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
-   <script>
-        $.validator.addMethod("dataoffparameters",
-            function (value, element, parameters) {
-
-                value = value.split("/");
-
-                var maxDate = new Date(todayDate.getFullYear() - 17, todayDate.getMonth(), todayDate.getDate());
-
-                date = new Date(value[2], value[0] - 1, value[1]);
-
-                return date < maxDate;
-
-                return value.toUpperCase() !== "RED";
-            });
-
-        $.validator.unobtrusive.adapters.add("dataoffparameters", [], function (options) {
-            options.rules.dataoffparameters = {};
-            options.messages["dataoffparameters"] = options.message;
-        });
-</script>
 
 }

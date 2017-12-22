@@ -137,7 +137,7 @@ namespace cimobgrupo2.Controllers
             var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.ChangePassword.OldPassword, model.ChangePassword.NewPassword);
             if (!changePasswordResult.Succeeded)
             {
-                SetErrorMessage("005");
+                SetErrorMessage("003");
                 AddErrorString("A password inserida não corresponde à password da conta!");
                 return View("Index", model);
             }

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<cimobgrupo2.Models.EscolaParceira>
+@{
+    ViewData["Titulo"] = "Lista de Escolas Parceiras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table table-striped" id="tabela-escolas">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Localidade)
+            </th>
+            <th>
+                Cursos Disponíveis
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cursos.Count)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Detalhes" asp-route-id="@item.EscolaParceiraId">Detalhes</a> |
+                    <a asp-action="Editar" asp-route-id="@item.EscolaParceiraId">Editar</a> |
+                    <a asp-action="Eliminar" asp-route-id="@item.EscolaParceiraId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="col-md-12 col-lg-12 botoes">
+    <button type="button" onclick="location.href='@Url.Action("Criar", "EscolasParceiras")'" class="pull-right" id="btnCriar" style="margin-bottom: 20px;">Nova Escola Parceira</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-escolas').DataTable();
+    });
+</script>

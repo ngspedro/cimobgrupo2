@@ -13,11 +13,13 @@
 
     @Html.Partial("_Favicons")
     <link rel="stylesheet" type="text/css" href="~/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/DataTables/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="~/lib/jquery-ui-1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="~/styles/main.css">
 
     <script src="~/lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
     <script src="~/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="~/lib/DataTables/datatables.min.js"></script>
     <script src="~/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -31,14 +33,14 @@
                     <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     @{ if (User.IsInRole("Estudante"))
                         {
-                            <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-paperclip"></span> Minha Candidatura</a></li>
                         }
                         else if (User.IsInRole("CIMOB"))
                         {
-                            <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
+                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
+                            <li><a href="@Url.Action("Index", "Cursos")"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-paperclip"></span> Candidaturas</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Entrevistas</a></li>
                         }

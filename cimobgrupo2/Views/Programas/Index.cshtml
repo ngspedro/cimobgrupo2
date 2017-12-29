@@ -1,0 +1,49 @@
+﻿@model IEnumerable<cimobgrupo2.Models.Programa>
+
+@{
+    ViewData["Titulo"] = "Programas Disponíveis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <table class="table table-striped" id="tabela-programas">
+        <thead class="thead-inverse">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duracao)
+                </th>
+                <th>
+                    Escolas Disponíveis
+                </th>
+                <th class="no-sort"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duracao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EscolasParceiras.Count)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Detalhes" asp-route-id="@item.ProgramaId">Detalhes</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-programas').DataTable();
+    });
+</script>

@@ -32,22 +32,25 @@ body {
     }
 
 #conteudo {
-    margin-top: -10px;
+    margin: 0 13px;
+    margin-top: -15px;
 }
 
-    #conteudo h1 {
-        font-size: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #2d2d2d;
-        margin-left: 13px;
-        margin-bottom: 20px;
-    }
+#conteudo h1 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2d2d2d;
+    margin-bottom: 20px;
+}
+
+#conteudo .sec-title {
+   font-size: 16px;
+}
 
 button {
     background-color: #496886;
     color: white;
     padding: 10px 18px;
-    border: none;
     cursor: pointer;
     box-sizing: border-box;
     font-size: 14px;
@@ -98,4 +101,22 @@ fieldset {
     max-width: 300px;
     padding: 10px 15px;
     text-align: left;
+}
+
+thead {
+    background-color: #dddddd;
+}
+
+.left-info {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+#table-info td {
+    padding-bottom: 8px;
+    padding-right: 10px;
+}
+
+.botoes {
+    margin-top: 20px;
 }

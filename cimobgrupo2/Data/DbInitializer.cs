@@ -113,6 +113,7 @@ namespace cimobgrupo2.Data
                     "<p>Esta página permite-lhe recuperar a password de acesso à sua conta.</p>" +
                     "<p>Para tal basta preencher o formulário com o email associado à sua conta, de seguida será-lhe enviado um link para re-definir a mesma.</p>"
                     ));
+                context.SaveChanges();
             }
 
             if (!context.Erros.Any())
@@ -122,8 +123,78 @@ namespace cimobgrupo2.Data
                 context.Erros.Add(new Erro("003", "Verifique se os dados introduzidos estão corretos."));
                 context.Erros.Add(new Erro("004", "Registo falhou. Já existe uma conta com esse username."));
                 context.Erros.Add(new Erro("005", "Ocorreu um erro inesperado! Tente novamente mais tarde."));
-            }
                 context.SaveChanges();
+            }
+
+            if (!context.Programas.Any())
+            {
+                var Cursos = new[]
+                {
+                new Curso { Nome = "Engenharia Informática" },
+                new Curso { Nome = "Engenharia Biomédica" },
+                new Curso { Nome = "Engenharia do Ambiente" },
+                new Curso { Nome = "Engenharia Mecânica" }
+                };
+
+                var EscolasParceiras = new[]
+                {
+                new EscolaParceira { Nome = "Escola Parceira 1", Pais = "França", Localidade = "Paris" },
+                new EscolaParceira { Nome = "Escola Parceira 2", Pais = "Espanha", Localidade = "Madrid" },
+                new EscolaParceira { Nome = "Escola Parceira 3", Pais = "Alemanha", Localidade = "Berlim" }
+                };
+
+                var Programas = new[]
+                {
+                new Programa {
+                    Nome = "ERASMUS",
+                    Descricao = "O Programa Erasmus destina-se a apoiar as actividades europeias das instituições de ensino superior (IES), " +
+                    "promovendo a mobilidade e o intercâmbio de estudantes, professores e funcionários das Instituições de Ensino Superior.",
+                    Duracao = 6
+                },
+                new Programa { Nome = "SANTANDER", Descricao = "descrição programa santander", Duracao = 12 }
+                };
+
+                var Ficheiros = new[]
+                {
+                new Ficheiro { Nome = "Carta de Motivação", Caminho = "/files/programas/1/cartamotivacao.png"},
+                new Ficheiro { Nome = "Documento X", Caminho = "/files/programas/1/documentox.txt"},
+                new Ficheiro { Nome = "Documento Y", Caminho = "/files/programas/1/documentoy.txt" },
+                new Ficheiro { Nome = "Carta de Motivação", Caminho = "/files/programas/2/cartamotivacao.png"},
+                new Ficheiro { Nome = "Documento Z", Caminho = "/files/programas/2/documentoz.txt"}
+                };
+
+                context.AddRange(
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[0] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[1] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[2] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[3] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[1], Curso = Cursos[2] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[2], Curso = Cursos[1] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[2], Curso = Cursos[0] },
+                    new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[2], Curso = Cursos[3] }
+                );
+
+                context.SaveChanges();
+
+                context.AddRange(
+                    new ProgramaEscolaParceira { Programa = Programas[0], EscolaParceira = EscolasParceiras[0], NumeroVagas = 30 },
+                    new ProgramaEscolaParceira { Programa = Programas[0], EscolaParceira = EscolasParceiras[1], NumeroVagas = 3 },
+                    new ProgramaEscolaParceira { Programa = Programas[1], EscolaParceira = EscolasParceiras[2], NumeroVagas = 55 }
+                );
+
+                context.SaveChanges();
+
+                context.AddRange(
+                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[0] },
+                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[1] },
+                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[2] },
+                    new ProgramaFicheiro { Programa = Programas[1], Ficheiro = Ficheiros[3] },
+                    new ProgramaFicheiro { Programa = Programas[1], Ficheiro = Ficheiros[4] }
+                );
+
+                context.SaveChanges();
+
+            }
         }
     }
 }

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<cimobgrupo2.Models.Programa>
+@{
+    ViewData["Titulo"] = "Lista de Programas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped" id="tabela-programas">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracao)
+            </th>
+            <th>
+                Escolas Disponíveis
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duracao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EscolasParceiras.Count)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Detalhes" asp-route-id="@item.ProgramaId">Detalhes</a> |
+                    <a asp-action="Editar" asp-route-id="@item.ProgramaId">Editar</a> |
+                    <a asp-action="Eliminar" asp-route-id="@item.ProgramaId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="col-md-12 col-lg-12 botoes">
+    <button type="button" onclick="location.href='@Url.Action("Criar", "Programas")'" class="pull-right" id="btnCriar" style="margin-bottom: 20px;">Novo Programa</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-programas').DataTable();
+    });
+</script>

@@ -1,0 +1,23 @@
+﻿@model cimobgrupo2.Models.Curso
+
+<form class="form-horizontal" role="form" asp-action="NovoCurso" method="POST" id="novoCursoForm">
+        <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Novo Curso</h4>
+            </div>
+        <div class="modal-body">
+            <div class="form-group animated fadeIn">
+                <div class="col-md-12 col-lg-12">
+
+                    <label asp-for="Nome"></label>
+                    <input type="text" name="Nome" class="form-control" id="txtNome" asp-for="Nome">
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+            </div>
+               
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+</form>

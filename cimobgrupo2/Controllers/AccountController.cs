@@ -120,8 +120,8 @@ namespace cimobgrupo2.Controllers
 
                    var newUserRole = await _userManager.AddToRoleAsync(user, "Estudante");
 
-
-                    TempData["Message"] = "Conta criada com sucesso. Note que esta tem que ser ativada no email antes de poder ser utilizada.";
+                    
+                    SetSuccessMessage("Conta criada com sucesso. Note que esta tem que ser ativada no email antes de poder ser utilizada.");
                     //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
                     return RedirectToAction("Login");
@@ -276,6 +276,11 @@ namespace cimobgrupo2.Controllers
             var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
             ViewData["Error_Code"] = Erro.Codigo;
             ViewData["Error_Message"] = Erro.Mensagem;
+        }
+
+        private void SetSuccessMessage(String Message)
+        {
+            TempData["Success"] = Message;
         }
 
         #region SetHelp

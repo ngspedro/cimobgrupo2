@@ -101,7 +101,8 @@ namespace cimobgrupo2.Controllers
 
             await _userManager.UpdateAsync(user);
 
-            TempData["result"] = "success";
+
+            SetSuccessMessage("Os seus detalhes de conta foram alterados.");
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(Index));
         }
@@ -146,7 +147,8 @@ namespace cimobgrupo2.Controllers
             _logger.LogInformation("User changed their password successfully.");
             StatusMessage = "Your password has been changed.";
 
-            TempData["result"] = "success";
+
+            SetSuccessMessage("A sua password foi alterada.");
             return RedirectToAction(nameof(Index));
         }
 
@@ -189,7 +191,7 @@ namespace cimobgrupo2.Controllers
             }
 
 
-            TempData["Message"] = "Conta eliminada.";
+            SetSuccessMessage("Conta eliminada.");
             return RedirectToAction("Login", "Account");
         }
 
@@ -198,6 +200,11 @@ namespace cimobgrupo2.Controllers
             var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
             ViewData["Error_Code"] = Erro.Codigo;
             ViewData["Error_Message"] = Erro.Mensagem;
+        }
+
+        private void SetSuccessMessage(String Message)
+        {
+            TempData["Success"] = Message;
         }
 
         #region SetHelp

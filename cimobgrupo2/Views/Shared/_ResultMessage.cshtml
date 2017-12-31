@@ -1,0 +1,34 @@
+﻿
+@{
+    if (ViewData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Sucesso!</strong> @ViewData["Success"]
+        </div>
+
+    }
+    else if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Sucesso!</strong> @TempData["Success"]
+        </div>
+    }
+
+    if (ViewData["Error_Code"] != null)
+    {
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>ERRO @ViewData["Error_Code"] - </strong> @ViewData["Error_Message"]
+        </div>
+    } else if (TempData["Error_Code"] != null)
+    {
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>ERRO @TempData["Error_Code"] - </strong> @TempData["Error_Message"]
+        </div>
+    }
+}
+
+

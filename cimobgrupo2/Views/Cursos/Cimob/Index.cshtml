@@ -3,6 +3,9 @@
     ViewData["Titulo"] = "Lista de Cursos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@Html.Partial("_ResultMessage")
+
 <table class="table table-striped" id="tabela-cursos">
     <thead class="thead-inverse">
         <tr>
@@ -20,8 +23,8 @@
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td class="text-center">
-                    <a asp-action="Editar" asp-route-id="@item.CursoId">Editar</a> |
-                    <a asp-action="Eliminar" asp-route-id="@item.CursoId">Eliminar</a>
+                    <a asp-action="EditarCursoModal" data-target="#editarCurso" data-toggle="modal" asp-route-id="@item.CursoId">Editar</a> |
+                    <a asp-action="RemoverCursoModal" data-target="#editarCurso" data-toggle="modal" asp-route-id="@item.CursoId">Eliminar</a>
                 </td>
             </tr>
         }
@@ -29,11 +32,50 @@
 </table>
 
 <div class="col-md-12 col-lg-12 botoes">
-    <button type="button" onclick="location.href='@Url.Action("Criar", "Cursos")'" class="pull-right" id="btnCriar" style="margin-bottom: 20px;">Novo Curso</button>
+    <button type="button" class="pull-right" id="btnCriar" style="margin-bottom: 20px;" data-toggle="modal" data-target="#novoCurso">Novo Curso</button>
+    <a href="@Url.Action("NovoCursoModal", "Cursos")" data-target="#novoCurso" data-toggle="modal">adsasd</a>
+</div>
+
+<div class="modal fade" id="novoCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editarCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removerCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
 </div>
 
 <script>
     $(document).ready(function () {
-        $('#tabela-cursos').DataTable();
+    $('#tabela-cursos').DataTable();
+    });
+
+    $(function () {
+        // when the modal is closed
+        $('#editarCurso').on('hidden.bs.modal', function () {
+            // remove the bs.modal data attribute from it
+            $(this).removeData('bs.modal');
+            // and empty the modal-content element
+            $('#editarCurso .modal-content').empty();
+        });
+
+        $('#removerCurso').on('hidden.bs.modal', function () {
+            // remove the bs.modal data attribute from it
+            $(this).removeData('bs.modal');
+            // and empty the modal-content element
+            $('#removerCurso .modal-content').empty();
+        });
     });
 </script>

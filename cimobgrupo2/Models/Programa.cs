@@ -18,10 +18,9 @@ namespace cimobgrupo2.Models
         public int Duracao { get; set; }
 
         public String CaminhoEdital { get; set; }
-
         public virtual ICollection<ProgramaEscolaParceira> EscolasParceiras { get; } = new List<ProgramaEscolaParceira>();
         public virtual ICollection<ProgramaFicheiro> Ficheiros { get; } = new List<ProgramaFicheiro>();
-
+        public virtual ICollection<Candidatura> Candidaturas { get; } = new List<Candidatura>();
         public Programa()
         {
 

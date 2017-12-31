@@ -32,5 +32,7 @@ namespace cimobgrupo2.Data
             builder.Entity<EscolaParceiraCurso>()
                 .HasKey(t => new { t.EscolaParceiraId, t.CursoId });
         }
+
+        public DbSet<cimobgrupo2.Models.Candidatura> Candidatura { get; set; }
     }
 }

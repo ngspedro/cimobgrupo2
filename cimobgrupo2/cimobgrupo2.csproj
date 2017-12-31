@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\files\candidaturas\" />
+    <Folder Include="wwwroot\files\candidaturas\costeira1\" />
   </ItemGroup>
 
 </Project>

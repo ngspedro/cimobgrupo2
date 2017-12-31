@@ -70,17 +70,17 @@ fieldset {
     padding-top: 20px;
 }
 
-    fieldset legend {
-        position: absolute;
-        top: -12px;
-        font-size: 14px;
-        font-weight: bold;
-        width: auto;
-        border: 0;
-        margin-left: 20px;
-        padding: 0 15px;
-        background-color: white;
-    }
+fieldset legend {
+    position: absolute;
+    top: -12px;
+    font-size: 14px;
+    font-weight: bold;
+    width: auto;
+    border: 0;
+    margin-left: 20px;
+    padding: 0 15px;
+    background-color: white;
+}
 
 .icon {
     width: 20px;

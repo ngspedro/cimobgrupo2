@@ -194,6 +194,14 @@ namespace cimobgrupo2.Data
 
                 context.SaveChanges();
 
+                context.Candidaturas.Add(
+                    new Candidatura {
+                        UserId = 1,
+                        CandidaturaId = 1,  CursoId = 1, EscolaParceiraId = 1, ProgramaId = 1}
+                );
+
+                context.SaveChanges();
+
             }
         }
     }

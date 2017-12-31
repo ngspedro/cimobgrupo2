@@ -47,7 +47,7 @@ body {
    font-size: 16px;
 }
 
-button {
+button, .button {
     background-color: #496886;
     color: white;
     padding: 10px 18px;
@@ -57,10 +57,13 @@ button {
     border-radius: 3px;
     border: 1px solid black;
     margin-left: 5px;
+    text-decoration: none;
 }
 
-    button:hover {
+button:hover, .button:hover {
         opacity: 0.8;
+        text-decoration: none;
+        color: white;
     }
 
 fieldset {

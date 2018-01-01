@@ -1,0 +1,38 @@
+﻿@model cimobgrupo2.Models.EscolaParceira
+
+@{
+    ViewData["Titulo"] = "Editar Escola Parceira";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Editar">
+    <input type="hidden" asp-for="EscolaParceiraId" />
+    <div class="col-md-3 col-lg-3">
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>:
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Pais" class="control-label"></label>:
+            <select asp-for="Pais" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.CountryList))">
+            </select>
+            <span asp-validation-for="Pais" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Localidade" class="control-label"></label>:
+            <input asp-for="Localidade" class="form-control" />
+            <span asp-validation-for="Localidade" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="col-md-12 col-lg-12 botoes">
+        <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
+        <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

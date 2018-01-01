@@ -93,7 +93,14 @@
 </div>
 
 <div class="col-md-12 col-lg-12">
-    <button type="button" onclick="location.href='@Url.Action("Eliminar", "Programas")'" class="pull-right" id="btnEliminar" style="margin-bottom: 20px;">Eliminar</button>
-    <button type="button" onclick="location.href='@Url.Action("Editar", "Programas")'" class="pull-right" id="btnEditar">Editar</button>
-    <button type="button" onclick="location.href='@Url.Action("Index", "Programas")'" class="pull-right" id="btnVoltar">Voltar</button>
+    <a type="button" href="@Url.Action("RemoverModal", "Programas", new { Id = Model.ProgramaId })" data-target="#removerPrograma" data-toggle="modal" class="button pull-right" id="btnEliminar">Eliminar</a>
+    <button type="button" onclick="location.href='@Url.Action("Editar", "Programas", new { Id = Model.ProgramaId })'" class="pull-right" id="btnEditar">Editar</button>
+    <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar" style="margin-bottom: 20px;">Voltar</button>
+</div>
+
+<div class="modal fade" id="removerPrograma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
 </div>

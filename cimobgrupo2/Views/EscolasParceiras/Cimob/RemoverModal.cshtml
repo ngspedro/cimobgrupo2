@@ -1,15 +1,15 @@
-﻿@model cimobgrupo2.Models.Curso
+﻿@model cimobgrupo2.Models.EscolaParceira
 
-<form class="form-horizontal" role="form" asp-action="RemoverCurso" method="POST" id="removerCursoForm">
+<form class="form-horizontal" role="form" asp-action="Remover" method="POST" id="removerEscolaForm">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Remover Curso</h4>
+        <h4 class="modal-title" id="myModalLabel">Remover Escola Parceira</h4>
     </div>
     <div class="modal-body">
-        <input type="hidden" asp-for="CursoId" />
+        <input type="hidden" asp-for="EscolaParceiraId" />
         <div class="form-group animated fadeIn">
             <div class="col-md-12 col-lg-12 text-center">
-                <label>Tem a certeza que pretende remover este curso?</label>
+                <label>Tem a certeza que pretende remover esta escola parceira?</label>
             </div>
         </div>
 

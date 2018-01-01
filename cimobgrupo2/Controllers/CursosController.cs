@@ -11,7 +11,7 @@ namespace cimobgrupo2.Controllers
 {
     public class CursosController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _context;
         private readonly List<Ajuda> _ajudas;
         private readonly List<Erro> _erros;
 
@@ -75,7 +75,6 @@ namespace cimobgrupo2.Controllers
         {
             return PartialView(ProperView("RemoverCursoModal"), _context.Cursos.SingleOrDefault(c => c.CursoId == Id));
         }
-
 
         public IActionResult RemoverCurso(int CursoId)
         {

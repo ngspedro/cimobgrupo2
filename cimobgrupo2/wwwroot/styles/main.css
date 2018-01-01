@@ -123,3 +123,7 @@ thead {
 .botoes {
     margin-top: 20px;
 }
+
+textarea {
+    resize: vertical;
+}

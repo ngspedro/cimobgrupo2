@@ -1,0 +1,38 @@
+﻿@model cimobgrupo2.Models.Programa
+
+@{
+    ViewData["Titulo"] = "Editar Programa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Editar">
+    <input type="hidden" asp-for="ProgramaId" />
+    <div class="col-md-3 col-lg-3">
+
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>:
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Duracao" class="control-label"></label>:
+            <input asp-for="Duracao" class="form-control" />
+            <span asp-validation-for="Duracao" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descricao" class="control-label"></label>:
+            <textarea asp-for="Descricao" class="form-control" style="min-height: 240px"></textarea>
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 botoes">
+        <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
+        <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

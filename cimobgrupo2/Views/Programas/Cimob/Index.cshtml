@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Partial("_ResultMessage")
+
 <table class="table table-striped" id="tabela-programas">
     <thead class="thead-inverse">
         <tr>
@@ -35,7 +37,7 @@
                 <td class="text-center">
                     <a asp-action="Detalhes" asp-route-id="@item.ProgramaId">Detalhes</a> |
                     <a asp-action="Editar" asp-route-id="@item.ProgramaId">Editar</a> |
-                    <a asp-action="Eliminar" asp-route-id="@item.ProgramaId">Eliminar</a>
+                    <a asp-action="RemoverModal" data-target="#removerPrograma" data-toggle="modal" asp-route-id="@item.ProgramaId">Eliminar</a>
                 </td>
             </tr>
         }
@@ -43,11 +45,27 @@
 </table>
 
 <div class="col-md-12 col-lg-12 botoes">
-    <button type="button" onclick="location.href='@Url.Action("Criar", "Programas")'" class="pull-right" id="btnCriar" style="margin-bottom: 20px;">Novo Programa</button>
+    <button type="button" onclick="location.href='@Url.Action("Adicionar", "Programas")'" class="pull-right" id="btnCriar" style="margin-bottom: 20px;">Novo Programa</button>
+</div>
+
+<div class="modal fade" id="removerPrograma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
 </div>
 
 <script>
     $(document).ready(function () {
         $('#tabela-programas').DataTable();
+    });
+
+    $(function () {
+        $('#removerPrograma').on('hidden.bs.modal', function () {
+            // remove the bs.modal data attribute from it
+            $(this).removeData('bs.modal');
+            // and empty the modal-content element
+            $('#removerPrograma .modal-content').empty();
+        });
     });
 </script>

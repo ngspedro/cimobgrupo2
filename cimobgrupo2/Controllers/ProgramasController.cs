@@ -56,8 +56,9 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Editar(int? Id)
         {
-  
-            return View(ProperView("Editar"), _context.Programas.SingleOrDefault(p => p.ProgramaId == Id));
+            Programa Programa = _context.Programas.SingleOrDefault(p => p.ProgramaId == Id);
+            ViewBag.EscolasAssociar = _context.EscolasParceiras.Where(e => e.Programas.Where(p => p.Programa == Programa).Count() == 0);
+            return View(ProperView("Editar"), Programa);
         }
 
         [HttpPost]
@@ -89,6 +90,43 @@ namespace cimobgrupo2.Controllers
             _context.SaveChanges();
             SetSuccessMessage("Programa removido.");
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoverAssociacoes(int ProgramaId, int[] escolasRemover)
+        {
+            if (escolasRemover.Count() > 0)
+            {
+                Programa Programa = _context.Programas.SingleOrDefault(p => p.ProgramaId == ProgramaId);
+                foreach (int i in escolasRemover)
+                {
+                    Programa.EscolasParceiras.Remove(Programa.EscolasParceiras.SingleOrDefault(e => e.ProgramaId == ProgramaId && e.EscolaParceiraId == i));
+
+                }
+                _context.SaveChanges();
+                SetSuccessMessage(escolasRemover.Count() + " associações removidas.");
+            }
+            return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
+        }
+
+
+        public IActionResult AssociarCursos(int ProgramaId, int[] escolasAssociar)
+        {
+            if (escolasAssociar.Count() > 0)
+            {
+                Programa Programa = _context.Programas.SingleOrDefault(p => p.ProgramaId == ProgramaId);
+                foreach (int i in escolasAssociar)
+                {
+                    _context.Add(new ProgramaEscolaParceira()
+                    {
+                        Programa = Programa,
+                        EscolaParceira = _context.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == i)
+                    });
+                }
+                _context.SaveChanges();
+                SetSuccessMessage("Escolas Parceiras associadas.");
+            }
+
+            return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
         }
 
         public String ProperView(String viewName)

@@ -63,7 +63,11 @@
 
 <script>
     $(document).ready(function () {
-        $('#tabela-escolas').DataTable();
+        $('#tabela-escolas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        });
     });
 
     $(function () {

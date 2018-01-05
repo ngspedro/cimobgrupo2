@@ -4,35 +4,207 @@
     ViewData["Titulo"] = "Editar Programa";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<form asp-action="Editar">
-    <input type="hidden" asp-for="ProgramaId" />
-    <div class="col-md-3 col-lg-3">
-
-        <div class="form-group">
-            <label asp-for="Nome" class="control-label"></label>:
-            <input asp-for="Nome" class="form-control" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Duracao" class="control-label"></label>:
-            <input asp-for="Duracao" class="form-control" />
-            <span asp-validation-for="Duracao" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Descricao" class="control-label"></label>:
-            <textarea asp-for="Descricao" class="form-control" style="min-height: 240px"></textarea>
-            <span asp-validation-for="Descricao" class="text-danger"></span>
-        </div>
+<div class="row">
+    <div class="col-lg-12">
+        @Html.Partial("_ResultMessage")
     </div>
 
-    <div class="col-md-12 col-lg-12 botoes">
-        <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
-        <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
-    </div>
-</form>
+    <form asp-action="Editar">
+        <input type="hidden" asp-for="ProgramaId" />
+        <div class="col-md-3 col-lg-3">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label asp-for="Nome" class="control-label"></label>:
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
 
-@section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
-}
+                <div class="form-group">
+                    <label asp-for="Duracao" class="control-label"></label>:
+                    <input asp-for="Duracao" class="form-control" />
+                    <span asp-validation-for="Duracao" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descricao" class="control-label"></label>:
+                    <textarea asp-for="Descricao" class="form-control" style="min-height: 150px"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <div class="clearfix botoes">
+                    <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
+                    <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <form asp-action="RemoverAssociacoes" id="RemoverAssociacoes">
+        <input type="hidden" asp-for="ProgramaId" />
+        <div class="col-md-9 col-lg-9">
+            <div class="col-lg-12">
+                <div class="sec-title">
+                    <span class="glyphicon glyphicon-education"></span><strong> Escolas Parceiras Associadas:</strong>
+                    <div class="pull-right">
+                        <a data-target="#associar" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Associar</a>
+                        <a data-target="#removerAssociacoes" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Remover</a>
+                    </div>
+                </div>
+                <br />
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" id="tabela-escolas">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    País
+                                </th>
+                                <th>
+                                    Localidade
+                                </th>
+                                <th>
+                                    Cursos
+                                </th>
+                                <th>
+                                    Vagas
+                                </th>
+                                <th class="text-center">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.EscolasParceiras.ToList())
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="@item.EscolaParceiraId"> @Html.DisplayFor(modelItem => item.EscolaParceira.Nome) </a>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Pais)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Localidade)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Cursos.Count)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NumeroVagas)
+                                    </td>
+                                    <td class="text-center">
+                                        <input name="escolasRemover[]" type="checkbox" value="@item.EscolaParceiraId">
+                                    </td>
+                                </tr>
+                            }
+                        </tbody> 
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        </form>
+</div>
+
+<div class="modal fade" id="associar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal" role="form" asp-action="AssociarCursos" method="POST" id="associarUmForm">
+                <input type="hidden" asp-for="ProgramaId" />
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Associar Escolas Parceiras</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered" id="tabela-escolasAssociar">
+                        <thead>
+                        <tr>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                País
+                            </th>
+                            <th>
+                                Localidade
+                            </th>
+                            <th>
+                                Cursos Disponíveis
+                            </th>
+                            <th class="text-center">
+                                #
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (EscolaParceira item in ViewBag.EscolasAssociar)
+            {
+                                <tr>
+                                    <td>
+                                        <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="@item.EscolaParceiraId">@Html.DisplayFor(modelItem => item.Nome)</a>
+</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Pais)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Localidade)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cursos.Count)
+                                    </td>
+                                    <td class="text-center">
+                                        <input name="escolasAssociar[]" type="checkbox" value="@item.EscolaParceiraId">
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removerAssociacoes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Remover Associações (Escolas Parceiras)</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" asp-for="ProgramaId" />
+                <div class="form-group animated fadeIn">
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <label>Tem a certeza que pretende remover as associações seleccionadas?</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button id="btnConfirmar" onclick="document.getElementById('RemoverAssociacoes').submit();" type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-escolasAssociar').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            },
+            "ordering": false
+        });
+    });
+</script>
+
+    @section Scripts {
+        @await Html.PartialAsync("_ValidationScriptsPartial")
+    }

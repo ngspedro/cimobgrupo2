@@ -58,7 +58,11 @@
 
 <script>
     $(document).ready(function () {
-    $('#tabela-cursos').DataTable();
+        $('#tabela-cursos').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        });
     });
 
     $(function () {

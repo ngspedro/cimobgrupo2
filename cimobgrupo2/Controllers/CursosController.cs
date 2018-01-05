@@ -57,7 +57,7 @@ namespace cimobgrupo2.Controllers
             return PartialView(ProperView("EditarCursoModal"), _context.Cursos.SingleOrDefault(c => c.CursoId == Id));
         }
 
-        public IActionResult EditarCurso ([Bind("CursoId,Nome")] Curso Curso)
+        public IActionResult EditarCurso([Bind("CursoId,Nome")] Curso Curso)
         {
             if (ModelState.IsValid)
             {
@@ -75,7 +75,7 @@ namespace cimobgrupo2.Controllers
         {
             return PartialView(ProperView("RemoverCursoModal"), _context.Cursos.SingleOrDefault(c => c.CursoId == Id));
         }
-
+    
         public IActionResult RemoverCurso(int CursoId)
         {
             _context.Cursos.Remove(_context.Cursos.SingleOrDefault(m => m.CursoId == CursoId));

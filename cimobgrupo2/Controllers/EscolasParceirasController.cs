@@ -57,8 +57,10 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Editar(int? Id)
         {
+            EscolaParceira EscolaParceira = _context.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == Id);
             FillCountryList();
-            return View(ProperView("Editar"), _context.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == Id));
+            ViewBag.CursosAssociar = _context.Cursos.Where(c => c.EscolasParceiras.Where(e => e.EscolaParceira == EscolaParceira).Count() == 0);
+            return View(ProperView("Editar"), EscolaParceira);
         }
 
         [HttpPost]
@@ -90,6 +92,43 @@ namespace cimobgrupo2.Controllers
             _context.SaveChanges();
             SetSuccessMessage("Escola parceira removida.");
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoverAssociacoes(int EscolaParceiraId, int[] cursosRemover)
+        {
+            if (cursosRemover.Count() > 0)
+            {
+                EscolaParceira Escola = _context.EscolasParceiras.SingleOrDefault(c => c.EscolaParceiraId == EscolaParceiraId);
+                foreach (int i in cursosRemover)
+                {
+                    Escola.Cursos.Remove(Escola.Cursos.SingleOrDefault(c => c.EscolaParceiraId == EscolaParceiraId && c.CursoId == i));
+
+                }
+                _context.SaveChanges();
+                SetSuccessMessage(cursosRemover.Count() + " associações removidas.");
+            }
+            return RedirectToAction(nameof(Editar),  new { Id = EscolaParceiraId });
+        }
+
+
+        public IActionResult AssociarCursos(int EscolaParceiraId, int[] cursosAssociar)
+        {
+            if (cursosAssociar.Count() > 0)
+            {
+                EscolaParceira Escola = _context.EscolasParceiras.SingleOrDefault(c => c.EscolaParceiraId == EscolaParceiraId);
+                foreach (int i in cursosAssociar)
+                {
+                    _context.Add(new EscolaParceiraCurso()
+                    {
+                        EscolaParceira = Escola,
+                        Curso = _context.Cursos.SingleOrDefault(c => c.CursoId == i)
+                    });
+                }
+                _context.SaveChanges();
+                SetSuccessMessage("Cursos associados.");
+            }
+            
+            return RedirectToAction(nameof(Editar), new { Id = EscolaParceiraId });
         }
 
         public String ProperView(String viewName)

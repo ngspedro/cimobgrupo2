@@ -57,7 +57,11 @@
 
 <script>
     $(document).ready(function () {
-        $('#tabela-programas').DataTable();
+        $('#tabela-programas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        }); 
     });
 
     $(function () {

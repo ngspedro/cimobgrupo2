@@ -149,19 +149,13 @@ namespace cimobgrupo2.Data
                     Nome = "ERASMUS",
                     Descricao = "O Programa Erasmus destina-se a apoiar as actividades europeias das instituições de ensino superior (IES), " +
                     "promovendo a mobilidade e o intercâmbio de estudantes, professores e funcionários das Instituições de Ensino Superior.",
-                    Duracao = 6
+                    Duracao = 6,
+                    Edital = "edital.txt"
                 },
-                new Programa { Nome = "SANTANDER", Descricao = "descrição programa santander", Duracao = 12 }
+                new Programa { Nome = "SANTANDER", Descricao = "descrição programa santander", Duracao = 12, Edital = "edital.txt" }
                 };
 
-                var Ficheiros = new[]
-                {
-                new Ficheiro { Nome = "Carta de Motivação", Caminho = "/files/programas/1/cartamotivacao.png"},
-                new Ficheiro { Nome = "Documento X", Caminho = "/files/programas/1/documentox.txt"},
-                new Ficheiro { Nome = "Documento Y", Caminho = "/files/programas/1/documentoy.txt" },
-                new Ficheiro { Nome = "Carta de Motivação", Caminho = "/files/programas/2/cartamotivacao.png"},
-                new Ficheiro { Nome = "Documento Z", Caminho = "/files/programas/2/documentoz.txt"}
-                };
+                
 
                 context.AddRange(
                     new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[0] },
@@ -183,17 +177,6 @@ namespace cimobgrupo2.Data
                 );
 
                 context.SaveChanges();
-
-                context.AddRange(
-                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[0] },
-                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[1] },
-                    new ProgramaFicheiro { Programa = Programas[0], Ficheiro = Ficheiros[2] },
-                    new ProgramaFicheiro { Programa = Programas[1], Ficheiro = Ficheiros[3] },
-                    new ProgramaFicheiro { Programa = Programas[1], Ficheiro = Ficheiros[4] }
-                );
-
-                context.SaveChanges();
-
             }
         }
     }

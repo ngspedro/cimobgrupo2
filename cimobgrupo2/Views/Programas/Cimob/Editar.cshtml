@@ -9,7 +9,7 @@
         @Html.Partial("_ResultMessage")
     </div>
 
-    <form asp-action="Editar">
+    <form asp-action="Editar" method="post" enctype="multipart/form-data">
         <input type="hidden" asp-for="ProgramaId" />
         <div class="col-md-3 col-lg-3">
             <div class="col-lg-12">
@@ -26,6 +26,26 @@
                 </div>
 
                 <div class="form-group">
+                    <label asp-for="Edital" class="control-label"></label>: 
+                    @{
+                        if (ViewBag.Edital != null)
+                        {
+                            <a asp-action="Download" asp-controller="File" asp-route-path="@ViewBag.Edital.Path">@ViewBag.Edital.Name</a>
+                        }
+                        else
+                        {
+                            <span>Nenhum</span>
+                        }
+                    }
+
+                     (<a id="toggleInput" style="cursor: pointer">Editar</a>)
+                    <div id="input-edital" style="display:none;">
+                        <input id="editalFile" name="file" type="file" class="file" data-show-preview="false">
+                    </div>
+                    <span asp-validation-for="Edital" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
                     <label asp-for="Descricao" class="control-label"></label>:
                     <textarea asp-for="Descricao" class="form-control" style="min-height: 150px"></textarea>
                     <span asp-validation-for="Descricao" class="text-danger"></span>
@@ -38,72 +58,123 @@
             </div>
         </div>
     </form>
-    <form asp-action="RemoverAssociacoes" id="RemoverAssociacoes">
-        <input type="hidden" asp-for="ProgramaId" />
+    
         <div class="col-md-9 col-lg-9">
-            <div class="col-lg-12">
-                <div class="sec-title">
-                    <span class="glyphicon glyphicon-education"></span><strong> Escolas Parceiras Associadas:</strong>
-                    <div class="pull-right">
-                        <a data-target="#associar" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Associar</a>
-                        <a data-target="#removerAssociacoes" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Remover</a>
+            <form asp-action="RemoverAssociacoes" id="RemoverAssociacoes">
+                <input type="hidden" asp-for="ProgramaId" />
+                <div class="col-lg-12">
+                    <div class="sec-title">
+                        <span class="glyphicon glyphicon-education"></span><strong> Escolas Parceiras Associadas:</strong>
+                        <div class="pull-right">
+                            <a data-target="#associar" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Associar</a>
+                            <a data-target="#removerAssociacoes" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Remover</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered" id="tabela-escolas">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        País
+                                    </th>
+                                    <th>
+                                        Localidade
+                                    </th>
+                                    <th>
+                                        Cursos
+                                    </th>
+                                    <th>
+                                        Vagas
+                                    </th>
+                                    <th class="text-center">#</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.EscolasParceiras.ToList())
+                                {
+                                    <tr>
+                                        <td>
+                                            <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="@item.EscolaParceiraId"> @Html.DisplayFor(modelItem => item.EscolaParceira.Nome) </a>
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EscolaParceira.Pais)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EscolaParceira.Localidade)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EscolaParceira.Cursos.Count)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NumeroVagas)
+                                        </td>
+                                        <td class="text-center">
+                                            <input name="escolasRemover[]" type="checkbox" value="@item.EscolaParceiraId">
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
-                <br />
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered" id="tabela-escolas">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Nome
-                                </th>
-                                <th>
-                                    País
-                                </th>
-                                <th>
-                                    Localidade
-                                </th>
-                                <th>
-                                    Cursos
-                                </th>
-                                <th>
-                                    Vagas
-                                </th>
-                                <th class="text-center">#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.EscolasParceiras.ToList())
-                            {
-                                <tr>
-                                    <td>
-                                        <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="@item.EscolaParceiraId"> @Html.DisplayFor(modelItem => item.EscolaParceira.Nome) </a>
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Pais)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Localidade)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.EscolaParceira.Cursos.Count)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.NumeroVagas)
-                                    </td>
-                                    <td class="text-center">
-                                        <input name="escolasRemover[]" type="checkbox" value="@item.EscolaParceiraId">
-                                    </td>
-                                </tr>
-                            }
-                        </tbody> 
-                    </table>
+            </form>
 
+            <form asp-action="RemoverDocumentos" id="RemoverDocumentos">
+                <input type="hidden" asp-for="ProgramaId" />
+                <div class="col-lg-12">
+                    <div class="sec-title">
+                        <span class="glyphicon glyphicon-file"></span><strong> Documentos Associados:</strong>
+                        <div class="pull-right">
+                            <a data-target="#associarDocumentos" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Associar</a>
+                            <a data-target="#removerDocumentos" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> Remover</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered" id="tabela-escolas">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Ficheiro
+                                    </th>
+                                    <th class="text-center">
+                                        Download
+                                    </th>
+                                    <th class="text-center">#</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var item in ViewBag.Documentos)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td class="text-center"><a asp-action="Download" asp-controller="File" asp-route-path="@item.Path"><span class="glyphicon glyphicon-download"></span></a></td>
+                                            <td class="text-center">
+                                                <input name="ficheirosRemover[]" type="checkbox" value="@item.Path">
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
 
                 </div>
-            </div>
-        </div>
-        </form>
+                </form>
+</div>
+        
 </div>
 
 <div class="modal fade" id="associar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -142,7 +213,7 @@
                                 <tr>
                                     <td>
                                         <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="@item.EscolaParceiraId">@Html.DisplayFor(modelItem => item.Nome)</a>
-</td>
+                                    </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Pais)
                                     </td>
@@ -170,6 +241,27 @@
     </div>
 </div>
 
+<div class="modal fade" id="associarDocumentos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Associar Documentos</h4>
+            </div>
+            <form asp-action="AssociarDocumentos" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="ProgramaId" />
+                <div class="modal-body">
+                    <input id="input-44" type="file" name="files" multiple />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="removerAssociacoes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -178,7 +270,6 @@
                 <h4 class="modal-title" id="myModalLabel">Remover Associações (Escolas Parceiras)</h4>
             </div>
             <div class="modal-body">
-                <input type="hidden" asp-for="ProgramaId" />
                 <div class="form-group animated fadeIn">
                     <div class="col-md-12 col-lg-12 text-center">
                         <label>Tem a certeza que pretende remover as associações seleccionadas?</label>
@@ -194,6 +285,29 @@
     </div>
 </div>
 
+<div class="modal fade" id="removerDocumentos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Remover Documentos Associados</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group animated fadeIn">
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <label>Tem a certeza que pretende remover os documentos seleccionados?</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button id="btnConfirmar" onclick="document.getElementById('RemoverDocumentos').submit();" type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function () {
         $('#tabela-escolasAssociar').DataTable({
@@ -202,6 +316,29 @@
             },
             "ordering": false
         });
+
+        $("#input-44").fileinput({
+            'showUpload': false,
+            language: "pt",
+            maxFilePreviewSize: 2000
+        });
+    });
+
+
+    $("#editalFile").fileinput({
+        'showUpload': false, language: "pt"
+    });
+
+    $("#toggleInput").click(function () {
+        $("#input-edital").toggle();
+        if ($("#toggleInput").text() == "Editar") {
+            $("#toggleInput").text("Cancelar");
+            $("#input-edital :input").attr("disabled", false);
+        }
+        else {
+            $("#toggleInput").text("Editar");
+            $("#input-edital :input").attr("disabled", true);
+        }
     });
 </script>
 

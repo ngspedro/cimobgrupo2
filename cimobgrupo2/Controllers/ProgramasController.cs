@@ -5,24 +5,32 @@ using Microsoft.AspNetCore.Mvc;
 using cimobgrupo2.Models;
 using cimobgrupo2.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace cimobgrupo2.Controllers
 {
     public class ProgramasController : Controller
     {
+        private string BASE_PATH = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", "programas");
+
         private ApplicationDbContext _context;
+        private FileController _fileController;
+
         private readonly List<Ajuda> _ajudas;
         private readonly List<Erro> _erros;
         private List<Programa> _programas;
 
-        public ProgramasController(ApplicationDbContext context)
+        public ProgramasController(ApplicationDbContext context, IFileProvider fileProvider)
         {
+            _fileController = new FileController(fileProvider);
             _context = context;
             _ajudas = context.Ajudas.Where(ai => ai.Controller == "Programas").ToList();
             _erros = context.Erros.ToList();
             _programas = context.Programas.Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
-                .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso)
-                .Include(e => e.Ficheiros).ThenInclude(e => e.Ficheiro).ToList();
+                .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
         }
 
         public IActionResult Index()
@@ -32,7 +40,11 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Detalhes(int? id)
         {
-            return View(ProperView("Detalhes"), _programas.Find(p => p.ProgramaId == id));
+            Programa programa = _programas.Find(p => p.ProgramaId == id);
+            var caminho = "programas/" + id;
+            ViewBag.Edital = _fileController.GetFile(caminho, programa.Edital);
+            ViewBag.Documentos = _fileController.GetFiles(caminho, programa.Edital);
+            return View(ProperView("Detalhes"), programa);
         }
 
         public IActionResult Adicionar()
@@ -41,12 +53,21 @@ namespace cimobgrupo2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Adicionar([Bind("ProgramaId,Nome,Duracao,Descricao")] Programa Programa)
+        public async Task<IActionResult> Adicionar([Bind("ProgramaId,Nome,Duracao,Descricao")] Programa Programa, IFormFile file)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(Programa);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
+
+                if (file != null)
+                {
+                    Programa.Edital = file.GetFilename();
+
+                    var caminho = Path.Combine(BASE_PATH, Programa.ProgramaId.ToString());
+                    await _fileController.UploadFile(caminho, file);
+                }
+
                 SetSuccessMessage("Programa adicionado.");
                 return RedirectToAction(nameof(Index));
             }
@@ -58,11 +79,15 @@ namespace cimobgrupo2.Controllers
         {
             Programa Programa = _context.Programas.SingleOrDefault(p => p.ProgramaId == Id);
             ViewBag.EscolasAssociar = _context.EscolasParceiras.Where(e => e.Programas.Where(p => p.Programa == Programa).Count() == 0);
+
+            var caminho = "programas/" + Id;
+            ViewBag.Edital = _fileController.GetFile(caminho, Programa.Edital);
+            ViewBag.Documentos = _fileController.GetFiles(caminho, Programa.Edital);
             return View(ProperView("Editar"), Programa);
         }
 
         [HttpPost]
-        public IActionResult Editar([Bind("ProgramaId,Nome,Duracao,Descricao")] Programa Programa)
+        public async Task<IActionResult> Editar([Bind("ProgramaId,Nome,Duracao,Descricao")] Programa Programa, IFormFile file)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +95,16 @@ namespace cimobgrupo2.Controllers
                 atual.Nome = Programa.Nome;
                 atual.Duracao = Programa.Duracao;
                 atual.Descricao = Programa.Descricao;
+
+
+                if (file != null)
+                {
+                    var caminho = Path.Combine(BASE_PATH, atual.ProgramaId.ToString());
+                    _fileController.Delete(caminho, atual.Edital);
+                    atual.Edital = file.GetFilename();
+                    await _fileController.UploadFile(caminho, file);
+                }
+
                 _context.SaveChanges();
                 SetSuccessMessage("Programa editado.");
                 return RedirectToAction(nameof(Index));
@@ -108,6 +143,37 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
         }
 
+        public IActionResult RemoverDocumentos(int ProgramaId, string[] ficheirosRemover)
+        {
+            if (ficheirosRemover.Count() > 0)
+            {
+                var caminho = Path.Combine(BASE_PATH, ProgramaId.ToString());
+                foreach (string s in ficheirosRemover)
+                {
+
+                    _fileController.Delete(caminho, s);
+
+                }
+                SetSuccessMessage(ficheirosRemover.Count() + " documentos removidos.");
+            }
+            return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AssociarDocumentos(int ProgramaId, List<IFormFile> files)
+        {
+            if (files.Count() > 0)
+            {
+                var caminho = Path.Combine(BASE_PATH, ProgramaId.ToString());
+                foreach (IFormFile f in files)
+                {
+                    await _fileController.UploadFile(caminho, f);
+                }
+                SetSuccessMessage(files.Count() + " documentos associados.");
+            }
+
+            return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
+        }
 
         public IActionResult AssociarCursos(int ProgramaId, int[] escolasAssociar)
         {

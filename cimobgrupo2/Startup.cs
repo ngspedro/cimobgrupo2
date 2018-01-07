@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using cimobgrupo2.Data;
 using cimobgrupo2.Models;
 using cimobgrupo2.Services;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace cimobgrupo2
 {
@@ -28,6 +30,10 @@ namespace cimobgrupo2
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("Azure")));
+
+            services.AddSingleton<IFileProvider>(
+                new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files")));
 
             services.Configure<IdentityOptions>(options =>
             {

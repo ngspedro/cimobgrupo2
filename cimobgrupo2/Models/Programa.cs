@@ -17,10 +17,9 @@ namespace cimobgrupo2.Models
         [Display(Name ="Duração")]
         public int Duracao { get; set; }
 
-        public String CaminhoEdital { get; set; }
+        public String Edital { get; set; }
 
         public virtual ICollection<ProgramaEscolaParceira> EscolasParceiras { get; } = new List<ProgramaEscolaParceira>();
-        public virtual ICollection<ProgramaFicheiro> Ficheiros { get; } = new List<ProgramaFicheiro>();
 
         public Programa()
         {

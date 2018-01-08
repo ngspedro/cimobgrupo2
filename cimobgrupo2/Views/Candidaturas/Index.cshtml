@@ -1,0 +1,60 @@
+﻿@model IEnumerable<cimobgrupo2.Models.Candidatura>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Criar">Criar novo</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EscolaParceira)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Programa)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curso.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EscolaParceira.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Programa.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Detalhes" asp-route-id="@item.CandidaturaId">Detalhes</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

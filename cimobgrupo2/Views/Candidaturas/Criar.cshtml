@@ -1,0 +1,64 @@
+﻿@model cimobgrupo2.Models.Candidatura
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+    <h4>Candidatura</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-9">
+                <div class="col-md-6">
+                    <form asp-action="Criar">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Programa" class="control-label"></label>
+                            <select asp-for="ProgramaId" class="form-control" asp-items="ViewBag.Programas"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EscolaParceiraId" class="control-label"></label>
+                            <select asp-for="EscolaParceiraId" class="form-control" asp-items="ViewBag.Escolas"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CursoId" class="control-label"></label>
+                            <select asp-for="CursoId" class="form-control" asp-items="ViewBag.Cursos"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Submeter Candidatura" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ficheiro e lista-->
+                <div class="col-md-6" style="padding: 20px;">
+                    <fieldset>
+                        <legend>Carregar Ficheiro</legend>
+                        <div class="form-group">
+                            <input type="text" style="width: 80%; margin: 5px;" />
+                            <input type="submit" value="Carregar" class="btn btn-primary" />
+                        </div>
+                    </fieldset>
+
+                    <div class="listarFicheiros">
+                        <h4>Ficheiros Submetidos</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

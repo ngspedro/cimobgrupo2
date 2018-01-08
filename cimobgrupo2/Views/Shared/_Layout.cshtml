@@ -40,7 +40,7 @@
                     @{ if (User.IsInRole("Estudante"))
                         {
                             <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-paperclip"></span> Minha Candidatura</a></li>
+                            <li><a href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Minha Candidatura</a></li>
                         }
                         else if (User.IsInRole("CIMOB"))
                         {

@@ -1,0 +1,45 @@
+﻿@model cimobgrupo2.Models.Candidatura
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <div>
+        <h4>Candidatura</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Curso)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Curso.Nome)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EscolaParceira)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EscolaParceira.Nome)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Programa)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Programa.Nome)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.CandidaturaId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

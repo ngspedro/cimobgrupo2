@@ -68,10 +68,12 @@ namespace cimobgrupo2.Controllers
             return model;
         }
 
-        public async Task<IActionResult> Download(string path)
+        public async Task<IActionResult> Download(string tipo, string id,  string nome)
         {
-            if (path == null)
+            if (tipo == null || nome == null)
                 return Content("filename not present");
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", tipo, id, nome);
 
             var memory = new MemoryStream();
             using (var stream = new FileStream(path, FileMode.Open))

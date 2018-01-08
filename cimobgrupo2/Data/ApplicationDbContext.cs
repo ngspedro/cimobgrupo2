@@ -17,6 +17,7 @@ namespace cimobgrupo2.Data
         public DbSet<EscolaParceira> EscolasParceiras { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Candidatura> Candidaturas { get; set; }
+        public DbSet<Estado> Estados { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

@@ -29,7 +29,7 @@ namespace cimobgrupo2.Controllers
             _fileController = new FileController(fileProvider);
             this._context = context;
             //vai buscar a lista de candidaturas
-            _candidaturas = context.Candidaturas.Include(c => c.Curso).Include(c => c.Programa).Include(c => c.EscolaParceira).Include(c => c.User).ToList();
+            _candidaturas = context.Candidaturas.Include(c => c.Curso).Include(c => c.Programa).Include(c => c.EscolaParceira).Include(c => c.User).Include(c => c.Estado).ToList();
 
         }
 
@@ -40,6 +40,11 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Criar()
         {
+            Candidatura aux = _candidaturas.SingleOrDefault(c => c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier));
+            if (aux != null)
+            {
+                return RedirectToAction(ProperView("Detalhes"), new { id = aux.CandidaturaId });
+            }
             //vai buscar a lista de programas e asocia a uma ViewBag
             ViewBag.Programas = _context.Programas.Select(p => new SelectListItem()
             {
@@ -71,10 +76,10 @@ namespace cimobgrupo2.Controllers
             if (ModelState.IsValid)
             {
                 Candidatura.UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                Candidatura.EstadoId = 1; //estado pendente
                 _context.Add(Candidatura);
                 _context.SaveChanges();
-                SetSuccessMessage("Programa adicionado.");
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(ProperView("Detalhes"), new { id = Candidatura.CandidaturaId });
             }
             SetErrorMessage("003");
             return View(Candidatura);
@@ -82,7 +87,10 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Detalhes(int? id)
         {
-            return View(ProperView("Detalhes"), _candidaturas.Find(p => p.CandidaturaId == id));
+            Candidatura candidatura = _candidaturas.Find(p => p.CandidaturaId == id);
+            var caminho = "candidaturas/" + candidatura.UserId;
+            ViewBag.Documentos = _fileController.GetFiles(caminho);
+            return View(ProperView("Detalhes"), candidatura);
         }
 
         [HttpPost]
@@ -95,7 +103,7 @@ namespace cimobgrupo2.Controllers
                 {
                     await _fileController.UploadFile(caminho, f);
                 }
-                SetSuccessMessage(files.Count() + " documentos adicionados.");
+                //SetSuccessMessage(files.Count() + " documentos adicionados.");
             }
 
             return RedirectToAction(nameof(Criar));
@@ -112,15 +120,43 @@ namespace cimobgrupo2.Controllers
                     _fileController.Delete(caminho, s);
 
                 }
-                SetSuccessMessage(ficheiros.Count() + " documentos removidos.");
+                //SetSuccessMessage(ficheiros.Count() + " documentos removidos.");
             }
             return RedirectToAction(nameof(Criar));
+        }
+
+        public IActionResult Aceitar(int? id)
+        {
+            Candidatura candidatura = _candidaturas.SingleOrDefault(p => p.CandidaturaId == id);
+            if (candidatura != null)
+            {
+                candidatura.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Aceite");
+                _context.SaveChanges();
+                SetSuccessMessage("Candidatura aceite.");
+                return RedirectToAction(nameof(Detalhes), new { id = id });
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Recusar(int CandidaturaId, string motivo)
+        {
+            Candidatura candidatura = _candidaturas.SingleOrDefault(p => p.CandidaturaId == CandidaturaId);
+            if (candidatura != null)
+            {
+                candidatura.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Recusada");
+                _context.SaveChanges();
+                SetSuccessMessage("Candidatura recusada.");
+                return RedirectToAction(nameof(Detalhes), new { id = CandidaturaId });
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
         public String ProperView(String viewName)
         {
             if (User.IsInRole("CIMOB"))
-                return "~/Views/Candidaturas/" + viewName + ".cshtml";
+                return "~/Views/Candidaturas/Cimob/" + viewName + ".cshtml";
 
             return viewName;
         }

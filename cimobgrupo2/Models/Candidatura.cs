@@ -13,19 +13,21 @@ namespace cimobgrupo2.Models
 
         [ForeignKey("User")]
         public string UserId { get; set; }
-        
-        [Display(Name = "Programas")]
         public int ProgramaId { get; set; }
-        [Display(Name = "Escolas Parceiras")]
         public int EscolaParceiraId { get; set; }
-        [Display(Name = "Cursos")]
         public int CursoId { get; set; }
+        public int EstadoId { get; set; }
 
-
+        [Display(Name = "Escola Parceira")]
         public virtual EscolaParceira EscolaParceira { get; set; }
+        [Display(Name = "Programa")]
         public virtual Programa Programa { get; set; }
+        [Display(Name = "Curso")]
         public virtual Curso Curso { get; set; }
+        [Display(Name = "Candidato")]
         public virtual ApplicationUser User { get; set; }
+        [Display(Name = "Estado")]
+        public virtual Estado Estado { get; set; }
 
         public Candidatura()
         {

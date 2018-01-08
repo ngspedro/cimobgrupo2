@@ -20,7 +20,7 @@
                 @{
                     if (ViewBag.Edital != null)
                     {
-                        <a asp-action="Download" asp-controller="File" asp-route-path="@ViewBag.Edital.Path">@ViewBag.Edital.Name</a>
+                        <a href="@Url.Action("Download", "File", new { tipo = "programas", id = Model.ProgramaId, nome = ViewBag.Edital.Name })">@ViewBag.Edital.Name</a>
                     }
                     else
                     {
@@ -47,7 +47,7 @@
                                 <td>
                                     @item.Name
                                 </td>
-                                <td class="text-center"><a asp-action="Download" asp-controller="File" asp-route-path="@item.Path"><span class="glyphicon glyphicon-download"></span></a></td>
+                                <td class="text-center"><a href="@Url.Action("Download", "File", new { tipo = "programas", id = Model.ProgramaId, nome = item.Name })"><span class="glyphicon glyphicon-download"></span></a></td>
                             </tr>
 
                         }

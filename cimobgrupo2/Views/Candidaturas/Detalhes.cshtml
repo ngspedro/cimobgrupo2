@@ -1,45 +1,96 @@
 ﻿@model cimobgrupo2.Models.Candidatura
-
 @{
+    ViewData["Titulo"] = "Detalhes de Candidatura";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<div class="col-md-4 col-lg-4 left-info">
+    <table id="table-info">
+        <tr>
+            <td><strong>@Html.DisplayNameFor(model => model.Programa): </strong></td>
+            <td>@Html.DisplayFor(model => model.Programa.Nome)</td>
+        </tr>
+        <tr>
+            <td><strong>@Html.DisplayNameFor(model => model.EscolaParceira): </strong></td>
+            <td>@Html.DisplayFor(model => model.EscolaParceira.Nome)</td>
+        </tr>
+        <tr>
+            <td><strong>@Html.DisplayNameFor(model => model.Curso): </strong></td>
+            <td>@Html.DisplayFor(model => model.Curso.Nome)</td>
+        </tr>
+        <tr>
+            <td><strong>@Html.DisplayNameFor(model => model.Estado): </strong></td>
+            <td>@Html.DisplayFor(model => model.Estado.Nome)</td>
+        </tr>
+    </table>
+    <br />
+    <p><strong>Documentos Submetidos:</strong></p>
+    @{
+        if (ViewBag.Documentos.Count > 0)
+        {
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
 
-    <div>
-        <h4>Candidatura</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Curso)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Curso.Nome)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.EscolaParceira)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.EscolaParceira.Nome)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Programa)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Programa.Nome)
-            </dd>
-        </dl>
+            <table class="table table-striped table-bordered">
+                <tbody>
+                    @{
+                        foreach (var item in ViewBag.Documentos)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td class="text-center"><a href="@Url.Action("Download", "File", new { tipo = "candidaturas", id = Model.UserId, nome = item.Name })"><span class="glyphicon glyphicon-download"></span></a></td>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+                        }
+                        else
+                        {
+                            <p>(Nenhum)</p>
+
+                        }
+    }
+
+</div>
+
+<div class="col-md-8 col-lg-8">
+    <p class="sec-title"><span class="glyphicon glyphicon-comment"></span><strong> Entrevistas Marcadas:</strong></p>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered" id="tabela-entrevistas">
+            <thead>
+                <tr>
+                    <th>
+                        Data
+                    </th>
+                    <th>
+                        Hora
+                    </th>
+                    <th>
+                        Estado
+                    </th>
+                    <th class="no-sort"></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            21/10/2017
+                        </td>
+                        <td>
+                           15h30
+                        </td>
+                        <td>
+                           Pendente
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="1">Adiar</a>
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
     </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.CandidaturaId">Edit</a> |
-        <a asp-action="Index">Back to List</a>
-    </div>
-</body>
-</html>
+</div>

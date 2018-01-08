@@ -178,6 +178,14 @@ namespace cimobgrupo2.Data
 
                 context.SaveChanges();
             }
-        }
+
+            if (!context.Estados.Any())
+            {
+                context.Estados.Add(new Estado() { Nome = "Pendente" });
+                context.Estados.Add(new Estado() { Nome = "Aceite" });
+                context.Estados.Add(new Estado() { Nome = "Recusada" });
+                context.SaveChanges();
+            }
+            }
     }
 }

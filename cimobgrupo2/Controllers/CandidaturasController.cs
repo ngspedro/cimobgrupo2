@@ -14,20 +14,14 @@ using Microsoft.AspNetCore.Http;
 
 namespace cimobgrupo2.Controllers
 {
-    public class CandidaturasController : Controller
+    public class CandidaturasController : BaseController
     {
         private string BASE_PATH = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", "candidaturas");
 
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
-        private FileController _fileController;
         private List<Candidatura> _candidaturas;
-        private ApplicationDbContext _context;
 
-        public CandidaturasController(ApplicationDbContext context, IFileProvider fileProvider)
+        public CandidaturasController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Candidaturas")
         {
-            _fileController = new FileController(fileProvider);
-            this._context = context;
             //vai buscar a lista de candidaturas
             _candidaturas = context.Candidaturas.Include(c => c.Curso).Include(c => c.Programa).Include(c => c.EscolaParceira).Include(c => c.User).Include(c => c.Estado).ToList();
 
@@ -145,32 +139,13 @@ namespace cimobgrupo2.Controllers
             if (candidatura != null)
             {
                 candidatura.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Recusada");
+                candidatura.Motivo = motivo;
                 _context.SaveChanges();
                 SetSuccessMessage("Candidatura recusada.");
                 return RedirectToAction(nameof(Detalhes), new { id = CandidaturaId });
             }
 
             return RedirectToAction(nameof(Index));
-        }
-
-        public String ProperView(String viewName)
-        {
-            if (User.IsInRole("CIMOB"))
-                return "~/Views/Candidaturas/Cimob/" + viewName + ".cshtml";
-
-            return viewName;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            TempData["Error_Code"] = Erro.Codigo;
-            TempData["Error_Message"] = Erro.Mensagem;
         }
     }
 }

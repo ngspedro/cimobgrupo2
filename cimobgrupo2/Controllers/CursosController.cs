@@ -6,21 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using cimobgrupo2.Models;
 using cimobgrupo2.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 namespace cimobgrupo2.Controllers
 {
-    public class CursosController : Controller
+    public class CursosController : BaseController
     {
-        private ApplicationDbContext _context;
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
+        private List<Curso> _cursos;
 
-        public CursosController(ApplicationDbContext context)
+        public CursosController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Cursos")
         {
-            _context = context;
-            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Cursos").ToList();
-            _erros = context.Erros.ToList();
+            _cursos = context.Cursos.ToList();
         }
+       
 
         public IActionResult Index()
         {
@@ -82,26 +80,6 @@ namespace cimobgrupo2.Controllers
             _context.SaveChanges();
             SetSuccessMessage("Curso removido.");
             return RedirectToAction(nameof(Index));
-        }
-
-        public String ProperView(String viewName)
-        {
-            if (User.IsInRole("CIMOB"))
-                return "~/Views/Cursos/Cimob/" + viewName + ".cshtml";
-
-            return viewName;
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            TempData["Error_Code"] = Erro.Codigo;
-            TempData["Error_Message"] = Erro.Mensagem;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
         }
     }
 }

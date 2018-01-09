@@ -9,26 +9,18 @@ using Microsoft.Extensions.FileProviders;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using cimobgrupo2.Models.FilesViewModels;
 
 namespace cimobgrupo2.Controllers
 {
-    public class ProgramasController : Controller
+    public class ProgramasController : BaseController
     {
         private string BASE_PATH = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", "programas");
 
-        private ApplicationDbContext _context;
-        private FileController _fileController;
-
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
         private List<Programa> _programas;
 
-        public ProgramasController(ApplicationDbContext context, IFileProvider fileProvider)
+        public ProgramasController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Programas")
         {
-            _fileController = new FileController(fileProvider);
-            _context = context;
-            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Programas").ToList();
-            _erros = context.Erros.ToList();
             _programas = context.Programas.Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
                 .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
         }
@@ -58,7 +50,7 @@ namespace cimobgrupo2.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(Programa);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 if (file != null)
                 {
@@ -68,6 +60,7 @@ namespace cimobgrupo2.Controllers
                     await _fileController.UploadFile(caminho, file);
                 }
 
+                _context.SaveChanges();
                 SetSuccessMessage("Programa adicionado.");
                 return RedirectToAction(nameof(Index));
             }
@@ -123,6 +116,12 @@ namespace cimobgrupo2.Controllers
         {
             _context.Programas.Remove(_context.Programas.SingleOrDefault(p => p.ProgramaId == ProgramaId));
             _context.SaveChanges();
+
+            foreach (FileDetails f in _fileController.GetFiles("programas/" + ProgramaId))
+            {
+                _fileController.Delete(Path.Combine(BASE_PATH, ProgramaId.ToString()), f.Name);
+            }
+
             SetSuccessMessage("Programa removido.");
             return RedirectToAction(nameof(Index));
         }
@@ -193,26 +192,6 @@ namespace cimobgrupo2.Controllers
             }
 
             return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
-        }
-
-        public String ProperView(String viewName)
-        {
-            if (User.IsInRole("CIMOB"))
-                return "~/Views/Programas/Cimob/" + viewName + ".cshtml";
-
-            return viewName;
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            TempData["Error_Code"] = Erro.Codigo;
-            TempData["Error_Message"] = Erro.Mensagem;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
         }
     }
 }

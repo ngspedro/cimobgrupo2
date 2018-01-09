@@ -1,0 +1,132 @@
+﻿============================================================ BPMN
+
+Fases do ciclo de vida de um sw:
+- Requisitos;
+- Análise;
+- Desenho;
+- Implementação;
+- Instalação;
+- Manutenção;
+
+Gateway exclusivo (XOR) - Vazio ou X
+Gateway inclusivo (OR) - O
+Gateway paralelo (AND) - +
+Gateway complexo - * 
+
+
+============================================================ REQUISITOS
+
+REQUISITOS - Necessário. Condição que se deve satisfazer para alcançar um objetivo.
+			Serve para traduzir formalmente as necessidades do cliente.
+			Importantes para a validação da entrega do sistema ao cliente
+			
+REQUISITOS FUNCIONAIS - Definem o comportamento que o sistema deve apresentar.
+
+REQUISITOS NÃO FUNCIONAIS - Definem as propriedades e restrições do sistema.
+		Dividem-se em:
+						- Requisitos Ambientais (definem os constrangimentos a nivel de software, hardware e normas a utilizar) 
+						       Hardware
+							   Software
+							   Normas
+							   Legislação
+						- Requisitos de qualidade (definem as propriedades do produto a desenvolver)
+								Desempenho (Capacidade de resposta / Capacidade de armazenamento) 
+								Disponibilidade (Fiabilidade / Manutenbilidade / Integridade)
+								Adaptabilidade (Portabilidade / Extensibilidade) 
+								Usabilidade (Facilidade de aprendizagem / Eficácia de Utilização / Resistência a erros / Satisfação de Utilização)
+
+--------------------------------------------------------------------------------------------------------------
+Requisitos Funcionais:
+
+Representação: <id> O <sistema> deverá <função>
+Categoria de Requesito de Qualidade:
+Teste:
+Escala: Especificação da escala de medida
+Pior Caso: Valor mínimo para aceitação do sistema
+--------------------------------------------------------------------------------------------------------------
+
+============================================================ FASE DE REQUISITOS
+
+Objectivos:
+
+Criar uma especificaçao de alto nivel
+	- identificar e documentar reqs funcionais e nao
+	- compreender e documentar desejos e necessidades de stakes
+
+- chegar a acordo sobre o sys (alcançar consenso)
+- minimizar o risco de nao satisfazer os desejos dos interessados
+
+Actividades: Descobrir reqs, classificar e organizar reqs e validar reqs.
+
+Descoberta:
+- Extrair info de stakes
+- Pessoal tecnico que trabalha com clientes e investiga o dominio da app, os serviços a oferecer e restrições operacionais.
+- Benfica é merda
+
+Problemas:
+- Pressão do cliente para terminar rápido;
+- Problemas de comunicação;
+- Suposição que o assunto é evidente;
+- Ambiguidade de requisitos;
+
+Chomsky:
+- Supressao/deletion - info filtrada;
+- Distorçao - Info modificada pelos mecanismos relacionados com a ciação;
+- Generalização - Criação de regras e princípios acerca da veracidade ou falsidade da info.
+
+Tecnicas:
+- Entrevistas;
+- Questionarios;
+- Workshops;
+- Etnografia - Ver as pessoas a trabalhar sem mexer.
+
+Passos:
+1 - Marcar entrevista com quem pediu sistema;
+2 - Usar as outras técnicas livremente.
+
+Entrevista:
+- Não alucinar a solução;
+- Questões de resposta aberta;
+- Escutar;
+- Não tentar ler pensamento;
+- Ter paciência.
+
+Workshops:
+- Ter regras bem definidas;
+- Todas as ideias são boas ideias;
+- Após reunião - analisar resultados e converter a reqs;
+- Fazer circular resultados.
+
+Etnografia:
+- Nível de profundidade bastante realista;
+- Factores sociais e organizacionais podem ser observadas;
+
+Classificação e organização dos reqs:
+- Funcionais podem ser organizados em taxonomias;
+- Atribuir prioridades (Must, should, could, wont);
+
+Validação:
+- Confirmar que os reqs são o que o cliente pretende;
+- Resolver situações de conflitos;
+- Verificar	se todas as funções requeridas são incluídas;
+- Verficiar se são realistas tendo em conta orçamento e tecnologia;
+- Os reqs podem ser verificados?
+
+Técnicas de validação:
+- Revisão de reqs;
+- Prototipagem;
+- Gerar casos de teste;
+- Análise da consistência.
+
+============================================================ DIAGRAMA DE CLASSES
+
+Multiplicidade: Empresa 1 - * Pessoa = Uma pessoa está associada com UMA empresa e uma empresa tem VÁRIAS pessoas associadas.
+Agregação - Associação com losango ABERTO: Relação todo-parte mas as classes parte existem sem o todo.
+Composição - Associação com losango FECHADO: Relação forte em que as partes não fazem sentido sem o todo. Ex.: Angola é nossa
+Generalização/especialização - Heranças e merdas.
+
+
+
+
+
+

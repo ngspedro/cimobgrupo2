@@ -14,15 +14,14 @@ using cimobgrupo2.Models;
 using cimobgrupo2.Models.AccountViewModels;
 using cimobgrupo2.Services;
 using cimobgrupo2.Data;
+using Microsoft.Extensions.FileProviders;
 
 namespace cimobgrupo2.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -33,14 +32,13 @@ namespace cimobgrupo2.Controllers
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger,
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+             IFileProvider fileProvider) : base(context, fileProvider, "Account")
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Account").ToList();
-            _erros = context.Erros.ToList();
         }
 
         [HttpGet]
@@ -269,18 +267,6 @@ namespace cimobgrupo2.Controllers
         public IActionResult ResetPasswordConfirmation()
         {
             return View();
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            ViewData["Error_Code"] = Erro.Codigo;
-            ViewData["Error_Message"] = Erro.Mensagem;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
         }
 
         #region SetHelp

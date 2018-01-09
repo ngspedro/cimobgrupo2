@@ -14,15 +14,14 @@ using cimobgrupo2.Models;
 using cimobgrupo2.Models.ManageViewModels;
 using cimobgrupo2.Services;
 using cimobgrupo2.Data;
+using Microsoft.Extensions.FileProviders;
 
 namespace cimobgrupo2.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger _logger;
@@ -31,13 +30,12 @@ namespace cimobgrupo2.Controllers
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
           ILogger<ManageController> logger,
-            ApplicationDbContext context)
+            ApplicationDbContext context, 
+            IFileProvider fileProvider) : base(context, fileProvider, "Manage")
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _ajudas = context.Ajudas.Where(ai => ai.Controller == "Manage").ToList();
-            _erros = context.Erros.ToList();
         }
 
         [TempData]
@@ -193,18 +191,6 @@ namespace cimobgrupo2.Controllers
 
             SetSuccessMessage("Conta eliminada.");
             return RedirectToAction("Login", "Account");
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            ViewData["Error_Code"] = Erro.Codigo;
-            ViewData["Error_Message"] = Erro.Mensagem;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
         }
 
         #region SetHelp

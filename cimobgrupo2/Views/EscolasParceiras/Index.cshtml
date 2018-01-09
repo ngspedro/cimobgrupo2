@@ -1,0 +1,57 @@
+﻿@model IEnumerable<cimobgrupo2.Models.EscolaParceira>
+@{
+    ViewData["Titulo"] = "Escolas Disponíveis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped" id="tabela-escolas">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Localidade)
+            </th>
+            <th>
+                Cursos Disponíveis
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cursos.Count)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Detalhes" asp-route-id="@item.EscolaParceiraId">Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-escolas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        });
+    });
+</script>

@@ -18,6 +18,8 @@ namespace cimobgrupo2.Models
         public int CursoId { get; set; }
         public int EstadoId { get; set; }
 
+        public string Motivo { get; set; }
+
         [Display(Name = "Escola Parceira")]
         public virtual EscolaParceira EscolaParceira { get; set; }
         [Display(Name = "Programa")]

@@ -7,21 +7,16 @@ using cimobgrupo2.Models;
 using cimobgrupo2.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
+using Microsoft.Extensions.FileProviders;
 
 namespace cimobgrupo2.Controllers
 {
-    public class EscolasParceirasController : Controller
+    public class EscolasParceirasController : BaseController
     {
-        private ApplicationDbContext _context;
-        private readonly List<Ajuda> _ajudas;
-        private readonly List<Erro> _erros;
         private List<EscolaParceira> _escolasParceiras;
 
-        public EscolasParceirasController(ApplicationDbContext context)
+        public EscolasParceirasController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "EscolasParceiras")
         {
-            _context = context;
-            _ajudas = context.Ajudas.Where(ai => ai.Controller == "EscolasParceiras").ToList();
-            _erros = context.Erros.ToList();
             _escolasParceiras = context.EscolasParceiras.Include(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
         }
 
@@ -129,26 +124,6 @@ namespace cimobgrupo2.Controllers
             }
             
             return RedirectToAction(nameof(Editar), new { Id = EscolaParceiraId });
-        }
-
-        public String ProperView(String viewName)
-        {
-            if (User.IsInRole("CIMOB"))
-                return "~/Views/EscolasParceiras/Cimob/" + viewName + ".cshtml";
-
-            return viewName;
-        }
-
-        private void SetErrorMessage(String Code)
-        {
-            var Erro = _erros.SingleOrDefault(e => e.Codigo == Code);
-            TempData["Error_Code"] = Erro.Codigo;
-            TempData["Error_Message"] = Erro.Mensagem;
-        }
-
-        private void SetSuccessMessage(String Message)
-        {
-            TempData["Success"] = Message;
         }
 
         private void FillCountryList()

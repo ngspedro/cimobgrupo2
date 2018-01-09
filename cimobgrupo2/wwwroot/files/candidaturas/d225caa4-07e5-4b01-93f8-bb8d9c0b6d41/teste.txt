@@ -1,0 +1,20 @@
+- fases do ciclo de vida de um sw
+- a modelaçao de processos permite...
+- elementos do bpmn
+- tipos de diagramas bpd
+- tipos de requisitos que existem
+
+fase de requesitos
+	-objetivos
+	-atividades
+	-linguagem natural contém (chomsky)
+	-tecnicas para descoberta de requisitos
+- classificaçao e organizaçao de requisitos
+
+-use cases
+	-elementos
+	-detalhes
+	-matriz rastreabilidade
+
+-diagrama classes
+	-multiplicidade

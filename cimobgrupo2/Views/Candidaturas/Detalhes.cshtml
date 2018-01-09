@@ -20,7 +20,23 @@
         </tr>
         <tr>
             <td><strong>@Html.DisplayNameFor(model => model.Estado): </strong></td>
-            <td>@Html.DisplayFor(model => model.Estado.Nome)</td>
+            @{
+                if (Model.EstadoId == 3)
+                {
+                    <td>
+                        <span style="color: red">@Html.DisplayFor(model => model.Estado.Nome)</span> 
+                        (<a style="cursor: pointer;" data-toggle="modal" data-target="#motivoRejeicao">+info</a>)
+                    </td>
+                }
+                else if (Model.EstadoId == 2)
+                {
+                    <td><span style="color: green">@Html.DisplayFor(model => model.Estado.Nome)</span></td>
+                }
+                else
+                {
+                    <td><span>@Html.DisplayFor(model => model.Estado.Nome)</span></td>
+                }
+            }
         </tr>
     </table>
     <br />
@@ -92,5 +108,30 @@
                 
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="modal fade" id="motivoRejeicao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Motivo de Rejeição</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group animated fadeIn">
+                        <div class="col-md-12 col-lg-12">
+                            <label class="control-label">Motivo:</label>
+                            <textarea style="margin-top: 10px; resize: none" class="form-control" disabled>@Model.Motivo</textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

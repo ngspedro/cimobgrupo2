@@ -1,6 +1,7 @@
 ﻿using cimobgrupo2.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -128,12 +129,14 @@ namespace cimobgrupo2.Data
 
             if (!context.Programas.Any())
             {
-                var Cursos = new[]
+                var Cursos = new Curso[]
                 {
                 new Curso { Nome = "Engenharia Informática" },
                 new Curso { Nome = "Engenharia Biomédica" },
                 new Curso { Nome = "Engenharia do Ambiente" },
-                new Curso { Nome = "Engenharia Mecânica" }
+                new Curso { Nome = "Engenharia Mecânica" },
+                new Curso { Nome = "Engenharia de Automação, Controlo e Instrumentação" },
+                new Curso { Nome = "Engenharia Electrotécnica e de Computadores" }
                 };
 
                 var EscolasParceiras = new[]
@@ -163,7 +166,7 @@ namespace cimobgrupo2.Data
                 new Ficheiro { Nome = "Documento Z", Caminho = "/files/programas/2/documentoz.txt"}
                 };
 
-                context.AddRange(
+                    context.AddRange(
                     new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[0] },
                     new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[1] },
                     new EscolaParceiraCurso { EscolaParceira = EscolasParceiras[0], Curso = Cursos[2] },
@@ -195,6 +198,48 @@ namespace cimobgrupo2.Data
                 context.SaveChanges();
 
             }
+
+            /*if (!context.Estados.Any())
+            {
+                var estados = new Estado[] {
+                new Estado { Nome = TipoEstado.POR_AVALIAR, Descricao = " Pendente" },
+                new Estado { Nome = TipoEstado.APROVADA, Descricao = " Em Curso" },
+                new Estado { Nome = TipoEstado.POR_AVALIAR, Descricao = " Aceite" },
+                new Estado { Nome = TipoEstado.APROVADA, Descricao = "Rejeitada" },
+            };
+            foreach (Estado ests in estados )
+            {
+                context.Estados.Add(ests);
+            }
+            context.SaveChanges();
+        }*/
+            //inserts a candidatura
+            if (!context.Candidaturas.Any())
+            {
+                var candidatura = new Candidatura[]  {
+           new Candidatura {Nome="André Gastão", ProgramaId = 1, EscolaParceiraId = 1, CursoId =0,Estado= TipoEstado.POR_AVALIAR},
+           new Candidatura {Nome="Daniel Costeira", ProgramaId = 0, EscolaParceiraId = 2, CursoId = 3, Estado= TipoEstado.APROVADA },
+           new Candidatura {Nome="Nuno Pedro",  ProgramaId = 1, EscolaParceiraId = 0, CursoId = 2, Estado= TipoEstado.POR_AVALIAR },
+           new Candidatura {Nome="João Pedro",  ProgramaId = 1, EscolaParceiraId = 0, CursoId = 2, Estado = TipoEstado.ADIADA },
+           new Candidatura {Nome="Andriana Matos", ProgramaId = 0, EscolaParceiraId = 2, CursoId = 3, Estado = TipoEstado.POR_AVALIAR },
+        };
+                foreach (Candidatura cand in candidatura)
+                {
+                    context.Candidaturas.Add(cand);
+                }
+                var entreviasta = new Entrevista[] {
+
+                //new Entrevista {DataEntrevista= DateTime.ParseExact("29/04/2018 13:34 ", "dd/MM/yyyy HH:mm",
+                  //  CultureInfo.InvariantCulture), Avaliacao="Em Curso", CandidaturaId=1},
+                new Entrevista{DataEntrevista= DateTime.Now, Avaliacao="Em Curso", CandidaturaId=1},
+                new Entrevista{DataEntrevista = DateTime.Now, Avaliacao = "Em Curso ", CandidaturaId = 4},
+                new Entrevista{DataEntrevista= DateTime.Now, Avaliacao = "Não Avaliado", CandidaturaId = 3},
+                new Entrevista{DataEntrevista = DateTime.Now, Avaliacao = "em curso", CandidaturaId = 2}
+            };
+                context.SaveChanges();
+            }
+            
+        }
         }
     }
-}
+

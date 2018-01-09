@@ -13,7 +13,6 @@ namespace cimobgrupo2.Models
 
         [Display(Name="Descrição")]
         public String Descricao { get; set; }
-
         [Display(Name ="Duração")]
         public int Duracao { get; set; }
 

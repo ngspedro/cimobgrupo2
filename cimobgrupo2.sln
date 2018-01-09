@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cimobgrupo2", "cimobgrupo2\cimobgrupo2.csproj", "{3E777001-1530-4BED-B87E-49A93E83897E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint1Testes", "Sprint1Testes\Sprint1Testes.csproj", "{83C6E92E-5441-49D6-BC14-642E78159FB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint1Testes", "Sprint1Testes\Sprint1Testes.csproj", "{83C6E92E-5441-49D6-BC14-642E78159FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

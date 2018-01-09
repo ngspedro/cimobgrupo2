@@ -12,7 +12,6 @@ namespace cimobgrupo2.Models
         public String Action { get; set; }
         public String Elemento { get; set; }
         public String Texto { get; set; }
-
         public Ajuda()
         {
 

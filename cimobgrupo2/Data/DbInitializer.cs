@@ -123,6 +123,7 @@ namespace cimobgrupo2.Data
                 context.Erros.Add(new Erro("003", "Verifique se os dados introduzidos estão corretos."));
                 context.Erros.Add(new Erro("004", "Registo falhou. Já existe uma conta com esse username."));
                 context.Erros.Add(new Erro("005", "Ocorreu um erro inesperado! Tente novamente mais tarde."));
+                context.Erros.Add(new Erro("006", "Impossível aceitar candidatura. O programa pretendido não possui mais vagas para a escola em questão."));
                 context.SaveChanges();
             }
 

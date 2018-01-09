@@ -51,6 +51,7 @@ namespace cimobgrupo2.Controllers
                 Value = e.EscolaParceiraId.ToString(),
                 Text = e.Nome
             }).ToList();
+
             //vai buscar a lista de cursos e asocia a uma ViewBag
             ViewBag.Cursos = _context.Cursos.Select(c => new SelectListItem()
             {
@@ -63,6 +64,7 @@ namespace cimobgrupo2.Controllers
 
             return View(ProperView("Criar"));
         }
+
 
         [HttpPost]
         public IActionResult Criar([Bind("ProgramaId,EscolaParceiraId,CursoId")] Candidatura Candidatura)
@@ -124,10 +126,19 @@ namespace cimobgrupo2.Controllers
             Candidatura candidatura = _candidaturas.SingleOrDefault(p => p.CandidaturaId == id);
             if (candidatura != null)
             {
-                candidatura.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Aceite");
-                _context.SaveChanges();
-                SetSuccessMessage("Candidatura aceite.");
-                return RedirectToAction(nameof(Detalhes), new { id = id });
+                Programa programa = _context.Programas.Include(p => p.EscolasParceiras).ThenInclude(p => p.EscolaParceira).SingleOrDefault(p => p.ProgramaId == candidatura.ProgramaId);
+                ProgramaEscolaParceira assoc = programa.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == candidatura.EscolaParceiraId);
+                if(assoc.NumeroVagas > 0)
+                {
+                    assoc.NumeroVagas--;
+                    candidatura.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Aceite");
+                    _context.SaveChanges();
+                    SetSuccessMessage("Candidatura aceite.");
+                    return RedirectToAction(nameof(Detalhes), new { id = id });
+                }
+
+                SetErrorMessage("006");
+               return RedirectToAction(nameof(Detalhes), new { id = id });
             }
 
             return RedirectToAction(nameof(Index));

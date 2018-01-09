@@ -193,5 +193,25 @@ namespace cimobgrupo2.Controllers
 
             return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
         }
+
+        public IActionResult EditarVagasModal(int idPrograma, int idEscola)
+        {
+            Programa programa = _programas.SingleOrDefault(p => p.ProgramaId == idPrograma);
+            return PartialView(ProperView("EditarVagasModal"), programa.EscolasParceiras.SingleOrDefault(ep => ep.EscolaParceiraId == idEscola));
+        }
+
+        public IActionResult EditarVagas(int ProgramaId, int EscolaParceiraId, int NumeroVagas)
+        {
+            ProgramaEscolaParceira Assoc = _programas.SingleOrDefault(p => p.ProgramaId == ProgramaId).EscolasParceiras.SingleOrDefault(ep => ep.EscolaParceiraId == EscolaParceiraId);
+
+            if (Assoc != null)
+            {
+                Assoc.NumeroVagas = NumeroVagas;
+                _context.SaveChanges();
+                SetSuccessMessage("Número de Vagas alterado.");
+               
+            }
+            return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
+        }
     }
 }

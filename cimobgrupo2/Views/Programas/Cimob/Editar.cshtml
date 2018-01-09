@@ -110,7 +110,9 @@
                                             @Html.DisplayFor(modelItem => item.EscolaParceira.Cursos.Count)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.NumeroVagas)
+                                            <a asp-action="EditarVagasModal" data-target="#editarVagas" data-toggle="modal" asp-route-idPrograma="@item.ProgramaId" asp-route-idEscola="@item.EscolaParceiraId">
+                                                @Html.DisplayFor(modelItem => item.NumeroVagas)
+                                            </a>
                                         </td>
                                         <td class="text-center">
                                             <input name="escolasRemover[]" type="checkbox" value="@item.EscolaParceiraId">
@@ -308,6 +310,14 @@
     </div>
 </div>
 
+<div class="modal fade" id="editarVagas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="loader"></div>
+        </div>
+    </div>
+</div>
+
 <script>
     $(document).ready(function () {
         $('#tabela-escolasAssociar').DataTable({
@@ -324,6 +334,16 @@
         });
     });
 
+    $(function () {
+        // when the modal is closed
+        $('#editarVagas').on('hidden.bs.modal', function () {
+            // remove the bs.modal data attribute from it
+            $(this).removeData('bs.modal');
+            // and empty the modal-content element
+            $('#editarVagas .modal-content').empty();
+            $('#editarVagas .modal-content').html("<div class='loader'></div>");
+        });
+    });
 
     $("#editalFile").fileinput({
         'showUpload': false, language: "pt"

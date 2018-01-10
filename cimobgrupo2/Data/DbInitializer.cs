@@ -187,6 +187,7 @@ namespace cimobgrupo2.Data
                 context.Estados.Add(new Estado() { Nome = "Recusada" });
                 context.SaveChanges();
             }
+
             }
     }
 }

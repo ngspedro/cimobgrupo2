@@ -21,7 +21,7 @@ namespace cimobgrupo2.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime DataEntrevista { get; set; }
         [Required(ErrorMessage = "{0} é obrigatorio")]
-        public string Avaliacao { get; set; }
+        public Avalicaco Avaliacao { get; set; } // tipo de enum 
         public int CandidaturaId { get; set; }
         public virtual Candidatura Candidatura { get; set; }
         /// <summary>

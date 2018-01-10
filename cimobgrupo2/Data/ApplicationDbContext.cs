@@ -18,6 +18,7 @@ namespace cimobgrupo2.Data
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Candidatura> Candidaturas { get; set; }
         public DbSet<Estado> Estados { get; set; }
+        public DbSet<Entrevista> Entrevistas { get; set;}
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -33,6 +34,13 @@ namespace cimobgrupo2.Data
 
             builder.Entity<EscolaParceiraCurso>()
                 .HasKey(t => new { t.EscolaParceiraId, t.CursoId });
+
+            builder.Entity<Candidatura>()
+                .HasMany<Entrevista>(c => c.Entrevistas)
+                .WithOne(e => e.Candidatura)
+                .HasForeignKey(e => e.CandidaturaId);
+                
+
         }
     }
 }

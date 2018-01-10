@@ -28,7 +28,8 @@ namespace cimobgrupo2.Models
         public virtual ApplicationUser User { get; set; }
         [Display(Name = "Estado")]
         public virtual Estado Estado { get; set; }
-
+        [Display(Name = "Entrevista")]
+        public virtual ICollection<Entrevista> Entrevistas { get; set; } = new List<Entrevista>();
         public Candidatura()
         {
 

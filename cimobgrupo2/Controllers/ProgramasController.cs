@@ -33,10 +33,14 @@ namespace cimobgrupo2.Controllers
         public IActionResult Detalhes(int? id)
         {
             Programa programa = _programas.Find(p => p.ProgramaId == id);
-            var caminho = "programas/" + id;
-            ViewBag.Edital = _fileController.GetFile(caminho, programa.Edital);
-            ViewBag.Documentos = _fileController.GetFiles(caminho, programa.Edital);
-            return View(ProperView("Detalhes"), programa);
+            if (programa != null)
+            {
+                var caminho = "programas/" + id;
+                ViewBag.Edital = _fileController.GetFile(caminho, programa.Edital);
+                ViewBag.Documentos = _fileController.GetFiles(caminho, programa.Edital);
+                return View(ProperView("Detalhes"), programa);
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Adicionar()

@@ -33,9 +33,13 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.ProgramasPublicar = _context.Programas.Include(p => p.Candidaturas).Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
+            if (!User.IsInRole("Estudante"))
+            {
+                ViewBag.ProgramasPublicar = _context.Programas.Include(p => p.Candidaturas).Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
                 .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
-            return View(ProperView("Index"), _candidaturas);
+                return View(ProperView("Index"), _candidaturas);
+            }
+            return RedirectToAction(nameof(Criar));
         }
 
         public IActionResult Criar()
@@ -89,10 +93,18 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Detalhes(int? id)
         {
-            Candidatura candidatura = _candidaturas.Find(p => p.CandidaturaId == id);
-            var caminho = "candidaturas/" + candidatura.UserId;
-            ViewBag.Documentos = _fileController.GetFiles(caminho);
-            return View(ProperView("Detalhes"), candidatura);
+            Candidatura candidatura = _candidaturas.Find(p => p.CandidaturaId == id); 
+            if (candidatura != null)
+            {
+                if (!User.IsInRole("Estudante") || candidatura.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                {
+                    var caminho = "candidaturas/" + candidatura.UserId;
+                    ViewBag.Documentos = _fileController.GetFiles(caminho);
+                    return View(ProperView("Detalhes"), candidatura);
+                }
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]

@@ -27,7 +27,11 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Detalhes(int? id)
         {
-            return View(ProperView("Detalhes"), _escolasParceiras.Find(e => e.EscolaParceiraId == id));
+            EscolaParceira escola = _escolasParceiras.Find(e => e.EscolaParceiraId == id);
+            if (escola != null)
+                return View(ProperView("Detalhes"), escola);
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Adicionar()

@@ -172,7 +172,7 @@ namespace cimobgrupo2.Controllers
             {
                 foreach (Candidatura c in _candidaturas)
                 {
-                    if (c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Pendente"))
+                    if (programasPublicar.Contains(c.ProgramaId) && c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Pendente"))
                     {
                         await _emailSender.SendEmailCandidaturaResultado(c);
                     }

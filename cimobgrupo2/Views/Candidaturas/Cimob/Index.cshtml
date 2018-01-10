@@ -109,7 +109,7 @@
                                         @Html.DisplayFor(modelItem => item.EscolasParceiras.Count)
                                     </td>
                                     <td>
-                                        12
+                                        @Html.DisplayFor(modelItem => item.Candidaturas.Count)
                                     </td>
                                     <td class="text-center">
                                         <input name="programasPublicar[]" type="checkbox" value="@item.ProgramaId">

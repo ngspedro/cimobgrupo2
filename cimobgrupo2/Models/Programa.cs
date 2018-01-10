@@ -20,6 +20,7 @@ namespace cimobgrupo2.Models
         public String Edital { get; set; }
 
         public virtual ICollection<ProgramaEscolaParceira> EscolasParceiras { get; } = new List<ProgramaEscolaParceira>();
+        public virtual ICollection<Candidatura> Candidaturas { get;  } = new List<Candidatura>();
 
         public Programa()
         {

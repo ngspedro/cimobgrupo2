@@ -33,7 +33,7 @@ namespace cimobgrupo2.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.ProgramasPublicar = _context.Programas.Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
+            ViewBag.ProgramasPublicar = _context.Programas.Include(p => p.Candidaturas).Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
                 .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
             return View(ProperView("Index"), _candidaturas);
         }
@@ -172,7 +172,11 @@ namespace cimobgrupo2.Controllers
             {
                 foreach (Candidatura c in _candidaturas)
                 {
-                    await _emailSender.SendEmailCandidaturaResultado(c);
+                    if (c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Pendente"))
+                    {
+                        await _emailSender.SendEmailCandidaturaResultado(c);
+                    }
+                   
                 }
                 SetSuccessMessage("Resultados Publicados (" + programasPublicar.Count() + " programas)");
             }

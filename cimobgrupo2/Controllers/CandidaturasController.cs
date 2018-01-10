@@ -11,6 +11,7 @@ using System.Security.Claims;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Http;
+using cimobgrupo2.Services;
 
 namespace cimobgrupo2.Controllers
 {
@@ -20,15 +21,20 @@ namespace cimobgrupo2.Controllers
 
         private List<Candidatura> _candidaturas;
 
-        public CandidaturasController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Candidaturas")
+        private readonly IEmailSender _emailSender;
+
+        public CandidaturasController(ApplicationDbContext context, IEmailSender emailSender, 
+            IFileProvider fileProvider) : base(context, fileProvider, "Candidaturas")
         {
             //vai buscar a lista de candidaturas
             _candidaturas = context.Candidaturas.Include(c => c.Curso).Include(c => c.Programa).Include(c => c.EscolaParceira).Include(c => c.User).Include(c => c.Estado).ToList();
-
+            _emailSender = emailSender;
         }
 
         public IActionResult Index()
         {
+            ViewBag.ProgramasPublicar = _context.Programas.Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
+                .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
             return View(ProperView("Index"), _candidaturas);
         }
 
@@ -156,6 +162,20 @@ namespace cimobgrupo2.Controllers
                 return RedirectToAction(nameof(Detalhes), new { id = CandidaturaId });
             }
 
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PublicarResultados(int[] programasPublicar)
+        {
+            if (programasPublicar.Count() > 0)
+            {
+                foreach (Candidatura c in _candidaturas)
+                {
+                    await _emailSender.SendEmailCandidaturaResultado(c);
+                }
+                SetSuccessMessage("Resultados Publicados (" + programasPublicar.Count() + " programas)");
+            }
             return RedirectToAction(nameof(Index));
         }
     }

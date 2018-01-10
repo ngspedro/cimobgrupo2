@@ -54,9 +54,77 @@
     </tbody>
 </table>
 
+<div class="col-md-12 col-lg-12 botoes">
+    <a type="button" data-target="#publicarResultados" data-toggle="modal" class="button pull-right" id="btnPublicar" style="margin-bottom: 20px;">Publicar Resultados</a>
+</div>
+
 <div class="modal fade" id="removerCandidatura" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="publicarResultados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form class="form-horizontal" role="form" asp-action="PublicarResultados" method="POST" id="PublicarForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Publicar Resultados</h4>
+                </div>
+                <div class="modal-body">
+                    <label>Seleccione os programas cujos resultados pretende publicar:</label>
+                    <table class="table table-striped table-bordered" id="tabela-publicarResultados">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nome
+                                </th>
+                                <th>
+                                    Duração
+                                </th>
+                                <th>
+                                    Escolas Disponíveis
+                                </th>
+                                <th>
+                                    Número de Candidatos
+                                </th>
+                                <th class="text-center">
+                                    #
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Programa item in ViewBag.ProgramasPublicar)
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-action="Detalhes" asp-controller="Programas" asp-route-id="@item.ProgramaId">@Html.DisplayFor(modelItem => item.Nome)</a>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Duracao)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EscolasParceiras.Count)
+                                    </td>
+                                    <td>
+                                        12
+                                    </td>
+                                    <td class="text-center">
+                                        <input name="programasPublicar[]" type="checkbox" value="@item.ProgramaId">
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -67,7 +135,7 @@
             "language": {
                 "url": "/lib/DataTables/pt.json"
             }
-        });
+        }); 
     });
 
     $(function () {

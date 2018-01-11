@@ -37,58 +37,114 @@ namespace cimobgrupo2.Controllers
             {
                 ViewBag.ProgramasPublicar = _context.Programas.Include(p => p.Candidaturas).Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
                 .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
-                return View(ProperView("Index"), _candidaturas);
+                return View(ProperView("Index"), _candidaturas.Where(c => c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Em Criação")));
             }
             return RedirectToAction(nameof(Criar));
         }
 
         public IActionResult Criar()
         {
+            if (!User.IsInRole("Estudante"))
+                return RedirectToAction(nameof(Index));
+            
+
             Candidatura aux = _candidaturas.SingleOrDefault(c => c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier));
-            if (aux != null)
+
+            if (aux == null)
+            {
+                _context.Add(new Candidatura()
+                {
+                    UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier),
+                    Programa = null,
+                    EscolaParceira = null,
+                    Curso = null,
+                    Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Em Criação")
+                    
+                });
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Criar));
+            }
+            else if (aux != null && aux.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Em Criação"))
             {
                 return RedirectToAction(ProperView("Detalhes"), new { id = aux.CandidaturaId });
             }
-            //vai buscar a lista de programas e asocia a uma ViewBag
-            ViewBag.Programas = _context.Programas.Select(p => new SelectListItem()
-            {
-                Value = p.ProgramaId.ToString(),
-                Text = p.Nome
-            }).ToList();
-            //vai buscar a lista de escolas e asocia a uma ViewBag
-            ViewBag.Escolas = _context.EscolasParceiras.Select(e => new SelectListItem()
-            {
-                Value = e.EscolaParceiraId.ToString(),
-                Text = e.Nome
-            }).ToList();
 
-            //vai buscar a lista de cursos e asocia a uma ViewBag
-            ViewBag.Cursos = _context.Cursos.Select(c => new SelectListItem()
-            {
-                Value = c.CursoId.ToString(),
-                Text = c.Nome
-            }).ToList();
+            Candidatura Candidatura = _candidaturas.SingleOrDefault(c => c.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            List<Programa> listaProgramas = _context.Programas.Include(p => p.EscolasParceiras).ThenInclude(p => p.EscolaParceira).ToList();
+            List<EscolaParceira> listaEscolas = _context.EscolasParceiras.Include(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
+            List<Curso> listaCursos = _context.Cursos.ToList();
+
+            if (Candidatura.ProgramaId != null)
+                listaEscolas = listaEscolas.Where(e => e.Programas.Where(p => p.ProgramaId == Candidatura.ProgramaId).Count() != 0).ToList();
+
+            if (Candidatura.EscolaParceiraId != null)
+                listaCursos = listaCursos.Where(e => e.EscolasParceiras.Where(p => p.EscolaParceiraId == Candidatura.EscolaParceiraId).Count() != 0).ToList();
+
+            ViewBag.Programas = listaProgramas;
+            ViewBag.Escolas = listaEscolas;
+            ViewBag.Cursos = listaCursos;
 
             var caminho = "candidaturas/" + this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.Documentos = _fileController.GetFiles(caminho);
 
-            return View(ProperView("Criar"));
+            return View(ProperView("Criar"), Candidatura);
         }
 
 
         [HttpPost]
-        public IActionResult Criar([Bind("ProgramaId,EscolaParceiraId,CursoId")] Candidatura Candidatura)
+        public IActionResult Submeter(int CandidaturaId)
         {
-            if (ModelState.IsValid)
+            Candidatura Candidatura = _candidaturas.SingleOrDefault(c => c.CandidaturaId == CandidaturaId);
+            if (Candidatura != null && Candidatura.Programa != null && Candidatura.EscolaParceira != null && Candidatura.Curso != null)
             {
-                Candidatura.UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
                 Candidatura.EstadoId = 1; //estado pendente
-                _context.Add(Candidatura);
                 _context.SaveChanges();
-                return RedirectToAction(ProperView("Detalhes"), new { id = Candidatura.CandidaturaId });
+                SetSuccessMessage("Candidatura Submetida. Por favor aguarde pela avaliação da mesma.");
+                return RedirectToAction(nameof(Detalhes), new { id = Candidatura.CandidaturaId });
             }
+            
             SetErrorMessage("003");
-            return View(Candidatura);
+            return RedirectToAction(nameof(Criar));
+        }
+
+        public IActionResult EscolherPrograma(int CandidaturaId, int ProgramaEscolhido)
+        {
+            Candidatura c = _candidaturas.SingleOrDefault(cand => cand.CandidaturaId == CandidaturaId);
+            if (c != null && ProgramaEscolhido != 0 && ProgramaEscolhido != c.ProgramaId)
+            {
+                c.ProgramaId = ProgramaEscolhido;
+                c.EscolaParceiraId = null;
+                c.CursoId = null;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(Criar));
+        }
+
+        public IActionResult EscolherEscola(int CandidaturaId, int EscolaEscolhida)
+        {
+            Candidatura c = _candidaturas.SingleOrDefault(cand => cand.CandidaturaId == CandidaturaId);
+            if (c != null && EscolaEscolhida != 0 && EscolaEscolhida != c.EscolaParceiraId)
+            {
+                c.EscolaParceiraId = EscolaEscolhida;
+                c.CursoId = null;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(Criar));
+        }
+
+        public IActionResult EscolherCurso(int CandidaturaId, int CursoEscolhido)
+        {
+            if (CandidaturaId != 0 && CursoEscolhido != 0)
+            {
+                Candidatura c = _candidaturas.SingleOrDefault(cand => cand.CandidaturaId == CandidaturaId);
+                c.CursoId = CursoEscolhido;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(Criar));
         }
 
         public IActionResult Detalhes(int? id)
@@ -184,7 +240,7 @@ namespace cimobgrupo2.Controllers
             {
                 foreach (Candidatura c in _candidaturas)
                 {
-                    if (programasPublicar.Contains(c.ProgramaId) && c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Pendente"))
+                    if (programasPublicar.Where(p => p == c.ProgramaId).Any() && c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Pendente"))
                     {
                         await _emailSender.SendEmailCandidaturaResultado(c);
                     }

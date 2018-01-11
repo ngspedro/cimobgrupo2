@@ -185,6 +185,7 @@ namespace cimobgrupo2.Data
                 context.Estados.Add(new Estado() { Nome = "Pendente" });
                 context.Estados.Add(new Estado() { Nome = "Aceite" });
                 context.Estados.Add(new Estado() { Nome = "Recusada" });
+                context.Estados.Add(new Estado() { Nome = "Em Criação" });
                 context.SaveChanges();
             }
 

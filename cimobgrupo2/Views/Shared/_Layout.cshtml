@@ -39,17 +39,17 @@
                     <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     @{ if (User.IsInRole("Estudante"))
                         {
-                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas</a></li>
-                            <li><a href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidatura</a></li>
+                            <li><a id="lnkProgramas" href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas</a></li>
+                            <li><a id="lnkCandidatura" href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidatura</a></li>
                         }
                         else if (User.IsInRole("CIMOB"))
                         {
-                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
-                            <li><a href="@Url.Action("Index", "Cursos")"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
-                            <li><a href="@Url.Action("Index", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidaturas</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-comment"></span> Entrevistas</a></li>
+                            <li><a id="lnkProgramas" href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
+                            <li><a id="lnkCursos" href="@Url.Action("Index", "Cursos")"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
+                            <li><a id="lnkCandidaturas" href="@Url.Action("Index", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidaturas</a></li>
+                            <li><a id="lnkEntrevistas" href="#"><span class="glyphicon glyphicon-comment"></span> Entrevistas</a></li>
                         }
                     }
 

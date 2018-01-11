@@ -34,7 +34,6 @@ namespace Sprint2Testes
             {
                 driver.Quit();
             }
-
         }
 
         [Fact]
@@ -61,6 +60,30 @@ namespace Sprint2Testes
                 driver.Quit();
             }
 
+        }
+
+        [Fact]
+        public void VisualizarDetalhesProgramaInexistente()
+        {
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
+                string url = "http://eswt4g2.azurewebsites.net/Account/Login";
+                driver.Navigate().GoToUrl(url);
+                driver.Manage().Window.Maximize();
+                driver.FindElement(By.Id("Username")).SendKeys("testecimob");
+                driver.FindElement(By.Id("Password")).SendKeys("@Abc123");
+                driver.FindElement(By.Id("btnLogin")).Click();
+                driver.Navigate().GoToUrl("http://eswt4g2.azurewebsites.net/Programas/Detalhes/12332");
+
+                Assert.NotNull(driver.FindElement(By.Id("tabela-programas")));
+                driver.Close();
+                driver.Dispose();
+            }
+            finally
+            {
+                driver.Quit();
+            }
         }
 
         [Fact]
@@ -179,6 +202,30 @@ namespace Sprint2Testes
                 driver.FindElement(By.LinkText("Detalhes")).Click();
 
                 Assert.NotNull(driver.FindElement(By.Id("table-info")));
+                driver.Close();
+                driver.Dispose();
+            }
+            finally
+            {
+                driver.Quit();
+            }
+        }
+
+        [Fact]
+        public void VisualizarDetalhesCandidaturaInexistente()
+        {
+            try
+            {
+                driver = new InternetExplorerDriver(CAMINHO);
+                string url = "http://eswt4g2.azurewebsites.net/Account/Login";
+                driver.Navigate().GoToUrl(url);
+                driver.Manage().Window.Maximize();
+                driver.FindElement(By.Id("Username")).SendKeys("testecimob");
+                driver.FindElement(By.Id("Password")).SendKeys("@Abc123");
+                driver.FindElement(By.Id("btnLogin")).Click();
+                driver.Navigate().GoToUrl("http://eswt4g2.azurewebsites.net/Candidaturas/Detalhes/12332");
+
+                Assert.NotNull(driver.FindElement(By.Id("tabela-candidaturas")));
                 driver.Close();
                 driver.Dispose();
             }

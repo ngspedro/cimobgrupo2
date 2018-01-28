@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cimobgrupo2", "cimobgrupo2\cimobgrupo2.csproj", "{3E777001-1530-4BED-B87E-49A93E83897E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint1Testes", "Sprint1Testes\Sprint1Testes.csproj", "{83C6E92E-5441-49D6-BC14-642E78159FB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint2Testes", "Sprint2Testes\Sprint2Testes.csproj", "{5C422D9E-2EC6-4D64-878A-25A436DD2296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint2Testes", "Sprint2Testes\Sprint2Testes.csproj", "{5C422D9E-2EC6-4D64-878A-25A436DD2296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf", "Wpf\Wpf.csproj", "{B7024395-7421-49CD-BC94-88596343B05F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5C422D9E-2EC6-4D64-878A-25A436DD2296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C422D9E-2EC6-4D64-878A-25A436DD2296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C422D9E-2EC6-4D64-878A-25A436DD2296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7024395-7421-49CD-BC94-88596343B05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7024395-7421-49CD-BC94-88596343B05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7024395-7421-49CD-BC94-88596343B05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7024395-7421-49CD-BC94-88596343B05F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

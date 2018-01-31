@@ -43,7 +43,7 @@
                             <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas</a></li>
                             <li><a id="lnkCandidatura" href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidatura</a></li>
                         }
-                        else if (User.IsInRole("CIMOB"))
+                        else if (User.IsInRole("CIMOB") || User.IsInRole("Admin"))
                         {
                             <li><a id="lnkProgramas" href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
                             <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>

@@ -93,11 +93,9 @@ namespace cimobgrupo2
         {
             var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-            string email = "cimobtestes@testes.com"; //email associado à conta de testes CIMOB
+           
             Task<IdentityResult> roleResult;
-            
-
-            
+   
             Task<bool> hasStudentRole = roleManager.RoleExistsAsync("Estudante");
             hasStudentRole.Wait();
 
@@ -125,6 +123,7 @@ namespace cimobgrupo2
                 roleResult.Wait();
             }
 
+            string email = "cimobtestes@testes.com"; //email associado à conta de testes CIMOB
             Task<ApplicationUser> testUser = userManager.FindByEmailAsync(email);
             testUser.Wait();
 
@@ -134,22 +133,39 @@ namespace cimobgrupo2
                 {
                     Email = email,
                     UserName = "testeCimob",
-                    PasswordHashAux = PasswordHashExtensions.Encode("@Abc123")
+                    PasswordHashAux = PasswordHashExtensions.Encode("@Abc123"),
+                    EmailConfirmed = true
                 };
 
                 Task<IdentityResult> newUser = userManager.CreateAsync(cimobTeste, "@Abc123");
                 newUser.Wait();
 
-                Task<String> code = userManager.GenerateEmailConfirmationTokenAsync(cimobTeste);
-                code.Wait();
-                Task<IdentityResult> resultActivation = userManager.ConfirmEmailAsync(cimobTeste, code.Result);
-                resultActivation.Wait();
+                Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(cimobTeste, "CIMOB");
+                newUserRole.Wait();
+            }
 
-                if (newUser.Result.Succeeded && resultActivation.Result.Succeeded)
+            email = "nunopedro@admin.com"; 
+            testUser = userManager.FindByEmailAsync(email);
+            testUser.Wait();
+
+            if (testUser.Result == null)
+            {
+                ApplicationUser adminNuno = new ApplicationUser
                 {
-                    Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(cimobTeste, "CIMOB");
-                    newUserRole.Wait();
-                }
+                    Email = email,
+                    Nome = "Nuno Miguel Gonçalves São Pedro",
+                    UserName = "NunoAdmin",
+                    Contato = "961861587",
+                    DataNascimento = "06/07/1996",
+                    PasswordHashAux = PasswordHashExtensions.Encode("@Abc123"),
+                    EmailConfirmed = true
+                };
+
+                Task<IdentityResult> newUser = userManager.CreateAsync(adminNuno, "@Abc123");
+                newUser.Wait();
+
+                Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(adminNuno, "Admin");
+                newUserRole.Wait();
             }
         }
     }

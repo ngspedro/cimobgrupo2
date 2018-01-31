@@ -12,7 +12,6 @@ namespace cimobgrupo2.Models
         public String Nome { get; set; }
         public String DataNascimento { get; set; }
         public String Contato { get; set; }
-
-        //username email password ja tem
+        public String PasswordHashAux { get; set; }
     }
 }

@@ -15,6 +15,7 @@ using cimobgrupo2.Models.ManageViewModels;
 using cimobgrupo2.Services;
 using cimobgrupo2.Data;
 using Microsoft.Extensions.FileProviders;
+using cimobgrupo2.Extensions;
 
 namespace cimobgrupo2.Controllers
 {
@@ -140,6 +141,9 @@ namespace cimobgrupo2.Controllers
                 AddErrorString("A password inserida não corresponde à password da conta!");
                 return View("Index", model);
             }
+
+            user.PasswordHashAux = PasswordHashExtensions.Encode(model.ChangePassword.NewPassword);
+            await _userManager.UpdateAsync(user);
 
             await _signInManager.SignInAsync(user, isPersistent: false);
             _logger.LogInformation("User changed their password successfully.");

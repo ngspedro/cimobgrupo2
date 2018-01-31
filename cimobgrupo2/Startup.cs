@@ -13,6 +13,7 @@ using cimobgrupo2.Models;
 using cimobgrupo2.Services;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using cimobgrupo2.Extensions;
 
 namespace cimobgrupo2
 {
@@ -96,7 +97,7 @@ namespace cimobgrupo2
             Task<IdentityResult> roleResult;
             
 
-            //Check that there is an Administrator role and create if not
+            
             Task<bool> hasStudentRole = roleManager.RoleExistsAsync("Estudante");
             hasStudentRole.Wait();
 
@@ -115,6 +116,15 @@ namespace cimobgrupo2
                 roleResult.Wait();
             }
 
+            Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
+            hasAdminRole.Wait();
+
+            if (!hasAdminRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Admin"));
+                roleResult.Wait();
+            }
+
             Task<ApplicationUser> testUser = userManager.FindByEmailAsync(email);
             testUser.Wait();
 
@@ -123,7 +133,8 @@ namespace cimobgrupo2
                 ApplicationUser cimobTeste = new ApplicationUser
                 {
                     Email = email,
-                    UserName = "testeCimob"
+                    UserName = "testeCimob",
+                    PasswordHashAux = PasswordHashExtensions.Encode("@Abc123")
                 };
 
                 Task<IdentityResult> newUser = userManager.CreateAsync(cimobTeste, "@Abc123");

@@ -15,6 +15,7 @@ using cimobgrupo2.Models.AccountViewModels;
 using cimobgrupo2.Services;
 using cimobgrupo2.Data;
 using Microsoft.Extensions.FileProviders;
+using cimobgrupo2.Extensions;
 
 namespace cimobgrupo2.Controllers
 {
@@ -106,7 +107,9 @@ namespace cimobgrupo2.Controllers
                     DataNascimento = model.DataNascimento,
                     Email = model.Email,
                     Contato = model.Contato,
-                    UserName = model.Username };
+                    UserName = model.Username,
+                    PasswordHashAux = PasswordHashExtensions.Encode(model.Password)
+                };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -248,9 +251,12 @@ namespace cimobgrupo2.Controllers
                 // Don't reveal that the user does not exist
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
+
+            user.PasswordHashAux = PasswordHashExtensions.Encode(model.Password);
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
+                await _userManager.UpdateAsync(user);
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
             else

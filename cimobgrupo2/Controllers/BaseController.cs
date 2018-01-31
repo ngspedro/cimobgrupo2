@@ -30,7 +30,7 @@ namespace cimobgrupo2.Controllers
 
         protected String ProperView(String viewName)
         {
-            if (User.IsInRole("CIMOB"))
+            if (User.IsInRole("CIMOB") || User.IsInRole("Admin"))
                 return "~/Views/" + _controllerName + "/Cimob/" + viewName + ".cshtml";
 
             return viewName;

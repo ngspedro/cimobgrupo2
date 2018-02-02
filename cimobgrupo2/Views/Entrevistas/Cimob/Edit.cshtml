@@ -1,0 +1,61 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+@{
+    ViewData["Titulo"] = "Editar a Entrevista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        @Html.Partial("_ResultMessage")
+    </div>
+    <fieldset>
+        <legend>Editar</legend>
+        <form asp-action="Edit"> 
+            <input type="hidden" asp-for="EntrevistaId" />
+            <div class="col-md-3 col-lg-3">
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label asp-for="Candidatura.User" class="control-label"></label>:
+                        <input asp-for="Candidatura.User.Nome" class="form-control" />
+                        <span asp-validation-for="Candidatura.User.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Candidatura.Programa" class="control-label"></label>:
+                        <input asp-for="Candidatura.Programa.Nome" class="form-control" />
+                        <span asp-validation-for="Candidatura.Programa.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataEntrevista" class="control-label"></label>:
+                        <input asp-for="DataEntrevista.Date" class="form-control" />
+                        <span asp-validation-for="DataEntrevista.Date" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Estado" class="control-label"></label>:
+                        <select asp-for="Estado.Nome" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.ListaEstados))"></select>
+                        <span asp-validation-for="Estado.Nome" class="text-danger"></span>
+                    </div>
+                    <!--div class="form-group">
+                        <label asp-for="CandidaturaId" class="control-label"></label>:
+                        <input asp-for="CandidaturaId" class="form-control" />
+                        <span asp-validation-for="CandidaturaId" class="text-danger"></span>
+                    </div-->
+                    
+                    <div class="clearfix botoes">
+                        <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
+                        <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </fieldset>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

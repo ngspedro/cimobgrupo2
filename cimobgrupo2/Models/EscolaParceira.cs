@@ -22,6 +22,7 @@ namespace cimobgrupo2.Models
 
         public virtual ICollection<ProgramaEscolaParceira> Programas { get; } = new List<ProgramaEscolaParceira>();
         public virtual ICollection<EscolaParceiraCurso> Cursos { get; } = new List<EscolaParceiraCurso>();
+        public virtual ICollection<Candidatura> Candidaturas { get; } = new List<Candidatura>();
 
         public EscolaParceira()
         {

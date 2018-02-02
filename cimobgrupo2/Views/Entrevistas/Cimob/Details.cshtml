@@ -1,0 +1,123 @@
+﻿@model cimobgrupo2.Models.Entrevista
+@{
+    ViewData["Titulo"] = "Detalhes da Entrevista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("_ResultMessage")
+<fieldset>
+    <legend>Mais detalhes da entrevista</legend>
+    <div class="col-md-4 col-lg-4 left-info">
+
+        <table id="table-info">
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.Candidatura.User): </strong></th>
+                <td>@Html.DisplayFor(model => model.Candidatura.User.Nome)</td>
+            </tr>
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.Candidatura.Programa): </strong></th>
+                <td>@Html.DisplayFor(model => model.Candidatura.Programa.Nome)</td>
+            </tr>
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.DataEntrevista): </strong></th>
+                <td>@Html.DisplayFor(model => model.DataEntrevista)</td>
+            </tr>
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.HoraEntrevista): </strong></th>
+                <td>@Html.DisplayFor(model => model.HoraEntrevista)</td>
+            </tr>
+
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.Estado): </strong></th>
+                @{
+                    if (Model.EstadoId == 3)
+                    {
+                        <td>
+                            <span style="color: red">@Html.DisplayFor(model => model.Estado.Nome)</span>
+                            (<a style="cursor: pointer;" data-toggle="modal" data-target="#motivoRejeicao">+info</a>)
+                        </td>
+                    }
+                    else if (Model.EstadoId == 2)
+                    {
+                        <td><span style="color: green">@Html.DisplayFor(model => model.Estado.Nome)</span></td>
+                    }
+                    else
+                    {
+                        <td><span>@Html.DisplayFor(model => model.Estado.Nome)</span></td>
+                    }
+                }
+            </tr>
+
+            <tr>
+                <th><strong>@Html.DisplayNameFor(model => model.Avaliacao): </strong></th>
+                <td>@Html.DisplayFor(model => model.Avaliacao)</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="col-md-8 col-lg-8">
+       
+        <span class="glyphicon glyphicon-comment"></span><strong> Entrevistas Marcadas:</strong>
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" id="tabela-entrevistas">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(Model => Model.DataEntrevista)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(Model => Model.HoraEntrevista)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(Model => Model.Estado)
+                            </th>
+                            <th class="no-sort"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(Model => Model.DataEntrevista)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Model => Model.HoraEntrevista)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Model => Model.Estado.Nome)
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-controller="Entrevistas" asp-route-id="@Model.EntrevistaId"> Detalhes</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(Model => Model.DataEntrevista)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Model => Model.HoraEntrevista)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Model => Model.Estado.Nome)
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="#" asp-controller="Entrevistas" asp-route-id="1">Adiar</a> |
+                                <a asp-action="#" asp-controller="Entrevistas" asp-route-id="1">Avaliar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</fieldset>
+<br/>
+
+<div class="col-md-12 col-lg-12 botoes">
+    <!--a asp-action="Edit" asp-controller="Entrevistas" asp-route-id="1">Editar</a-->
+    <button type="button" onclick="location.href='@Url.Action("Index", "Entrevistas")'" class="pull-right" id="btnVoltar">Voltar</button>
+
+
+</div>
+
+
+
+   

@@ -1,0 +1,83 @@
+﻿@using cimobgrupo2.Models
+@model IEnumerable< cimobgrupo2.Models.Entrevista>
+@{
+    ViewData["Titulo"] = "Lista de Entrevistas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("_ResultMessage")
+
+<table class="table table-striped table-bordered" id="tabela-marcarEntrevista">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidatura.User)   
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidatura.Programa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrevista)
+            </th>
+            <th>
+              @Html.DisplayNameFor(model => model.HoraEntrevista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatura.User.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatura.Programa.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrevista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraEntrevista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avaliacao)
+            </td>
+            <td>                
+                <a asp-action="Details" asp-route-id="@item.EntrevistaId">Detalhes</a>|
+                <a asp-action="Edit" asp-route-id="@item.EntrevistaId">Editar</a>|
+                <a asp-action="Delete" asp-route-id="@item.EntrevistaId">Eliminar</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="col-md-12 col-lg-12 botoes">
+    <button type="button" onclick="location.href='@Url.Action("MarcarEntrevista", "Entrevistas")'" class="pull-right" id="btnMarcarEntrevista">Marcar Entrevista</button>
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+

@@ -10,13 +10,12 @@ namespace cimobgrupo2.Models
     public class Candidatura
     {
         public int CandidaturaId { get; set; }
-
         [ForeignKey("User")]
         public string UserId { get; set; }
-        public int? ProgramaId { get; set; }
-        public int? EscolaParceiraId { get; set; }
-        public int? CursoId { get; set; }
-        public int EstadoId { get; set; } 
+        public int ProgramaId { get; set; }
+        public int EscolaParceiraId { get; set; }
+        public int CursoId { get; set; }
+        public int EstadoId { get; set; }
         public string Motivo { get; set; }
         [Display(Name = "Escola Parceira")]
         public virtual EscolaParceira EscolaParceira { get; set; }
@@ -29,6 +28,7 @@ namespace cimobgrupo2.Models
         [Display(Name = "Estado")]
         public virtual Estado Estado { get; set; }
         [Display(Name = "Entrevista")]
+        //public virtual Entrevista Entrevista { get; set; }
         public virtual ICollection<Entrevista> Entrevistas { get; set; } = new List<Entrevista>();
         public Candidatura()
         {

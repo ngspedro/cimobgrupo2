@@ -41,5 +41,10 @@ namespace cimobgrupo2.Services
                 $"<br /> <strong>Nota:</strong> Para mais informações, dirija-se à sua área pessoal, na aplicação.");
 
         }
+        public static Task SendEmailMarcacaoEntrevista(this IEmailSender emailSender, Entrevista e)
+        {
+            // por completar a cena
+            return null;
+        }
     }
 }

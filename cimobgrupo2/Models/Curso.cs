@@ -9,11 +9,10 @@ namespace cimobgrupo2.Models
     public class Curso
     {
         public int CursoId { get; set; }
-
         [Required(ErrorMessage = "Nome obrigatório.")]
         public String Nome { get; set; }
-
         public virtual ICollection<EscolaParceiraCurso> EscolasParceiras { get; } = new List<EscolaParceiraCurso>();
+        public virtual ICollection<Candidatura> Candidaturas { get; } = new List<Candidatura>();
 
         public Curso()
         {

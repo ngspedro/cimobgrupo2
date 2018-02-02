@@ -1,0 +1,54 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Deseja eliminar esta entrevista agendada?</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidatura.User)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Candidatura.User.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidatura.Programa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Candidatura.Programa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEntrevista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataEntrevista)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraEntrevista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HoraEntrevista)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Avaliacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avaliacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidatura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Candidatura.CandidaturaId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EntrevistaId" />
+        <a asp-action="Index">Voltar</a>|
+        <input type="submit" value="Delete" class="btn btn-default" />
+    </form>
+</div>

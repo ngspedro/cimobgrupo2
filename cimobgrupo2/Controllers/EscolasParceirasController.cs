@@ -75,7 +75,7 @@ namespace cimobgrupo2.Controllers
                 SetSuccessMessage("Escola Parceira editada.");
                 return RedirectToAction(nameof(Index));
             }
-     
+
             SetErrorMessage("003");
             return View(EscolaParceira);
         }
@@ -106,7 +106,7 @@ namespace cimobgrupo2.Controllers
                 _context.SaveChanges();
                 SetSuccessMessage(cursosRemover.Count() + " associações removidas.");
             }
-            return RedirectToAction(nameof(Editar),  new { Id = EscolaParceiraId });
+            return RedirectToAction(nameof(Editar), new { Id = EscolaParceiraId });
         }
 
 
@@ -126,7 +126,7 @@ namespace cimobgrupo2.Controllers
                 _context.SaveChanges();
                 SetSuccessMessage("Cursos associados.");
             }
-            
+
             return RedirectToAction(nameof(Editar), new { Id = EscolaParceiraId });
         }
 
@@ -136,7 +136,7 @@ namespace cimobgrupo2.Controllers
             CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
             foreach (CultureInfo CInfo in CInfoList)
             {
-                RegionInfo R = new RegionInfo(CInfo.LCID);
+                RegionInfo R = new RegionInfo(CInfo.Name);
                 if (!(CountryList.Contains(R.DisplayName)))
                 {
                     CountryList.Add(R.DisplayName);
@@ -146,5 +146,6 @@ namespace cimobgrupo2.Controllers
             CountryList.Sort();
             ViewBag.CountryList = CountryList;
         }
+        
     }
 }

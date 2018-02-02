@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using cimobgrupo2.Models
-
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
@@ -33,23 +32,22 @@
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-
-
                 <ul class="nav navbar-nav custom">
                     <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     @{ if (User.IsInRole("Estudante"))
                         {
-                            <li><a id="lnkProgramas" href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas</a></li>
-                            <li><a id="lnkCandidatura" href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidatura</a></li>
+                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas</a></li>
+                            <li><a href="@Url.Action("Criar", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidatura</a></li>
+                            <li><a href="@Url.Action("Index", "Entrevistas")"><span class="glyphicon glyphicon-paperclip"></span> Entrevista</a></li>
                         }
                         else if (User.IsInRole("CIMOB"))
                         {
-                            <li><a id="lnkProgramas" href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
-                            <li><a id="lnkEscolas" href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
-                            <li><a id="lnkCursos" href="@Url.Action("Index", "Cursos")"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
-                            <li><a id="lnkCandidaturas" href="@Url.Action("Index", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidaturas</a></li>
-                            <li><a id="lnkEntrevistas" href="#"><span class="glyphicon glyphicon-comment"></span> Entrevistas</a></li>
+                            <li><a href="@Url.Action("Index", "Programas")"><span class="glyphicon glyphicon-plane"></span> Programas</a></li>
+                            <li><a href="@Url.Action("Index", "EscolasParceiras")"><span class="glyphicon glyphicon-education"></span> Escolas Parceiras</a></li>
+                            <li><a href="@Url.Action("Index", "Cursos")"><span class="glyphicon glyphicon-book"></span> Cursos</a></li>
+                            <li><a href="@Url.Action("Index", "Candidaturas")"><span class="glyphicon glyphicon-paperclip"></span> Candidaturas</a></li>
+                            <li><a href="@Url.Action("Index", "Entrevistas")"><span class="glyphicon glyphicon-comment"></span> Entrevistas</a></li>
                         }
                     }
 
@@ -63,13 +61,23 @@
             </div>
         </nav>
     </form>
+    
     <div class="container-fluid" id="conteudo">
         <img src="~/images/help2.png" class="icon help" data-toggle="modal" data-target="#ModalAjuda" />
         <h1>@ViewData["Titulo"]</h1>
         @RenderBody()
     </div>
-
+   
     @Html.Partial("_HelpModal")
+    <div class="container" style="margin-top: 30px;">
+        <hr />
+        <footer style="color:currentColor" >
+            <p></p> 
+            @{DateTime data = new DateTime(2017,12,31,00,00,00);
+            <p>&copy;@data.Year/@DateTime.Now.Year- Cimob :: Programa de Mobilidade</p>
+            }
+        </footer>
+    </div>
 
     <script type="text/javascript" src="~/js/site.js"></script>
     @RenderSection("Scripts", required: false)

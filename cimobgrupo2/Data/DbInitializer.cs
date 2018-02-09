@@ -189,6 +189,19 @@ namespace cimobgrupo2.Data
                 context.SaveChanges();
             }
 
+            if(!context.Entrevistas.Any())
+            {
+                context.Entrevistas.Add(new Entrevista {
+                     DataEntrevista = DateTime.Now,
+                     Hora = "14:30",
+                     Local = "Escola",
+                     Avaliacao = Avalicaco.Pendente,
+                     UserId = "f1f6dd6a-a4e1-4aff-b8de-a2c349f31a03"
+                });
+
+                context.SaveChanges();
+            }
+
             }
     }
 }

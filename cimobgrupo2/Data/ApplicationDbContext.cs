@@ -34,11 +34,6 @@ namespace cimobgrupo2.Data
 
             builder.Entity<EscolaParceiraCurso>()
                 .HasKey(t => new { t.EscolaParceiraId, t.CursoId });
-
-            builder.Entity<Candidatura>()
-                .HasMany<Entrevista>(c => c.Entrevistas)
-                .WithOne(e => e.Candidatura)
-                .HasForeignKey(e => e.CandidaturaId);
                 
 
         }

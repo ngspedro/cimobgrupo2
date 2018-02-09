@@ -1,0 +1,70 @@
+﻿@model IEnumerable<cimobgrupo2.Models.Entrevista>
+
+@{
+    ViewData["Titulo"] = "Entrevistas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_ResultMessage")
+
+<table class="table table-striped" id="tabela-entrevistas">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrevista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataEntrevista)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Local)
+                </td>
+                <td>
+                    <a asp-action="Detalhes" asp-route-id="@item.EntrevistaId">Detalhes</a> |
+                    <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="editarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-entrevistas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        });
+    });
+</script>

@@ -1,0 +1,43 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+<form class="form-horizontal" role="form" asp-action="EditarEntrevista" method="POST" id="editarEntrevistaForm">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar Entrevista</h4>
+    </div>
+    <div class="modal-body">
+        <input type="hidden" asp-for="EntrevistaId" />
+        <div class="form-group animated fadeIn">
+            <div class="col-md-12 col-lg-12">
+                <label asp-for="Local"></label>
+                <input type="text" name="Local" class="form-control" id="txtLocal" asp-for="Local">
+                <span asp-validation-for="Local" class="text-danger"></span>
+            </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <label asp-for="Hora"></label>
+                    <input type="time" name="Hora" class="form-control" id="txtHoraEntrevista" asp-for="Hora">
+                    <span asp-validation-for="Hora" class="text-danger"></span>
+                </div>
+
+            <div class="col-md-12 col-lg-12">
+                <label asp-for="DataEntrevista"></label>
+                    <input type="text" asp-for="DataEntrevista" placeholder="Data de Entrevista" class="form-control" id="DataEntrevistaPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="Data Entrevista">
+                    <span asp-validation-for="DataEntrevista" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        $('#DataEntrevistaPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+            .change(dateChanged)
+            .on('changeDate', dateChanged);;
+    });  
+</script>

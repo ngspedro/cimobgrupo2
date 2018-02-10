@@ -17,8 +17,8 @@ namespace cimobgrupo2.Services
         /// <summary>Construtor sem parametros</summary>
         public AuthMessageSenderOptions()
         {
-            SendGridUser = "ngspedro";
-            SendGridKey = "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";
+            SendGridUser = "danielcosteira";
+            SendGridKey = "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";
         }
     }
 }

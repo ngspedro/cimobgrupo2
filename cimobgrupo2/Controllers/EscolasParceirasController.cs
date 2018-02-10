@@ -30,6 +30,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Retorna a view</returns>
         public IActionResult Index()
         {
+            SetHelpModal("Index");
             return View(ProperView("Index"), _escolasParceiras);
         }
 
@@ -40,7 +41,11 @@ namespace cimobgrupo2.Controllers
         {
             EscolaParceira escola = _escolasParceiras.Find(e => e.EscolaParceiraId == id);
             if (escola != null)
+            {
+                SetHelpModal("Detalhes");
                 return View(ProperView("Detalhes"), escola);
+            }
+                
 
             return RedirectToAction(nameof(Index));
         }
@@ -49,6 +54,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>View com o formulário de criação</returns>
         public IActionResult Adicionar()
         {
+            SetHelpModal("Adicionar");
             FillCountryList();
             return View(ProperView("Adicionar"));
         }
@@ -67,6 +73,7 @@ namespace cimobgrupo2.Controllers
                 return RedirectToAction(nameof(Index));
             }
             SetErrorMessage("003");
+            SetHelpModal("Adicionar");
             return View(EscolaParceira);
         }
 
@@ -75,6 +82,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>View com o formulário de edição</returns>
         public IActionResult Editar(int? Id)
         {
+            SetHelpModal("Editar");
             EscolaParceira EscolaParceira = _context.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == Id);
             FillCountryList();
             ViewBag.CursosAssociar = _context.Cursos.Where(c => c.EscolasParceiras.Where(e => e.EscolaParceira == EscolaParceira).Count() == 0);
@@ -99,6 +107,7 @@ namespace cimobgrupo2.Controllers
             }
      
             SetErrorMessage("003");
+            SetHelpModal("Editar");
             return View(EscolaParceira);
         }
 
@@ -181,6 +190,14 @@ namespace cimobgrupo2.Controllers
 
             CountryList.Sort();
             ViewBag.CountryList = CountryList;
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com escolas</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Nome").Texto;
+            ViewData["Pais"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Pais").Texto;
+            ViewData["Localidade"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Localidade").Texto;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Retorna a view</returns>
         public IActionResult Index()
         {
+            SetHelpModal("Index");
             return View(ProperView("Index"), _context.Cursos.ToList());
         }
 
@@ -112,6 +113,12 @@ namespace cimobgrupo2.Controllers
             _context.SaveChanges();
             SetSuccessMessage("Curso removido.");
             return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com cursos</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Nome").Texto;
         }
     }
 }

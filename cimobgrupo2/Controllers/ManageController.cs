@@ -56,7 +56,7 @@ namespace cimobgrupo2.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            SetHelpModal();
+            SetHelpModal("Index");
             SetHelpToolTips();
 
             var user = await _userManager.GetUserAsync(User);
@@ -82,7 +82,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangeDetails(IndexViewModel model)
         {
-            SetHelpModal();
+            SetHelpModal("Index");
             SetHelpToolTips();
 
             if (!ModelState.IsValid)
@@ -120,7 +120,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(IndexViewModel model)
         {
-            SetHelpModal();
+            SetHelpModal("Index");
             SetHelpToolTips();
 
             if (!ModelState.IsValid)
@@ -167,7 +167,7 @@ namespace cimobgrupo2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteAccount(IndexViewModel model)
         {
-            SetHelpModal();
+            SetHelpModal("Index");
             SetHelpToolTips();
 
 
@@ -220,12 +220,6 @@ namespace cimobgrupo2.Controllers
 
             ViewData["PasswordAtual"] = _ajudas.Single(ai => ai.Action == "DeleteAccount" && ai.Elemento == "PasswordAtual").Texto;
         }
-
-        private void SetHelpModal()
-        {
-            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == "Index" && ai.Elemento == "ModalAjuda").Texto;
-        }
-
         #endregion
 
         #region Helpers

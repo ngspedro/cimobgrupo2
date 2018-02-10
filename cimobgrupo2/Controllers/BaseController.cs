@@ -67,5 +67,12 @@ namespace cimobgrupo2.Controllers
         {
             TempData["Success"] = Message;
         }
+
+        /// <summary>Método que coloca a informação no modal de ajuda</summary>
+        /// <param name="Action">Acção atual (para se saber que ajuda colocar)</param>
+        protected void SetHelpModal(String Action)
+        {
+            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == Action && ai.Elemento == "ModalAjuda").Texto;
+        }
     }
 }

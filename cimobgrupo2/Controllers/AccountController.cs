@@ -361,13 +361,6 @@ namespace cimobgrupo2.Controllers
             ViewData["Password"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "Password").Texto;
             ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "ConfirmarPassword").Texto;
         }
-
-        /// <summary>Método que coloca a informação no modal de ajuda</summary>
-        /// <param name="Action">Acção atual (para se saber que ajuda colocar)</param>
-        private void SetHelpModal(String Action)
-        {
-            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == Action && ai.Elemento == "ModalAjuda").Texto;
-        }
         #endregion
 
         #region Helpers

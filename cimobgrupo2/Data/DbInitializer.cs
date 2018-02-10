@@ -90,7 +90,58 @@ namespace cimobgrupo2.Data
 
                 context.Ajudas.Add(new Ajuda("Manage", "DeleteAccount", "PasswordAtual", "Por motivos de segurança é necessário que preencha este campo com a sua password atual para poder eliminar a sua conta."));
 
-                //modals
+                context.Ajudas.Add(new Ajuda("Programas", "*", "Nome",
+                   "Preencha com o nome do programa."));
+
+                context.Ajudas.Add(new Ajuda("Programas", "*", "Duracao",
+                   "Preencha com a duração do programa"));
+
+                context.Ajudas.Add(new Ajuda("Programas", "*", "Edital",
+                   "Preencha com o edital do programa."));
+
+                context.Ajudas.Add(new Ajuda("Programas", "*", "Descricao",
+                   "Preencha com a descrição do programa."));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "*", "Nome",
+                  "Preencha com o nome da escola."));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "*", "Pais",
+                  "Seleccione o país da escola."));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "*", "Localidade",
+                  "Preencha com a localidade da escola."));
+
+                context.Ajudas.Add(new Ajuda("Cursos", "*", "Nome",
+                 "Preencha com o nome do curso."));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "*", "Programa",
+                 "Seleccione o programa que pretende."));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "*", "EscolaParceira",
+                 "Seleccione a escola parceira que pretende."));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "*", "Curso",
+                 "Seleccione o curso que pretende."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Candidato",
+                 "Seleccione o candidato que pretende."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Data",
+                 "Preencha com a data de realização da entrevista."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Hora",
+                 "Preencha com a hora para a entrevista ser realizada."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Local",
+                  "Preencha com o local da entrevista."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Pontuacao",
+                 "Preencha com a pontuação a atribuir à entrevista."));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Comentarios",
+                 "Preencha com o comentários adicionais."));
+
+                //MODALS
                 context.Ajudas.Add(new Ajuda("Manage", "Index", "ModalAjuda", 
                     "<p>Esta página permite-lhe alterar os dados da sua conta.</p>" +
                     "<p>Uma das secções permite-lhe alterar apenas os detalhes da sua conta (nome, contato, etc.),  " +
@@ -116,6 +167,82 @@ namespace cimobgrupo2.Data
                     "<p>Esta página permite-lhe recuperar a password de acesso à sua conta.</p>" +
                     "<p>Para tal basta preencher o formulário com o email associado à sua conta, de seguida será-lhe enviado um link para re-definir a mesma.</p>"
                     ));
+
+                context.Ajudas.Add(new Ajuda("Programas", "Index", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar todos os programas disponíveis.</p>" +
+                    "<p>Note que a última coluna da tabela possui diversas operações que pode realizar com os programas, dependendo do seu tipo de conta.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Programas", "Adicionar", "ModalAjuda",
+                    "<p>Esta página permite-lhe criar um novo programa de mobilidade.</p>" +
+                    "<p>Preencha todos os campos do formulário corretamente. Carregue também o edital que diz respeito ao programa que está a adicionar.</p>" +
+                    "<p>Qualquer dúvida que tenha sobre o preenchimento de qualquer um deles, passe o rato por cima e consulte as orientações detalhadamente.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Programas", "Detalhes", "ModalAjuda",
+                   "<p>Esta página permite-lhe visualizar os detalhes de um programa.</p>" +
+                   "<p>Esta possui duas seccções. A do lado esquerdo mostra a informação básica do programa (nome, duração, etc.) e a do lado direito mostra a lista de escolas disponíveis para tal programa.</p>"
+                   ));
+
+                context.Ajudas.Add(new Ajuda("Programas", "Editar", "ModalAjuda",
+                   "<p>Esta página permite-lhe editar um programa.</p>" +
+                   "<p>Esta possui duas seccções. A do lado esquerdo permite editar a informação básica do programa (nome, duração, etc.) e a do lado direito permite associar/desassociar escolas parceiras e documentos.</p>"
+                   ));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "Index", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar todas as escolas parceiras disponíveis.</p>" +
+                    "<p>Note que a última coluna da tabela possui diversas operações que pode realizar com as escolas, dependendo do seu tipo de conta.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "Detalhes", "ModalAjuda",
+                   "<p>Esta página permite-lhe visualizar os detalhes de uma escola parceira.</p>" +
+                   "<p>Esta possui duas seccções. A do lado esquerdo mostra a informação básica da escola (nome, país, etc.) e a do lado direito mostra a lista de cursos que esta disponibiliza.</p>"
+                   ));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "Editar", "ModalAjuda",
+                   "<p>Esta página permite-lhe editar uma escola parceira.</p>" +
+                   "<p>Esta possui duas seccções. A do lado esquerdo permite editar a informação básica do programa (nome, país, etc.) e a do lado direito permite associar/desassociar cursos.</p>"
+                   ));
+
+                context.Ajudas.Add(new Ajuda("EscolasParceiras", "Adicionar", "ModalAjuda",
+                    "<p>Esta página permite-lhe criar uma nova escola parceira.</p>" +
+                    "<p>Preencha todos os campos do formulário corretamente.</p>" +
+                    "<p>Qualquer dúvida que tenha sobre o preenchimento de qualquer um deles, passe o rato por cima e consulte as orientações detalhadamente.</p>"
+                    ));
+
+
+                context.Ajudas.Add(new Ajuda("Cursos", "Index", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar todos os cursos disponíveis.</p>" +
+                    "<p>Note que a última coluna da tabela possui diversas operações que pode realizar com os cursos, dependendo do seu tipo de conta.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "Index", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar todas as candidaturas feitas pelos estudantes.</p>" +
+                    "<strong><p>Fornece ainda acesso a diversas outras funcionalidades, por exemplo:</p></strong>  " +
+                    "<ul><li>Publicar Resultados;</li>" +
+                    "<li>Detalhes de Candidatura;</li>" +
+                    "<li>...</li></ul>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "Detalhes", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar os detalhes de uma candidatura.</p>" +
+                    "<p>Esta possui duas seccções. A do lado esquerdo permite visualizar a informação básica da candidatura (programa, escola, etc.) e a do lado direito permite visualizar as entrevistas marcadas.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Candidaturas", "Criar", "ModalAjuda",
+                    "<p>Esta página permite-lhe fazer uma nova candidatura.</p>" +
+                    "<p>Esta possui duas seccções. A do lado esquerdo permite lhe seleccionar o programa, escola e curso que pretende e a do lado direito permite-lhe carregar os documentos que precisa de associar à sua candidatura.</p>" +
+                    "<p>Qualquer dúvida que tenha sobre o preenchimento de qualquer um dos campos, passe o rato por cima e consulte as orientações detalhadamente.</p>"
+                    ));
+
+                context.Ajudas.Add(new Ajuda("Entrevistas", "Index", "ModalAjuda",
+                    "<p>Esta página permite-lhe visualizar todas as entrevistas marcadas.</p>" +
+                    "<strong><p>Fornece ainda acesso a diversas outras funcionalidades, por exemplo:</p></strong>  " +
+                    "<ul><li>Avaliar Entrevistas;</li>" +
+                    "<li>Desmarcar Entrevistas;</li>" +
+                    "<li>...</li></ul>"
+                    ));
+
                 context.SaveChanges();
             }
 

@@ -33,7 +33,7 @@ namespace cimobgrupo2.Controllers
         {
             List<Candidatura> listaCandidaturas = _context.Candidaturas.Include(c => c.User).ToList();
             ViewBag.ListOfUsers = listaCandidaturas;
-
+            SetHelpModal("Index");
             return View(ProperView("Index"), _context.Entrevistas.ToList());
         }
 
@@ -159,6 +159,17 @@ namespace cimobgrupo2.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com entrevistas</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Candidato"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Candidato").Texto;
+            ViewData["Data"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Data").Texto;
+            ViewData["Hora"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Hora").Texto;
+            ViewData["Local"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Local").Texto;
+            ViewData["Pontuacao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Pontuacao").Texto;
+            ViewData["Comentarios"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Comentarios").Texto;
         }
     }
 }

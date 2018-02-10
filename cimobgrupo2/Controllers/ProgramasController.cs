@@ -37,6 +37,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Retorna a view</returns>
         public IActionResult Index()
         {
+            SetHelpModal("Index");
             return View(ProperView("Index"), _programas);
         }
 
@@ -48,6 +49,7 @@ namespace cimobgrupo2.Controllers
             Programa programa = _programas.Find(p => p.ProgramaId == id);
             if (programa != null)
             {
+                SetHelpModal("Detalhes");
                 var caminho = "programas/" + id;
                 ViewBag.Edital = _fileController.GetFile(caminho, programa.Edital);
                 ViewBag.Documentos = _fileController.GetFiles(caminho, programa.Edital);
@@ -60,6 +62,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>View com o formulário de criação</returns>
         public IActionResult Adicionar()
         {
+            SetHelpModal("Adicionar");
             return View(ProperView("Adicionar"));
         }
 
@@ -88,6 +91,7 @@ namespace cimobgrupo2.Controllers
                 return RedirectToAction(nameof(Index));
             }
             SetErrorMessage("003");
+            SetHelpModal("Ãdicionar");
             return View(Programa);
         }
 
@@ -102,6 +106,7 @@ namespace cimobgrupo2.Controllers
             var caminho = "programas/" + Id;
             ViewBag.Edital = _fileController.GetFile(caminho, Programa.Edital);
             ViewBag.Documentos = _fileController.GetFiles(caminho, Programa.Edital);
+            SetHelpModal("Editar");
             return View(ProperView("Editar"), Programa);
         }
 
@@ -134,6 +139,7 @@ namespace cimobgrupo2.Controllers
             }
 
             SetErrorMessage("003");
+            SetHelpModal("Editar");
             return View(Programa);
         }
 
@@ -274,6 +280,15 @@ namespace cimobgrupo2.Controllers
                
             }
             return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com programas</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Nome").Texto;
+            ViewData["Duracao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Duracao").Texto;
+            ViewData["Edital"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Edital").Texto;
+            ViewData["Descricao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Descricao").Texto;
         }
     }
 }

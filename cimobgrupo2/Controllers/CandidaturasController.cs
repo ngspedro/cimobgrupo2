@@ -48,6 +48,7 @@ namespace cimobgrupo2.Controllers
             {
                 ViewBag.ProgramasPublicar = _context.Programas.Include(p => p.Candidaturas).Include(e => e.EscolasParceiras).ThenInclude(e => e.EscolaParceira)
                 .ThenInclude(e => e.Cursos).ThenInclude(e => e.Curso).ToList();
+                SetHelpModal("Index");
                 return View(ProperView("Index"), _candidaturas.Where(c => c.Estado != _context.Estados.SingleOrDefault(e => e.Nome == "Em Criação")));
             }
             return RedirectToAction(nameof(Criar));
@@ -101,6 +102,7 @@ namespace cimobgrupo2.Controllers
             var caminho = "candidaturas/" + this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.Documentos = _fileController.GetFiles(caminho);
 
+            SetHelpModal("Criar");
             return View(ProperView("Criar"), Candidatura);
         }
 
@@ -186,6 +188,7 @@ namespace cimobgrupo2.Controllers
                 {
                     var caminho = "candidaturas/" + candidatura.UserId;
                     ViewBag.Documentos = _fileController.GetFiles(caminho);
+                    SetHelpModal("Detalhes");
                     return View(ProperView("Detalhes"), candidatura);
                 }
             }
@@ -416,6 +419,14 @@ namespace cimobgrupo2.Controllers
                 SetErrorMessage("003");
             }
             return RedirectToAction(nameof(Detalhes), new { id = Entrevista.CandidaturaId });
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com candidaturas</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Programa"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Programa").Texto;
+            ViewData["EscolaParceira"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "EscolaParceira").Texto;
+            ViewData["Curso"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Curso").Texto;
         }
     }
 }

@@ -7,9 +7,8 @@ using Xunit;
 
 namespace Sprint3Testes
 {
-    public class Escola
+    class Curso
     {
-
         private static String CAMINHO = @"C:\Users\Costeira\Documents\CIMOBgrupo2\eswt4g2\Sprint3Testes\bin\Debug\netcoreapp2.0";
         private FirefoxDriver driver;
 
@@ -22,17 +21,17 @@ namespace Sprint3Testes
             driver.FindElement(By.Id("Username")).SendKeys("testecimob");
             driver.FindElement(By.Id("Password")).SendKeys("@Abc123");
             driver.FindElement(By.Id("btnLogin")).Click();
-            driver.FindElement(By.Id("lnkEscolas")).Click(); 
+            driver.FindElement(By.Id("lnkCursos")).Click();
         }
 
         [Fact]
-        public void VisualizarEscola()
+        public void VisualizarCursos()
         {
             try
             {
 
                 CommonCode();
-                Assert.NotNull(driver.FindElement(By.Id("tabela-escolas")));
+                Assert.NotNull(driver.FindElement(By.Id("tabela-cursos")));
                 driver.Close();
                 driver.Dispose();
             }
@@ -44,15 +43,13 @@ namespace Sprint3Testes
         }
 
         [Fact]
-        public void NovaEscola()
+        public void NovoCurso()
         {
             try
             {
                 CommonCode();
                 driver.FindElement(By.Id("btnCriar")).Click();
-                driver.FindElement(By.Id("Nome")).SendKeys("Engenharia de Instrumentação");
-                driver.FindElement(By.Id("Pais")).SendKeys("Portugal");
-                driver.FindElement(By.Id("Localidade")).SendKeys("Setúbal");
+                driver.FindElement(By.Id("txtNome")).SendKeys("Engenharia de Instrumentação");
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
                 driver.Close();
@@ -74,9 +71,6 @@ namespace Sprint3Testes
                 driver.FindElement(By.Id("Editar")).Click();
                 driver.FindElement(By.Id("Nome")).Clear();
                 driver.FindElement(By.Id("Nome")).SendKeys("Teste");
-                driver.FindElement(By.Id("Pais")).SendKeys("Poland");
-                driver.FindElement(By.Id("Localidade")).Clear();
-                driver.FindElement(By.Id("Localidade")).SendKeys("sosnowiec");
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
                 driver.Close();

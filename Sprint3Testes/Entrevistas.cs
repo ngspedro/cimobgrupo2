@@ -91,6 +91,27 @@ namespace Sprint3Testes
             try
             {
                 CommonCode();
+                driver.FindElement(By.Id("AvaliarModal")).Click();
+                driver.FindElement(By.Id("Pontuacao")).SendKeys("5");
+                driver.FindElement(By.Name("Comentarios")).SendKeys("Isto é um teste!");
+                driver.FindElement(By.Id("btnConfirmar")).Click();
+                Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
+                driver.Close();
+                driver.Dispose();
+            }
+            finally
+            {
+                driver.Quit();
+            }
+
+        }
+
+        [Fact]
+        public void DesmarcarEntrevista()
+        {
+            try
+            {
+                CommonCode();
                 driver.FindElement(By.Id("DesmarcarModal")).Click();
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));

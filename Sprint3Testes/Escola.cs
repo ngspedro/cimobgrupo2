@@ -72,8 +72,10 @@ namespace Sprint3Testes
             {
                 CommonCode();
                 driver.FindElement(By.Id("Editar")).Click();
+                driver.FindElement(By.Id("Nome")).Clear();
                 driver.FindElement(By.Id("Nome")).SendKeys("Teste");
                 driver.FindElement(By.Id("Pais")).SendKeys("Poland");
+                driver.FindElement(By.Id("Localidade")).Clear();
                 driver.FindElement(By.Id("Localidade")).SendKeys("sosnowiec");
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
@@ -93,9 +95,7 @@ namespace Sprint3Testes
             try
             {
                 CommonCode();
-                driver.FindElement(By.Id("AvaliarModal")).Click();
-                driver.FindElement(By.Id("Pontuacao")).SendKeys("5");
-                driver.FindElement(By.Name("Comentarios")).SendKeys("Isto é um teste!");
+                driver.FindElement(By.Id("Remover")).Click();
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
                 driver.Close();

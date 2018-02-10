@@ -43,7 +43,7 @@
                 <td class="text-center">
                     <a asp-action="Detalhes" asp-route-id="@item.EscolaParceiraId">Detalhes</a> |
                     <a asp-action="Editar" id="Editar" asp-route-id="@item.EscolaParceiraId">Editar</a> |
-                    <a asp-action="RemoverModal" data-target="#removerEscola" data-toggle="modal" asp-route-id="@item.EscolaParceiraId">Eliminar</a>
+                    <a asp-action="RemoverModal" id="Remover" data-target="#removerEscola" data-toggle="modal" asp-route-id="@item.EscolaParceiraId">Eliminar</a>
                 </td>
             </tr>
         }

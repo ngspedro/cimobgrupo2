@@ -35,7 +35,7 @@ namespace cimobgrupo2.Models
         [Required(ErrorMessage = "Local obrigatório.")]
         public string Local { get; set; }
 
-        /// <summary>Propriedade correspondente ao estado da entrevista/summary>
+        /// <summary>Propriedade correspondente ao estado da entrevista</summary>
         public EstadoEntrevista Estado { get; set; }
 
         /// <summary>Propriedade correspondente à pontuação da entrevista, depois de realizada</summary>

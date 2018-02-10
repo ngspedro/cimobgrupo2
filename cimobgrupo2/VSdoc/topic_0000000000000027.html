@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>CandidaturasController.MarcarEntrevista Method</title>
+	<title>_emailSender Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">CandidaturasController.MarcarEntrevista Method</h1>
+  	<h1 class="title">_emailSender Field</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,6 +74,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
+        Atributo para o Email Sender
 
 
         <p /><strong>Namespace:</strong>
@@ -136,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function MarcarEntrevista( _&nbsp;<br />   ByVal <i>CandidaturaId</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>, _&nbsp;<br />   &lt;Bind(&quot;Data&quot;, &quot;Hora&quot;, &quot;Local&quot;)&gt; _&nbsp;<br />   ByVal <i>Entrevista</i> As <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">Entrevista</a> _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Private ReadOnly _emailSender As <a target="_top" href="topic_000000000000013D.html" onclick="this.target='';return true;">IEmailSender</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -175,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a> MarcarEntrevista(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>CandidaturaId</i>,&nbsp;<br />   [Bind(&quot;Data&quot;, &quot;Hora&quot;, &quot;Local&quot;)]&nbsp;<br />   <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">Entrevista</a> <i>Entrevista</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private readonly <a target="_top" href="topic_000000000000013D.html" onclick="this.target='';return true;">IEmailSender</a> _emailSender</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -215,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>^ MarcarEntrevista(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>CandidaturaId</i>,&nbsp;<br />   [Bind(&quot;Data&quot;, &quot;Hora&quot;, &quot;Local&quot;)]&nbsp;<br />   <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">Entrevista</a>^ <i>Entrevista</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">private: &nbsp;<br /><a target="_top" href="topic_000000000000013D.html" onclick="this.target='';return true;">IEmailSender</a>^ _emailSender;</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -254,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">public function MarcarEntrevista(&nbsp;<br />    <i>CandidaturaId</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>,&nbsp;<br />   Bind(&quot;Data&quot;, &quot;Hora&quot;, &quot;Local&quot;)&nbsp;<br />    <i>Entrevista</i> : <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">Entrevista</a>&nbsp;<br />) : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>;</pre>			
+					<pre xml:space="preserve" class="brush: js">private readonly _emailSender : <a target="_top" href="topic_000000000000013D.html" onclick="this.target='';return true;">IEmailSender</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -265,39 +266,10 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="CandidaturaId">
-	<dt>
-		<span class="parameter">
-			CandidaturaId
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
-		<p>
-			 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Entrevista">
-	<dt>
-		<span class="parameter">
-			Entrevista
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="topic_00000000000000E0.html" onclick="this.target='';return true;">Entrevista</a> 
-		<p>
-			 
-		</p>
-	</dd>
-</dl>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a> 
+		Field Value</h4>
+	Type: <a target="_top" href="topic_000000000000013D.html" onclick="this.target='';return true;">IEmailSender</a> 
 	
 
 
@@ -386,7 +358,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000019.html">CandidaturasController Class</a><br />
+			<a href="topic_0000000000000024.html">CandidaturasController Class</a><br />
 
 
 
@@ -413,4 +385,3 @@ function replaceTitleAndUrl(win, title, url) {
 		</script>	
   </body>
 </html>
-

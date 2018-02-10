@@ -223,7 +223,7 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction(nameof(Editar), new { Id = ProgramaId });
         }
 
-        /// <summary>Action responsável por associar escolas a um determinado programa/summary>
+        /// <summary>Action responsável por associar escolas a um determinado programa</summary>
         /// <param name="ProgramaId">Id do programa</param>
         /// <param name="escolasAssociar">Lista com ids das escolas a associar</param>
         /// <returns>Redireciona para a action de editar de determinado programa</returns>

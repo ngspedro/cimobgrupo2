@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>ApplicationDbContext Class</title>
+	<title>_logger Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">ApplicationDbContext Class</h1>
+  	<h1 class="title">_logger Field</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,11 +74,11 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Classe para representar o dbcontext
+        Atributo para o Logger
 
 
         <p /><strong>Namespace:</strong>
-<a href="topic_000000000000006F.html">cimobgrupo2.Data</a>
+<a href="topic_0000000000000000.html">cimobgrupo2.Controllers</a>
 
 
 
@@ -137,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Class ApplicationDbContext&nbsp;<br />    Inherits <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext`1.aspx">IdentityDbContext</a>(Of <a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">ApplicationUser</a>)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Private ReadOnly _logger As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.ilogger.aspx">ILogger</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public class ApplicationDbContext : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext`1.aspx">IdentityDbContext</a>&lt;<a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">ApplicationUser</a>&gt;</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private readonly <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.ilogger.aspx">ILogger</a> _logger</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -216,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public ref class ApplicationDbContext : public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft::aspnetcore::identity::entityframeworkcore::identitydbcontext`1.aspx">IdentityDbContext</a>&lt;<a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">ApplicationUser</a>^&gt;^</pre>			
+					<pre xml:space="preserve" class="brush: cpp">private: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.ilogger.aspx">ILogger</a>^ _logger;</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -255,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
+					<pre xml:space="preserve" class="brush: js">private readonly _logger : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.ilogger.aspx">ILogger</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -267,6 +267,11 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 
+	<h4 class="subHeading">
+		Field Value</h4>
+	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.extensions.logging.ilogger.aspx">ILogger</a> 
+	
+
 
 
 
@@ -285,382 +290,8 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Constructors</a></span>
-		<div><hr /></div>
-	</div>
 
-	<div id="ConstructorsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
 
-
-	
-			<tr class="
-	
-	
-	">
-	  <td>
-    <img alt="Public constructor" title="Public constructor" src="msdn2017/pubmethod.png"></img>
-
-	
-	    
-	  </td>
-	  <td>
-	    <a href="topic_0000000000000079.html">ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt;)</a>
-
-	  </td>
-	  <td>
-	
-	Construtor com parametros para criaçao do dbcontext
-	
-		</td>
-	</tr>
-	
-
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Properties</a></span>
-		<div><hr /></div>
-	</div>
-
-	<div id="PropertiesSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000071.html">Ajudas</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de ajudas presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000076.html">Candidaturas</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de candidaturas presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000075.html">Cursos</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de cursos presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000078.html">Entrevistas</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de entrevistas presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000072.html">Erros</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de erros presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000074.html">EscolasParceiras</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de escolas parceiras presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000077.html">Estados</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de estados presentes na bd
-
-	</td>
-</tr>
-	
-
-
-	
-		<tr class="
-
-
-">
-	<td>
-<img alt="Public property" title="Public property" src="msdn2017/pubproperty.png"></img>
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_0000000000000073.html">Programas</a>
-
-	</td>
-	<td>
-
-Propriedade correspondente à lista de programas presentes na bd
-
-	</td>
-</tr>
-	
-
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
-
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Methods</a></span>
-		<div><hr /></div>
-	</div>
-
-	<div id="MethodsSection" class="section">	
-  <table class="memberListTable">
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-
-
-
-
-	<tr class="
-
-
-">
-	<td>
-  <img alt="Protected method" title="Protected method" src="msdn2017/protmethod.png"></img>
-
-    
-	  
-
-    
-	</td>
-	<td>
-	<a href="topic_000000000000007A.html">OnModelCreating(ModelBuilder)</a>
-
-	</td>
-	<td>
-
-
-
-	</td>
-</tr>
-
-
-
-
-
-
-  </table>
-
-  <a href="#mainBody">
-    Top
-  </a>
-
-	</div>					
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-<!-- Classes -->
-
-<!-- Classes End -->
-
-<!-- Standard Modules -->
-
-<!-- Standard Modules End -->
-
-  
-
-
-
-
-
-
-
-
-<div class="section_container">
-	<div class="section_heading">
-		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Remarks</a></span>
-		<div><hr /></div>
-	</div>
-
-	<div id="remarksSection" class="section">	
-			Possui as listas para preencher com o conteudo da bd
-	</div>					
-</div>
 
 
 
@@ -719,7 +350,6 @@ Propriedade correspondente à lista de programas presentes na bd
 	</div>					
 </div>
 
-
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -728,10 +358,14 @@ Propriedade correspondente à lista de programas presentes na bd
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-	<a href="topic_000000000000006F.html">cimobgrupo2.Data Namespace</a><br />
+			<a href="topic_000000000000006D.html">ManageController Class</a><br />
 
 
-	
+
+<a href="topic_0000000000000000.html">cimobgrupo2.Controllers Namespace</a><br />
+
+
+			
 
 		</div>
 	</div>					
@@ -751,4 +385,3 @@ Propriedade correspondente à lista de programas presentes na bd
 		</script>	
   </body>
 </html>
-

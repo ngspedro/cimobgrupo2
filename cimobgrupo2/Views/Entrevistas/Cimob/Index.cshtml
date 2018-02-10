@@ -50,13 +50,13 @@
                     @if (item.Estado == EstadoEntrevista.Pendente)
                     {
                         <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a> <span>|</span>
-                        <a asp-action="AvaliarEntrevistaModal" data-target="#avaliarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Avaliar</a> <span>|</span>
+                        <a asp-action="AvaliarEntrevistaModal" id="AvaliarModal" data-target="#avaliarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Avaliar</a> <span>|</span>
                         <a asp-action="DesmarcarEntrevistaModal" data-target="#removerEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Desmarcar</a>
 
                     }
                     else
                     {
-                        <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a>
+                        <a asp-action="EditarEntrevistaModal" id="EntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a>
 
                     }
 

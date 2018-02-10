@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Sprint3Testes
 {
-    public class Entrevistas
+    public class Firefox
     {
         private static String CAMINHO = @"C:\Users\Costeira\Documents\CIMOBgrupo2\eswt4g2\Sprint3Testes\bin\Debug\netcoreapp2.0";
         private FirefoxDriver driver;

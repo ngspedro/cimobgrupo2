@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace cimobgrupo2.Data
 {
+    /// <summary>Classe para inicializar a bd com dados, quando necessário.</summary>
     public class DbInitializer
     {
+        /// <summary>Método para inicializar a bd, quando necessário</summary>
+        /// <param name="context">Context da bd a ser inicializada</param>
         public static void Initialize(ApplicationDbContext context)
         {
             context.Database.EnsureCreated();

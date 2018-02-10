@@ -11,9 +11,14 @@ using Microsoft.Extensions.FileProviders;
 
 namespace cimobgrupo2.Controllers
 {
+    /// <summary>Controlador para a home</summary>
+    /// <remarks>Extende de BaseController</remarks>
     [Authorize]
     public class HomeController : BaseController
     {
+        /// <summary>Construtor com parametros - HomeController</summary>
+        /// <param name="context">Context da Bd</param>
+        /// <param name="fileProvider">File Provider</param>
         public HomeController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Home")
         {
 

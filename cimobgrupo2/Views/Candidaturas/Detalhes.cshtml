@@ -89,25 +89,34 @@
                     <th>
                         Estado
                     </th>
-                    <th class="no-sort"></th>
+                    <th>
+                        Local
+                    </th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
+                @foreach (var item in Model.Entrevistas)
+            {
                     <tr>
                         <td>
-                            21/10/2017
+                            @Html.DisplayFor(modelItem => item.Data)
                         </td>
                         <td>
-                           15h30
+                            @Html.DisplayFor(modelItem => item.Hora)
                         </td>
                         <td>
-                           Pendente
+                            @Html.DisplayFor(modelItem => item.Local)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
                         </td>
                         <td class="text-center">
-                            <a asp-action="Detalhes" asp-controller="EscolasParceiras" asp-route-id="1">Adiar</a>
+                            <a>Detalhes</a> | 
+                            <a>Adiar</a>
                         </td>
                     </tr>
-                
+                }
             </tbody>
         </table>
     </div>

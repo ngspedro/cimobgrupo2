@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace cimobgrupo2.Extensions
 {
+    /// <summary>Extensão para hash de passwords</summary>
     public static class PasswordHashExtensions
     {
+        /// <summary>Método para dar hash numa password</summary>
+        /// <param name="input">Password em texto integral</param>
+        /// <returns>Password hashed</returns>
         public static string Encode(string input)
         {
             HMACSHA1 myhmacsha1 = new HMACSHA1(Encoding.ASCII.GetBytes("eswt4g2"));

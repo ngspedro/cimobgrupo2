@@ -19,14 +19,27 @@ using cimobgrupo2.Extensions;
 
 namespace cimobgrupo2.Controllers
 {
+    /// <summary>Controlador para a gestão das definições de conta</summary>
+    /// <remarks>Extende de BaseController</remarks>
     [Authorize]
     [Route("[controller]/[action]")]
     public class ManageController : BaseController
     {
+        /// <summary>Atributo para o User Manager</summary>
         private readonly UserManager<ApplicationUser> _userManager;
+
+        /// <summary>Atributo para o SignIn Manager</summary>
         private readonly SignInManager<ApplicationUser> _signInManager;
+
+        /// <summary>Atributo para o Logger</summary>
         private readonly ILogger _logger;
 
+        /// <summary>Construtor com parametros - ManageController</summary>
+        /// <param name="userManager">User Manager</param>
+        /// <param name="signInManager">SignIn Manager</param>
+        /// <param name="logger">Logger</param>
+        /// <param name="context">Context da Bd</param>
+        /// <param name="fileProvider">File Provider</param>
         public ManageController(
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
@@ -39,8 +52,6 @@ namespace cimobgrupo2.Controllers
             _logger = logger;
         }
 
-        [TempData]
-        public string StatusMessage { get; set; }
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -102,7 +113,6 @@ namespace cimobgrupo2.Controllers
 
 
             SetSuccessMessage("Os seus detalhes de conta foram alterados.");
-            StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(Index));
         }
 
@@ -147,7 +157,6 @@ namespace cimobgrupo2.Controllers
 
             await _signInManager.SignInAsync(user, isPersistent: false);
             _logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Your password has been changed.";
 
 
             SetSuccessMessage("A sua password foi alterada.");

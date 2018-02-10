@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Sprint3Testes
 {
-    class Curso
+    public class Curso
     {
         private static String CAMINHO = @"C:\Users\Costeira\Documents\CIMOBgrupo2\eswt4g2\Sprint3Testes\bin\Debug\netcoreapp2.0";
         private FirefoxDriver driver;
@@ -63,14 +63,14 @@ namespace Sprint3Testes
         }
 
         [Fact]
-        public void EditarEscola()
+        public void EditarCurso()
         {
             try
             {
                 CommonCode();
                 driver.FindElement(By.Id("Editar")).Click();
-                driver.FindElement(By.Id("Nome")).Clear();
-                driver.FindElement(By.Id("Nome")).SendKeys("Teste");
+                driver.FindElement(By.Id("txtNome")).Clear();
+                driver.FindElement(By.Id("txtNome")).SendKeys("Teste");
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
                 driver.Close();
@@ -84,7 +84,7 @@ namespace Sprint3Testes
         }
 
         [Fact]
-        public void EliminarEscola()
+        public void EliminarCurso()
         {
             try
             {
@@ -92,24 +92,6 @@ namespace Sprint3Testes
                 driver.FindElement(By.Id("Remover")).Click();
                 driver.FindElement(By.Id("btnConfirmar")).Click();
                 Assert.NotNull(driver.FindElement(By.ClassName("alert-success")));
-                driver.Close();
-                driver.Dispose();
-            }
-            finally
-            {
-                driver.Quit();
-            }
-
-        }
-
-        [Fact]
-        public void DetalhesEscola()
-        {
-            try
-            {
-                CommonCode();
-                driver.FindElement(By.Id("Detalhes")).Click();
-                Assert.NotNull(driver.FindElement(By.Id("conteudo")));
                 driver.Close();
                 driver.Dispose();
             }

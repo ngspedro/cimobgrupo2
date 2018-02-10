@@ -63,6 +63,7 @@ namespace cimobgrupo2.Controllers
         public IActionResult Adicionar()
         {
             SetHelpModal("Adicionar");
+            SetHelpTooltips();
             return View(ProperView("Adicionar"));
         }
 
@@ -91,7 +92,8 @@ namespace cimobgrupo2.Controllers
                 return RedirectToAction(nameof(Index));
             }
             SetErrorMessage("003");
-            SetHelpModal("Ãdicionar");
+            SetHelpModal("Adicionar");
+            SetHelpTooltips();
             return View(Programa);
         }
 
@@ -107,6 +109,7 @@ namespace cimobgrupo2.Controllers
             ViewBag.Edital = _fileController.GetFile(caminho, Programa.Edital);
             ViewBag.Documentos = _fileController.GetFiles(caminho, Programa.Edital);
             SetHelpModal("Editar");
+            SetHelpTooltips();
             return View(ProperView("Editar"), Programa);
         }
 
@@ -140,6 +143,7 @@ namespace cimobgrupo2.Controllers
 
             SetErrorMessage("003");
             SetHelpModal("Editar");
+            SetHelpTooltips();
             return View(Programa);
         }
 
@@ -287,7 +291,7 @@ namespace cimobgrupo2.Controllers
         {
             ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Nome").Texto;
             ViewData["Duracao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Duracao").Texto;
-            ViewData["Edital"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Edital").Texto;
+            ViewData["EditalTooltip"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Edital").Texto;
             ViewData["Descricao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Descricao").Texto;
         }
     }

@@ -103,6 +103,7 @@ namespace cimobgrupo2.Controllers
             ViewBag.Documentos = _fileController.GetFiles(caminho);
 
             SetHelpModal("Criar");
+            SetHelpTooltips();
             return View(ProperView("Criar"), Candidatura);
         }
 
@@ -189,6 +190,7 @@ namespace cimobgrupo2.Controllers
                     var caminho = "candidaturas/" + candidatura.UserId;
                     ViewBag.Documentos = _fileController.GetFiles(caminho);
                     SetHelpModal("Detalhes");
+                    SetHelpTooltipsEnt();
                     return View(ProperView("Detalhes"), candidatura);
                 }
             }
@@ -347,6 +349,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult AvaliarEntrevistaModal(int? Id)
         {
+            SetHelpTooltipsEnt();
             return PartialView(ProperView("AvaliarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 
@@ -377,6 +380,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult EditarEntrevistaModal(int? Id)
         {
+            SetHelpTooltipsEnt();
             return PartialView(ProperView("EditarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 
@@ -424,9 +428,20 @@ namespace cimobgrupo2.Controllers
         /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com candidaturas</summary>
         private void SetHelpTooltips()
         {
-            ViewData["Programa"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Programa").Texto;
+            ViewData["Programa"] = _context.Ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Programa").Texto;
             ViewData["EscolaParceira"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "EscolaParceira").Texto;
             ViewData["Curso"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Curso").Texto;
+        }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com entrevistas</summary>
+        private void SetHelpTooltipsEnt()
+        {
+            ViewData["Candidato"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Candidato").Texto;
+            ViewData["Data"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Data").Texto;
+            ViewData["Hora"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Hora").Texto;
+            ViewData["Local"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Local").Texto;
+            ViewData["Pontuacao"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Pontuacao").Texto;
+            ViewData["Comentarios"] = _context.Ajudas.Single(ai => ai.Controller == "Entrevistas" && ai.Action == "*" && ai.Elemento == "Comentarios").Texto;
         }
     }
 }

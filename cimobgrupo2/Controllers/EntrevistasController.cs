@@ -34,6 +34,7 @@ namespace cimobgrupo2.Controllers
             List<Candidatura> listaCandidaturas = _context.Candidaturas.Include(c => c.User).ToList();
             ViewBag.ListOfUsers = listaCandidaturas;
             SetHelpModal("Index");
+            SetHelpTooltips();
             return View(ProperView("Index"), _context.Entrevistas.ToList());
         }
 
@@ -61,6 +62,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult AvaliarEntrevistaModal(int? Id)
         {
+            SetHelpTooltips();
             return PartialView(ProperView("AvaliarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 
@@ -91,6 +93,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult EditarEntrevistaModal(int? Id)
         {
+            SetHelpTooltips();
             return PartialView(ProperView("EditarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 

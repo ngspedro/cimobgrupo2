@@ -70,7 +70,7 @@
 </div>
 
 <div class="col-md-9 col-lg-9">
-    <p class="sec-title"><span class="glyphicon glyphicon-education"></span><strong> Escolas Disponíveis:</strong></p>
+    <div class="sec-title" style="margin-bottom: 10px;"><span class="glyphicon glyphicon-education"></span><strong> Escolas Disponíveis:</strong></div>
     <div class="table-responsive">
         <table class="table table-striped table-bordered" id="tabela-escolas">
             <thead>
@@ -122,7 +122,7 @@
     </div>
 </div>
 
-<div class="col-md-12 col-lg-12">
+<div class="col-md-12 col-lg-12" style="margin-top: 15px;">
     <a type="button" href="@Url.Action("RemoverModal", "Programas", new { Id = Model.ProgramaId })" data-target="#removerPrograma" data-toggle="modal" class="button pull-right" id="btnEliminar">Eliminar</a>
     <button type="button" onclick="location.href='@Url.Action("Editar", "Programas", new { Id = Model.ProgramaId })'" class="pull-right" id="btnEditar">Editar</button>
     <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar" style="margin-bottom: 20px;">Voltar</button>
@@ -134,3 +134,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-escolas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            },
+            "searching": false,
+            "pageLength": 5,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bAutoWidth": false
+        });
+    });
+</script>

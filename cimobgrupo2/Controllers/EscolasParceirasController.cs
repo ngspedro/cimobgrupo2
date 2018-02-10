@@ -55,6 +55,7 @@ namespace cimobgrupo2.Controllers
         public IActionResult Adicionar()
         {
             SetHelpModal("Adicionar");
+            SetHelpTooltips();
             FillCountryList();
             return View(ProperView("Adicionar"));
         }
@@ -74,6 +75,7 @@ namespace cimobgrupo2.Controllers
             }
             SetErrorMessage("003");
             SetHelpModal("Adicionar");
+            SetHelpTooltips();
             return View(EscolaParceira);
         }
 
@@ -83,6 +85,7 @@ namespace cimobgrupo2.Controllers
         public IActionResult Editar(int? Id)
         {
             SetHelpModal("Editar");
+            SetHelpTooltips();
             EscolaParceira EscolaParceira = _context.EscolasParceiras.SingleOrDefault(e => e.EscolaParceiraId == Id);
             FillCountryList();
             ViewBag.CursosAssociar = _context.Cursos.Where(c => c.EscolasParceiras.Where(e => e.EscolaParceira == EscolaParceira).Count() == 0);
@@ -108,6 +111,7 @@ namespace cimobgrupo2.Controllers
      
             SetErrorMessage("003");
             SetHelpModal("Editar");
+            SetHelpTooltips();
             return View(EscolaParceira);
         }
 

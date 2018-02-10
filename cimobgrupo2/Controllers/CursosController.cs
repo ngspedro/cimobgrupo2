@@ -50,6 +50,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult NovoCursoModal()
         {
+            SetHelpTooltips();
             return PartialView(ProperView("NovoCursoModal"));
         }
 
@@ -76,6 +77,7 @@ namespace cimobgrupo2.Controllers
         /// <returns>Partialview com o devido modal</returns>
         public IActionResult EditarCursoModal(int? Id)
         {
+            SetHelpTooltips();
             return PartialView(ProperView("EditarCursoModal"), _context.Cursos.SingleOrDefault(c => c.CursoId == Id));
         }
 

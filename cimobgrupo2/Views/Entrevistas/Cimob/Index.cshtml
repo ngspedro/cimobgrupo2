@@ -105,19 +105,19 @@
                             <div class="form-group">
                                 <label>Candidato:</label>
                                 <select typeof="text" name="CandidaturaId" class="form-control"
-                                        asp-items="@(new SelectList(ViewBag.ListOfUsers,"CandidaturaId","User.Nome"))"></select>
+                                        asp-items="@(new SelectList(ViewBag.ListOfUsers,"CandidaturaId","User.Nome"))" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Candidato"]"></select>
                             </div>
                             <div class="form-group">
                                 <label>Data:</label>
-                                <input type="text" name="Data" class="form-control" id="DataPicker">
+                                <input type="text" name="Data" class="form-control" id="DataPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Data"]">
                             </div>
                             <div class="form-group">
                                 <label>Hora:</label>
-                                <input type="time" name="Hora" class="form-control" id="txtHora">
+                                <input type="time" name="Hora" class="form-control" id="txtHora" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Hora"]">
                             </div>
                             <div class="form-group">
                                 <label>Local:</label>
-                                <input type="text" name="Local" class="form-control" id="txtLocal">
+                                <input type="text" name="Local" class="form-control" id="txtLocal" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Local"]">
                             </div>
                         </div>
                     </div>

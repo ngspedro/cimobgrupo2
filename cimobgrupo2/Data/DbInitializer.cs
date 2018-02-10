@@ -97,7 +97,7 @@ namespace cimobgrupo2.Data
                    "Preencha com a duração do programa"));
 
                 context.Ajudas.Add(new Ajuda("Programas", "*", "Edital",
-                   "Preencha com o edital do programa."));
+                   "Seleccione o ficheiro do edital do programa."));
 
                 context.Ajudas.Add(new Ajuda("Programas", "*", "Descricao",
                    "Preencha com a descrição do programa."));

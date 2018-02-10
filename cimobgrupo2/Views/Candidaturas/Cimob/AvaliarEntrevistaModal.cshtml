@@ -12,19 +12,17 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Pontuação (0-10):</label>
-                        <input type="number" name="Pontuacao" class="form-control" id="Pontuacao">
+                        <input type="number" name="Pontuacao" class="form-control" id="Pontuacao" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Pontuacao"]">
                     </div>
                 </div>
             <div class="col-lg-12">
                 <div class="form-group">
                     <label>Comentários:</label>
-                    <textarea name="Comentarios" style="margin-top: 10px; resize: none" class="form-control"></textarea>
+                    <textarea name="Comentarios" style="margin-top: 10px; resize: none" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Comentarios"]"></textarea>
                 </div>
             </div>
                 </div>
-               
-            
-       
+</div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

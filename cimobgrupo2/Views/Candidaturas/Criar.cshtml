@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label asp-for="Programa" class="control-label"></label>:  
                     <a style="cursor: pointer "id="EscolherPrograma" class="pull-right" data-toggle="modal" data-target="#escolherPrograma">Escolher</a>
-                    <input id="Programa" asp-for="Programa.Nome" class="form-control" disabled/>
+                    <input id="Programa" asp-for="Programa.Nome" class="form-control" disabled />
                 </div>
                 <div class="form-group">
                     <label asp-for="EscolaParceira" class="control-label"></label>: 
@@ -355,8 +355,19 @@
                 "language": {
                     "url": "/lib/DataTables/pt.json"
                 }
-            });
     });
+    $('#tabela-ficheiros').DataTable({
+        "language": {
+            "url": "/lib/DataTables/pt.json"
+        },
+        "paging": false,
+        "pageLength": false,
+        "searching": false,
+        "ordering": false,
+        "info": false
+    });
+    });
+
 </script>
 
 @section Scripts {

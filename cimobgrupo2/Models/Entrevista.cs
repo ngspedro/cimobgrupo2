@@ -61,10 +61,10 @@ namespace cimobgrupo2.Models
         /// <remarks></remarks>
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            var data = DateTime.Parse(Data);
+            var dataInserida = DateTime.Parse(Data);
             var dataAtual = DateTime.Now;
             List<ValidationResult> res = new List<ValidationResult>();
-            if (data<dataAtual)
+            if (dataInserida<dataAtual)
             {
                 ValidationResult mss = new ValidationResult("A data inserida deve ser superior ou igual a de hoje");
                 

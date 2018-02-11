@@ -78,9 +78,6 @@ namespace cimobgrupo2.Data
             builder.Entity<Candidatura>().HasMany<Entrevista>(e => e.Entrevistas).WithOne(cand => cand.Candidatura)
                .HasForeignKey(cand => cand.CandidaturaId);
             //foreirgnkeys tha table Entrevista from programa
-
-            //builder.Entity<Programa>().HasMany<Entrevista>(e => e.Entrevistas).WithOne(pro=> pro.Programa)
-            //    .HasForeignKey(pro => pro.ProgramaId);
             //foreirgnkeys tha table Entrevista 
             builder.Entity<Candidatura>()
                 .HasMany<Entrevista>(c => c.Entrevistas)

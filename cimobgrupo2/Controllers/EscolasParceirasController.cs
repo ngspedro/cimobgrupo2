@@ -182,7 +182,7 @@ namespace cimobgrupo2.Controllers
         private void FillCountryList()
         {
             List<string> CountryList = new List<string>();
-            CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+            CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo CInfo in CInfoList)
             {
                 RegionInfo R = new RegionInfo(CInfo.Name);

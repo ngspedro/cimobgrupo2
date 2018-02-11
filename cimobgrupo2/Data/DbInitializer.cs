@@ -375,14 +375,14 @@ namespace cimobgrupo2.Data
                     DataEntrevista = DateTime.ParseExact("2018/04/20 13:34:00 ", "yyyy/MM/dd HH:mm:ss",
                 CultureInfo.InvariantCulture),
                     CandidaturaId = 1, EstadoId=4
-                });*/
-                context.Entrevistas.Add(new Entrevista { DataEntrevista = new DateTime(2017,12,06,16,12,00),CandidaturaId = 1,EstadoId=4});
+                });
+                context.Entrevistas.Add(new Entrevista { Data = new DateTime(2017,12,06,16,12,00),CandidaturaId = 1,});
                 context.Entrevistas.Add(new Entrevista { DataEntrevista = new DateTime(2017,12,27,09,45,34), CandidaturaId = 3,EstadoId=5});
                 context.Entrevistas.Add(new Entrevista { DataEntrevista = new DateTime(2018, 01, 29,14,30,25), CandidaturaId = 5,EstadoId=1});
                 context.Entrevistas.Add(new Entrevista { DataEntrevista = new DateTime(2018,02,14,10,00,56,33), CandidaturaId = 4,EstadoId=2});
                 context.Entrevistas.Add(new Entrevista { DataEntrevista = DateTime.Now, CandidaturaId = 2,EstadoId=3});
-                context.SaveChanges();
-        } 
+                context.SaveChanges();*/
+            }
         }
     }
 }

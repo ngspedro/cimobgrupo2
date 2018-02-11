@@ -358,7 +358,7 @@ namespace cimobgrupo2.Data
                 context.Estados.Add(new Estado() { Nome = "Avaliada" });
                 context.SaveChanges();
             }
-            /*inserts a candidatura*/
+            /*inserts a candidatura
             if (!context.Candidaturas.Any())
             {
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 1, EscolaParceiraId = 1, CursoId = 4, EstadoId = 1, Motivo = "Inter Cambio" });
@@ -367,7 +367,7 @@ namespace cimobgrupo2.Data
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 2, EscolaParceiraId = 1, CursoId = 3, EstadoId = 2, Motivo = "Inter Cambio" });
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 1, EscolaParceiraId = 2, CursoId = 2, EstadoId = 1, Motivo = "Inter Cambio" });
                 context.SaveChanges();
-            }
+            }*/
 
             if (!context.Entrevistas.Any())
             {

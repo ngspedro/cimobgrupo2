@@ -358,7 +358,7 @@ namespace cimobgrupo2.Data
                 context.Estados.Add(new Estado() { Nome = "Avaliada" });
                 context.SaveChanges();
             }
-            /*inserts a candidatura
+            /*inserts a candidatura*/
             if (!context.Candidaturas.Any())
             {
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 1, EscolaParceiraId = 1, CursoId = 4, EstadoId = 1, Motivo = "Inter Cambio" });
@@ -367,7 +367,7 @@ namespace cimobgrupo2.Data
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 2, EscolaParceiraId = 1, CursoId = 3, EstadoId = 2, Motivo = "Inter Cambio" });
                 context.Candidaturas.Add(new Candidatura { UserId = "5d0a50c4-1222-476e-8eee-07fb06ba5906", ProgramaId = 1, EscolaParceiraId = 2, CursoId = 2, EstadoId = 1, Motivo = "Inter Cambio" });
                 context.SaveChanges();
-            }*/
+            }
 
             if (!context.Entrevistas.Any())
             {
@@ -376,13 +376,13 @@ namespace cimobgrupo2.Data
                     DataEntrevista = DateTime.ParseExact("2018/04/20 13:34:00 ", "yyyy/MM/dd HH:mm:ss",
                 CultureInfo.InvariantCulture),
                     CandidaturaId = 1, EstadoId=4
-                });
+                });*/
                 context.Entrevistas.Add(new Entrevista { Data = "2017/12/06", Hora = "16:30", CandidaturaId = 1 });
                 context.Entrevistas.Add(new Entrevista { Data = "2017/12/27", Hora = "09:45", CandidaturaId = 2 });
                 context.Entrevistas.Add(new Entrevista { Data = "2018/01/29", Hora = "14:30", CandidaturaId = 3 });
                 context.Entrevistas.Add(new Entrevista { Data = "2018/02/14", Hora = "10:50", CandidaturaId = 4 });
                 context.Entrevistas.Add(new Entrevista { Data = "2018/02/25", Hora = "17:10", CandidaturaId = 2 });
-                context.SaveChanges();*/
+                context.SaveChanges();
             }
         }
     }

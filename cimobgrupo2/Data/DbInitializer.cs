@@ -127,7 +127,11 @@ namespace cimobgrupo2.Data
                  "Seleccione o candidato que pretende."));
 
                 context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Data",
-                 "Preencha com a data de realização da entrevista."));
+                 "Preencha com a data de realização da entrevista." +
+                    "<br />" +
+                    "<strong>Nota:</strong> " +
+                    "É obrigatório que a data inserida tem de ser superior ou igual data de hoje."
+                 ));
 
                 context.Ajudas.Add(new Ajuda("Entrevistas", "*", "Hora",
                  "Preencha com a hora para a entrevista ser realizada."));
@@ -254,6 +258,7 @@ namespace cimobgrupo2.Data
                 context.Erros.Add(new Erro("004", "Registo falhou. Já existe uma conta com esse username."));
                 context.Erros.Add(new Erro("005", "Ocorreu um erro inesperado! Tente novamente mais tarde."));
                 context.Erros.Add(new Erro("006", "Impossível aceitar candidatura. O programa pretendido não possui mais vagas para a escola em questão."));
+
                 context.SaveChanges();
             }
 

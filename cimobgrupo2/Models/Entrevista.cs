@@ -18,12 +18,11 @@ namespace cimobgrupo2.Models
 
     /// <summary>Classe para representar uma entrevista do sistema</summary>
     /// <remarks>Possui as propriedades necessárias para uma entrevista (data, hora, local, etc.)</remarks> 
-    public class Entrevista
+    public class Entrevista : IValidatableObject
     {
         /// <summary>Propriedade correspondente ao id da entrevista</summary>
         public int EntrevistaId { get; set; }
         [Required(ErrorMessage = "Data obrigatória.")]
-
         /// <summary>Propriedade correspondente à data da entrevista</summary>
         public string Data { get; set; }
 
@@ -54,6 +53,26 @@ namespace cimobgrupo2.Models
         public Entrevista()
         {
 
+        }
+
+        /// <summary>
+        /// Verificação de data ao inserir num determinado model.
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var dataInserida = DateTime.Parse(Data);
+            var dataAtual = DateTime.Now;
+            List<ValidationResult> res = new List<ValidationResult>();
+            if (dataInserida<dataAtual)
+            {
+                ValidationResult mss = new ValidationResult("A data inserida deve ser superior ou igual a de hoje");
+                
+                res.Add(mss);
+            }
+            return res;
         }
     }
 

@@ -1,0 +1,62 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">Editar Entrevista</h4>
+</div>
+<form asp-action="EditarEntrevista" method="post">
+    <input type="hidden" asp-for="EntrevistaId" />
+    <div class="modal-body">
+        @{
+            if (Model.Estado == EstadoEntrevista.Pendente)
+            {
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Data:</label>
+                            <input type="text" name="Data" asp-for="Data" class="form-control" id="EditDataPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Data"]">
+                        </div>
+                        <div class="form-group">
+                            <label>Hora:</label>
+                            <input type="time" name="Hora" asp-for="Hora" class="form-control" id="txtHora" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Hora"]">
+                        </div>
+                        <div class="form-group">
+                            <label>Local:</label>
+                            <input type="text" name="Local" asp-for="Local" class="form-control" id="txtLocal" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Local"]">
+                        </div>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Pontuação (0-10):</label>
+                            <input type="number" name="Pontuacao" asp-for="Pontuacao" class="form-control" id="Pontuacao" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Pontuacao"]">
+                        </div>
+                        <div class="form-group">
+                            <label>Comentários:</label>
+                            <textarea name="Comentarios" asp-for="Comentarios" style="margin-top: 10px; resize: none" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Comentarios"]"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+
+</form>
+
+<script>
+    $(function () {
+        $('#EditDataPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+            .change(dateChanged)
+            .on('changeDate', dateChanged);;
+    });
+</script>

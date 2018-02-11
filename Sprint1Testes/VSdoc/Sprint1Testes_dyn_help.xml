@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="Sprint1Testes" Title="Sprint1Testes Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.ChangeAccountDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000006.html" LinkGroup="Sprint1Testes">ChangeAccountDetails Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.ChangeAccountDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000F.html" LinkGroup="Sprint1Testes">ChangeAccountDetails Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.ChangeAccountDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000018.html" LinkGroup="Sprint1Testes">ChangeAccountDetails Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.ChangeAccountPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000007.html" LinkGroup="Sprint1Testes">ChangeAccountPassword Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.ChangeAccountPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000010.html" LinkGroup="Sprint1Testes">ChangeAccountPassword Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.ChangeAccountPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000019.html" LinkGroup="Sprint1Testes">ChangeAccountPassword Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000001.html" LinkGroup="Sprint1Testes">Chrome Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000008.html" LinkGroup="Sprint1Testes">DeleteAccount Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000011.html" LinkGroup="Sprint1Testes">DeleteAccount Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000001A.html" LinkGroup="Sprint1Testes">DeleteAccount Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.DeleteAccountPasswordErrada" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000009.html" LinkGroup="Sprint1Testes">DeleteAccountPasswordErrada Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.DeleteAccountPasswordErrada" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000012.html" LinkGroup="Sprint1Testes">DeleteAccountPasswordErrada Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.DeleteAccountPasswordErrada" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000001B.html" LinkGroup="Sprint1Testes">DeleteAccountPasswordErrada Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000A.html" LinkGroup="Sprint1Testes">Firefox Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000013.html" LinkGroup="Sprint1Testes">InternetExplorer Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000002.html" LinkGroup="Sprint1Testes">Login Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000B.html" LinkGroup="Sprint1Testes">Login Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000014.html" LinkGroup="Sprint1Testes">Login Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.LoginCredenciaisInvalidas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000003.html" LinkGroup="Sprint1Testes">LoginCredenciaisInvalidas Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.LoginCredenciaisInvalidas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000C.html" LinkGroup="Sprint1Testes">LoginCredenciaisInvalidas Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.LoginCredenciaisInvalidas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000015.html" LinkGroup="Sprint1Testes">LoginCredenciaisInvalidas Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.Registo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000004.html" LinkGroup="Sprint1Testes">Registo Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.Registo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000D.html" LinkGroup="Sprint1Testes">Registo Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.Registo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000016.html" LinkGroup="Sprint1Testes">Registo Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Chrome.RegistoNotOver17" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000005.html" LinkGroup="Sprint1Testes">RegistoNotOver17 Method {Sprint1Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.Firefox.RegistoNotOver17" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000000E.html" LinkGroup="Sprint1Testes">RegistoNotOver17 Method {Sprint1Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes.InternetExplorer.RegistoNotOver17" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000017.html" LinkGroup="Sprint1Testes">RegistoNotOver17 Method {Sprint1Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_0000000000000000.html" LinkGroup="Sprint1Testes">Sprint1Testes Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint1Testes Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint1Testes.chm::/topic_000000000000001C.html" LinkGroup="Sprint1Testes">Sprint1Testes Reference</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

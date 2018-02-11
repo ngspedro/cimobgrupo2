@@ -9,18 +9,18 @@
 
         <div class="form-group">
             <label asp-for="Nome" class="control-label"></label>:
-            <input asp-for="Nome" class="form-control" />
+            <input asp-for="Nome" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]"/>
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Pais" class="control-label"></label>:
             <select asp-for="Pais" class="form-control"
-                    asp-items="@(new SelectList(ViewBag.CountryList))"></select>
+                    asp-items="@(new SelectList(ViewBag.CountryList))" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Pais"]"></select>
             <span asp-validation-for="Pais" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Localidade" class="control-label"></label>:
-            <input asp-for="Localidade" class="form-control" />
+            <input asp-for="Localidade" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Localidade"]"/>
             <span asp-validation-for="Localidade" class="text-danger"></span>
         </div>
 

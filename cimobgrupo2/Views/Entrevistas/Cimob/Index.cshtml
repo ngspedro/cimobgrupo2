@@ -1,83 +1,173 @@
-﻿@using cimobgrupo2.Models
-@model IEnumerable< cimobgrupo2.Models.Entrevista>
+﻿@model IEnumerable<cimobgrupo2.Models.Entrevista>
 @{
     ViewData["Titulo"] = "Lista de Entrevistas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @Html.Partial("_ResultMessage")
 
-<table class="table table-striped table-bordered" id="tabela-marcarEntrevista">
+<table class="table table-striped" id="tabela-entrevistas">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Candidatura.User)   
+                Entrevistado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Candidatura.Programa)
+                @Html.DisplayNameFor(model => model.Data)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataEntrevista)
+                @Html.DisplayNameFor(model => model.Hora)
             </th>
             <th>
-              @Html.DisplayNameFor(model => model.HoraEntrevista)
+                @Html.DisplayNameFor(model => model.Local)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Avaliacao)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Candidatura.User.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Candidatura.Programa.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEntrevista)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoraEntrevista)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avaliacao)
-            </td>
-            <td>                
-                <a asp-action="Details" asp-route-id="@item.EntrevistaId">Detalhes</a>|
-                <a asp-action="Edit" asp-route-id="@item.EntrevistaId">Editar</a>|
-                <a asp-action="Delete" asp-route-id="@item.EntrevistaId">Eliminar</a>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Candidatura.User.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Local)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td class="text-center">
+                    @if (item.Estado == EstadoEntrevista.Pendente)
+                    {
+                        <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a> <span>|</span>
+                        <a asp-action="AvaliarEntrevistaModal" id="AvaliarModal" data-target="#avaliarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Avaliar</a> <span>|</span>
+                        <a asp-action="DesmarcarEntrevistaModal" id="DesmarcarModal" data-target="#removerEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Desmarcar</a>
 
-            </td>
-        </tr>
-}
+                    }
+                    else
+                    {
+                        <a asp-action="EditarEntrevistaModal" id="EntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a>
+
+                    }
+
+                </td>
+            </tr>
+            }
     </tbody>
 </table>
+
 <div class="col-md-12 col-lg-12 botoes">
-    <button type="button" onclick="location.href='@Url.Action("MarcarEntrevista", "Entrevistas")'" class="pull-right" id="btnMarcarEntrevista">Marcar Entrevista</button>
+    <a type="button" data-target="#marcarEntrevista" data-toggle="modal" class="button pull-right" id="btnMarcarEntrevista" style="margin-bottom: 20px;">Marcar Entrevista</a>
 </div>
-    
 
+<div class="modal fade" id="removerEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="editarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="avaliarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="marcarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Marcar Entrevista</h4>
+            </div>
+            <form asp-action="MarcarEntrevista" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Candidato:</label>
+                                <select typeof="text" name="CandidaturaId" class="form-control"
+                                        asp-items="@(new SelectList(ViewBag.ListOfUsers,"CandidaturaId","User.Nome"))" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Candidato"]"></select>
+                            </div>
+                            <div class="form-group">
+                                <label>Data:</label>
+                                <input type="text" name="Data" class="form-control" id="DataPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Data"]">
+                            </div>
+                            <div class="form-group">
+                                <label>Hora:</label>
+                                <input type="time" name="Hora" class="form-control" id="txtHora" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Hora"]">
+                            </div>
+                            <div class="form-group">
+                                <label>Local:</label>
+                                <input type="text" name="Local" class="form-control" id="txtLocal" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Local"]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
 
+            </form>
+        </div>
+    </div>
+</div>
 
+<script>
+    $(document).ready(function () {
+        $('#tabela-entrevistas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            }
+        }); 
+    });
 
+    $(function () {
+        $('#removerEntrevista').on('hidden.bs.modal', function () {
+            // remove the bs.modal data attribute from it
+            $(this).removeData('bs.modal');
+            // and empty the modal-content element
+            $('#removerEntrevista .modal-content').empty();
+        });
+    });
 
+    $('#avaliarEntrevista').on('hidden.bs.modal', function () {
+        // remove the bs.modal data attribute from it
+        $(this).removeData('bs.modal');
+        // and empty the modal-content element
+        $('#avaliarEntrevista .modal-content').empty();
+    });
 
+    $('#editarEntrevista').on('hidden.bs.modal', function () {
+        // remove the bs.modal data attribute from it
+        $(this).removeData('bs.modal');
+        // and empty the modal-content element
+        $('#editarEntrevista .modal-content').empty();
+    });
 
+    $(function () {
+        $('#DataPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+            .change(dateChanged)
+            .on('changeDate', dateChanged);;
+    });
 
-
-
-
-        
-
+</script>

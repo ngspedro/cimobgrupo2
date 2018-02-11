@@ -1,0 +1,20 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+<form class="form-horizontal" role="form" asp-action="DesmarcarEntrevista" method="POST" id="desmarcarEntrevista">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Desmarcar Entrevista</h4>
+    </div>
+    <div class="modal-body">
+        <input type="hidden" asp-for="EntrevistaId" />
+        <div class="form-group animated fadeIn">
+            <div class="col-md-12 col-lg-12 text-center">
+                <label>Tem a certeza que pretende desmarcar esta entrevista?</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+</form>

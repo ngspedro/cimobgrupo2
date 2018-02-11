@@ -1,0 +1,31 @@
+﻿@model cimobgrupo2.Models.Entrevista
+
+<form class="form-horizontal" role="form" asp-action="AvaliarEntrevista" method="POST" id="AvaliarEntrevista">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Avaliar Entrevista</h4>
+    </div>
+    <div class="modal-body">
+        <input type="hidden" asp-for="EntrevistaId" />
+        <div class="form-group animated fadeIn">
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Pontuação (0-10):</label>
+                        <input type="number" name="Pontuacao" class="form-control" id="Pontuacao" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Pontuacao"]">
+                    </div>
+                </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label>Comentários:</label>
+                    <textarea name="Comentarios" style="margin-top: 10px; resize: none" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Comentarios"]"></textarea>
+                </div>
+            </div>
+                </div>
+</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+</form>

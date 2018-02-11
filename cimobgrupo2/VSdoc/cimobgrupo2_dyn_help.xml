@@ -1,0 +1,3268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="cimobgrupo2" Title="cimobgrupo2 Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000001.html" LinkGroup="cimobgrupo2">AccountController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.AccountController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000006.html" LinkGroup="cimobgrupo2">AccountController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Aceitar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000032.html" LinkGroup="cimobgrupo2">Aceitar Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Action" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D6.html" LinkGroup="cimobgrupo2">Action Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.AddErrorString" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000078.html" LinkGroup="cimobgrupo2">AddErrorString Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.AddErrors" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000018.html" LinkGroup="cimobgrupo2">AddErrors Method {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.AddErrors" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000079.html" LinkGroup="cimobgrupo2">AddErrors Method {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Maiores17.AddValidation" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000132.html" LinkGroup="cimobgrupo2">AddValidation Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Adicionar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000057_overloads--.html" LinkGroup="cimobgrupo2">Adicionar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Adicionar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000080_overloads--.html" LinkGroup="cimobgrupo2">Adicionar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Adicionar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000058_overloads--.html" LinkGroup="cimobgrupo2">Adicionar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Adicionar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000081_overloads--.html" LinkGroup="cimobgrupo2">Adicionar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Ajuda" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D9_overloads--.html" LinkGroup="cimobgrupo2">Ajuda Constructor</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Ajuda" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DA_overloads--.html" LinkGroup="cimobgrupo2">Ajuda Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D3.html" LinkGroup="cimobgrupo2">Ajuda Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.AjudaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D4.html" LinkGroup="cimobgrupo2">AjudaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Ajudas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008E.html" LinkGroup="cimobgrupo2">Ajudas Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008D.html" LinkGroup="cimobgrupo2">ApplicationDbContext Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.ApplicationDbContext" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000096.html" LinkGroup="cimobgrupo2">ApplicationDbContext Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ApplicationUser" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DB.html" LinkGroup="cimobgrupo2">ApplicationUser Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.AssociarCursos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005E.html" LinkGroup="cimobgrupo2">AssociarCursos Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.AssociarDocumentos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000030.html" LinkGroup="cimobgrupo2">AssociarDocumentos Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.AssociarDocumentos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000088.html" LinkGroup="cimobgrupo2">AssociarDocumentos Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.AssociarEscolas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000089.html" LinkGroup="cimobgrupo2">AssociarEscolas Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.AuthMessageSenderOptions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000134.html" LinkGroup="cimobgrupo2">AuthMessageSenderOptions Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.AuthMessageSenderOptions.AuthMessageSenderOptions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000137.html" LinkGroup="cimobgrupo2">AuthMessageSenderOptions Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.AvaliarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000039.html" LinkGroup="cimobgrupo2">AvaliarEntrevista Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.AvaliarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004E.html" LinkGroup="cimobgrupo2">AvaliarEntrevista Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.AvaliarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000038.html" LinkGroup="cimobgrupo2">AvaliarEntrevistaModal Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.AvaliarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004D.html" LinkGroup="cimobgrupo2">AvaliarEntrevistaModal Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.BASE_PATH" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000025.html" LinkGroup="cimobgrupo2">BASE_PATH Field {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.BASE_PATH" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007B.html" LinkGroup="cimobgrupo2">BASE_PATH Field {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001A.html" LinkGroup="cimobgrupo2">BaseController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController.BaseController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000020.html" LinkGroup="cimobgrupo2">BaseController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Program.BuildWebHost" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000142.html" LinkGroup="cimobgrupo2">BuildWebHost Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E0.html" LinkGroup="cimobgrupo2">Candidatura Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Candidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000EE.html" LinkGroup="cimobgrupo2">Candidatura Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Candidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000106.html" LinkGroup="cimobgrupo2">Candidatura Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.CandidaturaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E1.html" LinkGroup="cimobgrupo2">CandidaturaId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.CandidaturaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000105.html" LinkGroup="cimobgrupo2">CandidaturaId Property {cimobgrupo2.Models.Entrevista}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Candidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000093.html" LinkGroup="cimobgrupo2">Candidaturas Property {cimobgrupo2.Data.ApplicationDbContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Candidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000127.html" LinkGroup="cimobgrupo2">Candidaturas Property {cimobgrupo2.Models.Programa}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000024.html" LinkGroup="cimobgrupo2">CandidaturasController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.CandidaturasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000028.html" LinkGroup="cimobgrupo2">CandidaturasController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.ChangeDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000073.html" LinkGroup="cimobgrupo2">ChangeDetails Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.IndexViewModel.ChangeDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CF.html" LinkGroup="cimobgrupo2">ChangeDetails Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C2.html" LinkGroup="cimobgrupo2">ChangeDetailsViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.ChangePassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000074.html" LinkGroup="cimobgrupo2">ChangePassword Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.IndexViewModel.ChangePassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D0.html" LinkGroup="cimobgrupo2">ChangePassword Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C7.html" LinkGroup="cimobgrupo2">ChangePasswordViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel.Code" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BB.html" LinkGroup="cimobgrupo2">Code Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro.Codigo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010A.html" LinkGroup="cimobgrupo2">Codigo Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Comentarios" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000104.html" LinkGroup="cimobgrupo2">Comentarios Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup.Configuration" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000145.html" LinkGroup="cimobgrupo2">Configuration Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup.Configure" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000147.html" LinkGroup="cimobgrupo2">Configure Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup.ConfigureServices" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000146.html" LinkGroup="cimobgrupo2">ConfigureServices Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ConfirmEmail" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000C.html" LinkGroup="cimobgrupo2">ConfirmEmail Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.ConfirmPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B7.html" LinkGroup="cimobgrupo2">ConfirmPassword Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel.ConfirmPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BA.html" LinkGroup="cimobgrupo2">ConfirmPassword Property {cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel.ConfirmPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CA.html" LinkGroup="cimobgrupo2">ConfirmPassword Property {cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.Contato" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B4.html" LinkGroup="cimobgrupo2">Contato Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ApplicationUser.Contato" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DE.html" LinkGroup="cimobgrupo2">Contato Property {cimobgrupo2.Models.ApplicationUser}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel.Contato" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C6.html" LinkGroup="cimobgrupo2">Contato Property {cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Controller" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D5.html" LinkGroup="cimobgrupo2">Controller Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup.CreateRoles" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000148.html" LinkGroup="cimobgrupo2">CreateRoles Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Criar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002A.html" LinkGroup="cimobgrupo2">Criar Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Curso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000EF.html" LinkGroup="cimobgrupo2">Curso Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Curso.Curso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F3.html" LinkGroup="cimobgrupo2">Curso Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Curso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000EA.html" LinkGroup="cimobgrupo2">Curso Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso.Curso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011A.html" LinkGroup="cimobgrupo2">Curso Property {cimobgrupo2.Models.EscolaParceiraCurso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.CursoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E5.html" LinkGroup="cimobgrupo2">CursoId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Curso.CursoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F0.html" LinkGroup="cimobgrupo2">CursoId Property {cimobgrupo2.Models.Curso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso.CursoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000119.html" LinkGroup="cimobgrupo2">CursoId Property {cimobgrupo2.Models.EscolaParceiraCurso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Cursos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000092.html" LinkGroup="cimobgrupo2">Cursos Property {cimobgrupo2.Data.ApplicationDbContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.Cursos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000114.html" LinkGroup="cimobgrupo2">Cursos Property {cimobgrupo2.Models.EscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003C.html" LinkGroup="cimobgrupo2">CursosController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.CursosController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003E.html" LinkGroup="cimobgrupo2">CursosController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F4.html" LinkGroup="cimobgrupo2">CustomIdentityErrorDescriber Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Data" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000FF.html" LinkGroup="cimobgrupo2">Data Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.DataNascimento" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B2.html" LinkGroup="cimobgrupo2">DataNascimento Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ApplicationUser.DataNascimento" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DD.html" LinkGroup="cimobgrupo2">DataNascimento Property {cimobgrupo2.Models.ApplicationUser}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel.DataNascimento" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C4.html" LinkGroup="cimobgrupo2">DataNascimento Property {cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.DbInitializer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000098.html" LinkGroup="cimobgrupo2">DbInitializer Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.Delete" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000067.html" LinkGroup="cimobgrupo2">Delete Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000075.html" LinkGroup="cimobgrupo2">DeleteAccount Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.IndexViewModel.DeleteAccount" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D1.html" LinkGroup="cimobgrupo2">DeleteAccount Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.DeleteAccountViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CC.html" LinkGroup="cimobgrupo2">DeleteAccountViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Descricao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000123.html" LinkGroup="cimobgrupo2">Descricao Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.DesmarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000037.html" LinkGroup="cimobgrupo2">DesmarcarEntrevista Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.DesmarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004C.html" LinkGroup="cimobgrupo2">DesmarcarEntrevista Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.DesmarcarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000036.html" LinkGroup="cimobgrupo2">DesmarcarEntrevistaModal Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.DesmarcarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004B.html" LinkGroup="cimobgrupo2">DesmarcarEntrevistaModal Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Detalhes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002F.html" LinkGroup="cimobgrupo2">Detalhes Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.Detalhes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000040.html" LinkGroup="cimobgrupo2">Detalhes Method {cimobgrupo2.Controllers.CursosController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Detalhes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000056.html" LinkGroup="cimobgrupo2">Detalhes Method {cimobgrupo2.Controllers.EscolasParceirasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Detalhes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007F.html" LinkGroup="cimobgrupo2">Detalhes Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.Download" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000066.html" LinkGroup="cimobgrupo2">Download Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber.DuplicateUserName" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F8.html" LinkGroup="cimobgrupo2">DuplicateUserName Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Duracao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000124.html" LinkGroup="cimobgrupo2">Duracao Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Edital" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000125.html" LinkGroup="cimobgrupo2">Edital Property</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Editar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005A_overloads--.html" LinkGroup="cimobgrupo2">Editar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Editar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000059_overloads--.html" LinkGroup="cimobgrupo2">Editar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Editar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000082_overloads--.html" LinkGroup="cimobgrupo2">Editar Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Editar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000083_overloads--.html" LinkGroup="cimobgrupo2">Editar Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.EditarCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000044.html" LinkGroup="cimobgrupo2">EditarCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.EditarCursoModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000043.html" LinkGroup="cimobgrupo2">EditarCursoModal Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.EditarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003B.html" LinkGroup="cimobgrupo2">EditarEntrevista Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.EditarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000050.html" LinkGroup="cimobgrupo2">EditarEntrevista Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.EditarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003A.html" LinkGroup="cimobgrupo2">EditarEntrevistaModal Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.EditarEntrevistaModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004F.html" LinkGroup="cimobgrupo2">EditarEntrevistaModal Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.EditarVagas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008B.html" LinkGroup="cimobgrupo2">EditarVagas Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.EditarVagasModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008A.html" LinkGroup="cimobgrupo2">EditarVagasModal Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Elemento" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D7.html" LinkGroup="cimobgrupo2">Elemento Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ForgotPasswordViewModel.Email" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AC.html" LinkGroup="cimobgrupo2">Email Property {cimobgrupo2.Models.AccountViewModels.ForgotPasswordViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.Email" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B3.html" LinkGroup="cimobgrupo2">Email Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel.Email" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C5.html" LinkGroup="cimobgrupo2">Email Property {cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Microsoft.AspNetCore.Mvc.UrlHelperExtensions.EmailConfirmationLink" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A8.html" LinkGroup="cimobgrupo2">EmailConfirmationLink Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000138.html" LinkGroup="cimobgrupo2">EmailSender Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSender.EmailSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000139.html" LinkGroup="cimobgrupo2">EmailSender Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSenderExtensions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009B.html" LinkGroup="cimobgrupo2">EmailSenderExtensions Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.PasswordHashExtensions.Encode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A5.html" LinkGroup="cimobgrupo2">Encode Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000FD.html" LinkGroup="cimobgrupo2">Entrevista Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Entrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000107.html" LinkGroup="cimobgrupo2">Entrevista Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.EntrevistaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000FE.html" LinkGroup="cimobgrupo2">EntrevistaId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Entrevistas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000095.html" LinkGroup="cimobgrupo2">Entrevistas Property {cimobgrupo2.Data.ApplicationDbContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Entrevistas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000ED.html" LinkGroup="cimobgrupo2">Entrevistas Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000047.html" LinkGroup="cimobgrupo2">EntrevistasController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.EntrevistasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000049.html" LinkGroup="cimobgrupo2">EntrevistasController Constructor</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro.Erro" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010C_overloads--.html" LinkGroup="cimobgrupo2">Erro Constructor</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro.Erro" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010D_overloads--.html" LinkGroup="cimobgrupo2">Erro Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000108.html" LinkGroup="cimobgrupo2">Erro Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro.ErroId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000109.html" LinkGroup="cimobgrupo2">ErroId Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Erros" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008F.html" LinkGroup="cimobgrupo2">Erros Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010E.html" LinkGroup="cimobgrupo2">EscolaParceira Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.EscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000115.html" LinkGroup="cimobgrupo2">EscolaParceira Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.EscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E8.html" LinkGroup="cimobgrupo2">EscolaParceira Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso.EscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000118.html" LinkGroup="cimobgrupo2">EscolaParceira Property {cimobgrupo2.Models.EscolaParceiraCurso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.EscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012D.html" LinkGroup="cimobgrupo2">EscolaParceira Property {cimobgrupo2.Models.ProgramaEscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000116.html" LinkGroup="cimobgrupo2">EscolaParceiraCurso Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso.EscolaParceiraCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011B.html" LinkGroup="cimobgrupo2">EscolaParceiraCurso Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.EscolaParceiraId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E4.html" LinkGroup="cimobgrupo2">EscolaParceiraId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceiraCurso.EscolaParceiraId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000117.html" LinkGroup="cimobgrupo2">EscolaParceiraId Property {cimobgrupo2.Models.EscolaParceiraCurso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.EscolaParceiraId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010F.html" LinkGroup="cimobgrupo2">EscolaParceiraId Property {cimobgrupo2.Models.EscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.EscolaParceiraId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012C.html" LinkGroup="cimobgrupo2">EscolaParceiraId Property {cimobgrupo2.Models.ProgramaEscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.EscolasParceiras" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000091.html" LinkGroup="cimobgrupo2">EscolasParceiras Property {cimobgrupo2.Data.ApplicationDbContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Curso.EscolasParceiras" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F2.html" LinkGroup="cimobgrupo2">EscolasParceiras Property {cimobgrupo2.Models.Curso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.EscolasParceiras" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000126.html" LinkGroup="cimobgrupo2">EscolasParceiras Property {cimobgrupo2.Models.Programa}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000052.html" LinkGroup="cimobgrupo2">EscolasParceirasController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.EscolasParceirasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000054.html" LinkGroup="cimobgrupo2">EscolasParceirasController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.EscolherCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002E.html" LinkGroup="cimobgrupo2">EscolherCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.EscolherEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002D.html" LinkGroup="cimobgrupo2">EscolherEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.EscolherPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002C.html" LinkGroup="cimobgrupo2">EscolherPrograma Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Estado" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011C.html" LinkGroup="cimobgrupo2">Estado Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Estado.Estado" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011F.html" LinkGroup="cimobgrupo2">Estado Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Estado" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000EC.html" LinkGroup="cimobgrupo2">Estado Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Estado" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000102.html" LinkGroup="cimobgrupo2">Estado Property {cimobgrupo2.Models.Entrevista}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EstadoEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000FA.html" LinkGroup="cimobgrupo2">EstadoEntrevista Enumeration</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.EstadoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E6.html" LinkGroup="cimobgrupo2">EstadoId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Estado.EstadoId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011D.html" LinkGroup="cimobgrupo2">EstadoId Property {cimobgrupo2.Models.Estado}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Estados" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000094.html" LinkGroup="cimobgrupo2">Estados Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSender.Execute" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013C.html" LinkGroup="cimobgrupo2">Execute Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000060.html" LinkGroup="cimobgrupo2">FileController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.FileController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000062.html" LinkGroup="cimobgrupo2">FileController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.FilesViewModels.FileDetails" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BE.html" LinkGroup="cimobgrupo2">FileDetails Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.FillCountryList" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005F.html" LinkGroup="cimobgrupo2">FillCountryList Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ForgotPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000D_overloads--.html" LinkGroup="cimobgrupo2">ForgotPassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ForgotPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000E_overloads--.html" LinkGroup="cimobgrupo2">ForgotPassword Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ForgotPasswordConfirmation" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000F.html" LinkGroup="cimobgrupo2">ForgotPasswordConfirmation Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ForgotPasswordViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AB.html" LinkGroup="cimobgrupo2">ForgotPasswordViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.GetContentType" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000068.html" LinkGroup="cimobgrupo2">GetContentType Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.GetFile" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000064.html" LinkGroup="cimobgrupo2">GetFile Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.IFormFileExtensions.GetFileArray" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A3.html" LinkGroup="cimobgrupo2">GetFileArray Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.IFormFileExtensions.GetFileStream" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A2.html" LinkGroup="cimobgrupo2">GetFileStream Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.IFormFileExtensions.GetFilename" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A1.html" LinkGroup="cimobgrupo2">GetFilename Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.GetFiles" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000065.html" LinkGroup="cimobgrupo2">GetFiles Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.GetMimeTypes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000069.html" LinkGroup="cimobgrupo2">GetMimeTypes Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.HomeController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006A.html" LinkGroup="cimobgrupo2">HomeController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.HomeController.HomeController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006B.html" LinkGroup="cimobgrupo2">HomeController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Hora" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000100.html" LinkGroup="cimobgrupo2">Hora Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.IEmailSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013D.html" LinkGroup="cimobgrupo2">IEmailSender Interface</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.IFormFileExtensions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A0.html" LinkGroup="cimobgrupo2">IFormFileExtensions Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000029.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003F.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.CursosController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000004A.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000055.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.EscolasParceirasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.HomeController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006C.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.HomeController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000072.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Index" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007E.html" LinkGroup="cimobgrupo2">Index Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.IndexViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CE.html" LinkGroup="cimobgrupo2">IndexViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.DbInitializer.Initialize" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000099.html" LinkGroup="cimobgrupo2">Initialize Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Maiores17.IsValid" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000131_overloads--.html" LinkGroup="cimobgrupo2">IsValid Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Local" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000101.html" LinkGroup="cimobgrupo2">Local Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.Localidade" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000112.html" LinkGroup="cimobgrupo2">Localidade Property</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000008_overloads--.html" LinkGroup="cimobgrupo2">Login Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.Login" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000007_overloads--.html" LinkGroup="cimobgrupo2">Login Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.LoginViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AD.html" LinkGroup="cimobgrupo2">LoginViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.Logout" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000B.html" LinkGroup="cimobgrupo2">Logout Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Program.Main" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000141.html" LinkGroup="cimobgrupo2">Main Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Maiores17" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000130.html" LinkGroup="cimobgrupo2">Maiores17 Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006D.html" LinkGroup="cimobgrupo2">ManageController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.ManageController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000071.html" LinkGroup="cimobgrupo2">ManageController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.MarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000035.html" LinkGroup="cimobgrupo2">MarcarEntrevista Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController.MarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000051.html" LinkGroup="cimobgrupo2">MarcarEntrevista Method {cimobgrupo2.Controllers.EntrevistasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Erro.Mensagem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000010B.html" LinkGroup="cimobgrupo2">Mensagem Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Maiores17.MergeAttribute" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000133.html" LinkGroup="cimobgrupo2">MergeAttribute Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Microsoft.AspNetCore.Mvc" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A6.html" LinkGroup="cimobgrupo2">Microsoft.AspNetCore.Mvc Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Motivo" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E7.html" LinkGroup="cimobgrupo2">Motivo Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.FilesViewModels.FileDetails.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BF.html" LinkGroup="cimobgrupo2">Name Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel.NewPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C9.html" LinkGroup="cimobgrupo2">NewPassword Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B1.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ApplicationUser.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DC.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.ApplicationUser}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Curso.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F1.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.Curso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000110.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.EscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Estado.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000011E.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.Estado}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C3.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.ManageViewModels.ChangeDetailsViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Nome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000122.html" LinkGroup="cimobgrupo2">Nome Property {cimobgrupo2.Models.Programa}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.NovoCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000042.html" LinkGroup="cimobgrupo2">NovoCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.NovoCursoModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000041.html" LinkGroup="cimobgrupo2">NovoCursoModal Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.NumeroVagas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012E.html" LinkGroup="cimobgrupo2">NumeroVagas Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel.OldPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C8.html" LinkGroup="cimobgrupo2">OldPassword Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.OnModelCreating" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000097.html" LinkGroup="cimobgrupo2">OnModelCreating Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSender.Options" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013A.html" LinkGroup="cimobgrupo2">Options Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.Pais" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000111.html" LinkGroup="cimobgrupo2">Pais Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.LoginViewModel.Password" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AF.html" LinkGroup="cimobgrupo2">Password Property {cimobgrupo2.Models.AccountViewModels.LoginViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.Password" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B6.html" LinkGroup="cimobgrupo2">Password Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel.Password" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B9.html" LinkGroup="cimobgrupo2">Password Property {cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.DeleteAccountViewModel.Password" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CD.html" LinkGroup="cimobgrupo2">Password Property {cimobgrupo2.Models.ManageViewModels.DeleteAccountViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ApplicationUser.PasswordHashAux" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000DF.html" LinkGroup="cimobgrupo2">PasswordHashAux Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions.PasswordHashExtensions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A4.html" LinkGroup="cimobgrupo2">PasswordHashExtensions Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber.PasswordRequiresDigit" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F7.html" LinkGroup="cimobgrupo2">PasswordRequiresDigit Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber.PasswordRequiresNonAlphanumeric" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F6.html" LinkGroup="cimobgrupo2">PasswordRequiresNonAlphanumeric Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber.PasswordRequiresUpper" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F5.html" LinkGroup="cimobgrupo2">PasswordRequiresUpper Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.CustomIdentityErrorDescriber.PasswordTooShort" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000F9.html" LinkGroup="cimobgrupo2">PasswordTooShort Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.FilesViewModels.FileDetails.Path" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C0.html" LinkGroup="cimobgrupo2">Path Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Entrevista.Pontuacao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000103.html" LinkGroup="cimobgrupo2">Pontuacao Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Program" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000140.html" LinkGroup="cimobgrupo2">Program Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000120.html" LinkGroup="cimobgrupo2">Programa Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.Programa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000128.html" LinkGroup="cimobgrupo2">Programa Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.Programa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E9.html" LinkGroup="cimobgrupo2">Programa Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.Programa" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012B.html" LinkGroup="cimobgrupo2">Programa Property {cimobgrupo2.Models.ProgramaEscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000129.html" LinkGroup="cimobgrupo2">ProgramaEscolaParceira Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.ProgramaEscolaParceira" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012F.html" LinkGroup="cimobgrupo2">ProgramaEscolaParceira Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.ProgramaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E3.html" LinkGroup="cimobgrupo2">ProgramaId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ProgramaEscolaParceira.ProgramaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000012A.html" LinkGroup="cimobgrupo2">ProgramaId Property {cimobgrupo2.Models.ProgramaEscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Programa.ProgramaId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000121.html" LinkGroup="cimobgrupo2">ProgramaId Property {cimobgrupo2.Models.Programa}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data.ApplicationDbContext.Programas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000090.html" LinkGroup="cimobgrupo2">Programas Property {cimobgrupo2.Data.ApplicationDbContext}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.EscolaParceira.Programas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000113.html" LinkGroup="cimobgrupo2">Programas Property {cimobgrupo2.Models.EscolaParceira}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007A.html" LinkGroup="cimobgrupo2">ProgramasController Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.ProgramasController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007D.html" LinkGroup="cimobgrupo2">ProgramasController Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController.ProperView" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000021.html" LinkGroup="cimobgrupo2">ProperView Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.PublicarResultados" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000034.html" LinkGroup="cimobgrupo2">PublicarResultados Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Recusar" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000033.html" LinkGroup="cimobgrupo2">Recusar Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.RedirectToLocal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000019.html" LinkGroup="cimobgrupo2">RedirectToLocal Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.Register" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000000A_overloads--.html" LinkGroup="cimobgrupo2">Register Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.Register" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000009_overloads--.html" LinkGroup="cimobgrupo2">Register Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B0.html" LinkGroup="cimobgrupo2">RegisterViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.Remover" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005C.html" LinkGroup="cimobgrupo2">Remover Method {cimobgrupo2.Controllers.EscolasParceirasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.Remover" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000085.html" LinkGroup="cimobgrupo2">Remover Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.RemoverAssociacoes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005D.html" LinkGroup="cimobgrupo2">RemoverAssociacoes Method {cimobgrupo2.Controllers.EscolasParceirasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.RemoverAssociacoes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000086.html" LinkGroup="cimobgrupo2">RemoverAssociacoes Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.RemoverCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000046.html" LinkGroup="cimobgrupo2">RemoverCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController.RemoverCursoModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000045.html" LinkGroup="cimobgrupo2">RemoverCursoModal Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.RemoverDocumentos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000031.html" LinkGroup="cimobgrupo2">RemoverDocumentos Method {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.RemoverDocumentos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000087.html" LinkGroup="cimobgrupo2">RemoverDocumentos Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController.RemoverModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000005B.html" LinkGroup="cimobgrupo2">RemoverModal Method {cimobgrupo2.Controllers.EscolasParceirasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController.RemoverModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000084.html" LinkGroup="cimobgrupo2">RemoverModal Method {cimobgrupo2.Controllers.ProgramasController}</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ResetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000011_overloads--.html" LinkGroup="cimobgrupo2">ResetPassword Method</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ResetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000010_overloads--.html" LinkGroup="cimobgrupo2">ResetPassword Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Microsoft.AspNetCore.Mvc.UrlHelperExtensions.ResetPasswordCallbackLink" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A9.html" LinkGroup="cimobgrupo2">ResetPasswordCallbackLink Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.ResetPasswordConfirmation" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000012.html" LinkGroup="cimobgrupo2">ResetPasswordConfirmation Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B8.html" LinkGroup="cimobgrupo2">ResetPasswordViewModel Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSender.SendEmailAsync" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013B.html" LinkGroup="cimobgrupo2">SendEmailAsync Method {cimobgrupo2.Services.EmailSender}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.IEmailSender.SendEmailAsync" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013E.html" LinkGroup="cimobgrupo2">SendEmailAsync Method {cimobgrupo2.Services.IEmailSender}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSenderExtensions.SendEmailCandidaturaResultado" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009E.html" LinkGroup="cimobgrupo2">SendEmailCandidaturaResultado Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSenderExtensions.SendEmailConfirmationAsync" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009C.html" LinkGroup="cimobgrupo2">SendEmailConfirmationAsync Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.EmailSenderExtensions.SendEmailForgotPasswordAsync" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009D.html" LinkGroup="cimobgrupo2">SendEmailForgotPasswordAsync Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.AuthMessageSenderOptions.SendGridKey" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000136.html" LinkGroup="cimobgrupo2">SendGridKey Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services.AuthMessageSenderOptions.SendGridUser" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000135.html" LinkGroup="cimobgrupo2">SendGridUser Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController.SetErrorMessage" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000022.html" LinkGroup="cimobgrupo2">SetErrorMessage Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.SetHelpModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000017.html" LinkGroup="cimobgrupo2">SetHelpModal Method {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.SetHelpModal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000077.html" LinkGroup="cimobgrupo2">SetHelpModal Method {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController.SetHelpToolTips" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000076.html" LinkGroup="cimobgrupo2">SetHelpToolTips Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.SetHelpTooltipsForgotPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000015.html" LinkGroup="cimobgrupo2">SetHelpTooltipsForgotPassword Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.SetHelpTooltipsLogin" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000013.html" LinkGroup="cimobgrupo2">SetHelpTooltipsLogin Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.SetHelpTooltipsRegisto" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000014.html" LinkGroup="cimobgrupo2">SetHelpTooltipsRegisto Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController.SetHelpTooltipsResetPassword" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000016.html" LinkGroup="cimobgrupo2">SetHelpTooltipsResetPassword Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController.SetSuccessMessage" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000023.html" LinkGroup="cimobgrupo2">SetSuccessMessage Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000143.html" LinkGroup="cimobgrupo2">Startup Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Startup.Startup" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000144.html" LinkGroup="cimobgrupo2">Startup Constructor</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels.ChangePasswordViewModel.StatusMessage" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000CB.html" LinkGroup="cimobgrupo2">StatusMessage Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController.Submeter" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000002B.html" LinkGroup="cimobgrupo2">Submeter Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Ajuda.Texto" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D8.html" LinkGroup="cimobgrupo2">Texto Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.UploadFile" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000063.html" LinkGroup="cimobgrupo2">UploadFile Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Microsoft.AspNetCore.Mvc.UrlHelperExtensions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000A7.html" LinkGroup="cimobgrupo2">UrlHelperExtensions Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.User" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000EB.html" LinkGroup="cimobgrupo2">User Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel.UserId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BC.html" LinkGroup="cimobgrupo2">UserId Property {cimobgrupo2.Models.AccountViewModels.ResetPasswordViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.Candidatura.UserId" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000E2.html" LinkGroup="cimobgrupo2">UserId Property {cimobgrupo2.Models.Candidatura}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.LoginViewModel.Username" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AE.html" LinkGroup="cimobgrupo2">Username Property {cimobgrupo2.Models.AccountViewModels.LoginViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels.RegisterViewModel.Username" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000B5.html" LinkGroup="cimobgrupo2">Username Property {cimobgrupo2.Models.AccountViewModels.RegisterViewModel}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController._ajudas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001E.html" LinkGroup="cimobgrupo2">_ajudas Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController._candidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000026.html" LinkGroup="cimobgrupo2">_candidaturas Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController._context" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001C.html" LinkGroup="cimobgrupo2">_context Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController._controllerName" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001B.html" LinkGroup="cimobgrupo2">_controllerName Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CursosController._cursos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000003D.html" LinkGroup="cimobgrupo2">_cursos Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController._emailSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000004.html" LinkGroup="cimobgrupo2">_emailSender Field {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.CandidaturasController._emailSender" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000027.html" LinkGroup="cimobgrupo2">_emailSender Field {cimobgrupo2.Controllers.CandidaturasController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EntrevistasController._entrevistas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000048.html" LinkGroup="cimobgrupo2">_entrevistas Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController._erros" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001F.html" LinkGroup="cimobgrupo2">_erros Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.EscolasParceirasController._escolasParceiras" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000053.html" LinkGroup="cimobgrupo2">_escolasParceiras Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.BaseController._fileController" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000001D.html" LinkGroup="cimobgrupo2">_fileController Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController._logger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000005.html" LinkGroup="cimobgrupo2">_logger Field {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController._logger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000070.html" LinkGroup="cimobgrupo2">_logger Field {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ProgramasController._programas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000007C.html" LinkGroup="cimobgrupo2">_programas Field</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController._signInManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000003.html" LinkGroup="cimobgrupo2">_signInManager Field {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController._signInManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006F.html" LinkGroup="cimobgrupo2">_signInManager Field {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.AccountController._userManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000002.html" LinkGroup="cimobgrupo2">_userManager Field {cimobgrupo2.Controllers.AccountController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.ManageController._userManager" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000006E.html" LinkGroup="cimobgrupo2">_userManager Field {cimobgrupo2.Controllers.ManageController}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000013F.html" LinkGroup="cimobgrupo2">cimobgrupo2 Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2 Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000149.html" LinkGroup="cimobgrupo2">cimobgrupo2 Reference</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000000.html" LinkGroup="cimobgrupo2">cimobgrupo2.Controllers Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Data" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000008C.html" LinkGroup="cimobgrupo2">cimobgrupo2.Data Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Extensions" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009F.html" LinkGroup="cimobgrupo2">cimobgrupo2.Extensions Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000D2.html" LinkGroup="cimobgrupo2">cimobgrupo2.Models Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.AccountViewModels" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000AA.html" LinkGroup="cimobgrupo2">cimobgrupo2.Models.AccountViewModels Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.FilesViewModels" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000BD.html" LinkGroup="cimobgrupo2">cimobgrupo2.Models.FilesViewModels Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Models.ManageViewModels" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_00000000000000C1.html" LinkGroup="cimobgrupo2">cimobgrupo2.Models.ManageViewModels Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Services" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_000000000000009A.html" LinkGroup="cimobgrupo2">cimobgrupo2.Services Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="cimobgrupo2.Controllers.FileController.fileProvider" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:cimobgrupo2.chm::/topic_0000000000000061.html" LinkGroup="cimobgrupo2">fileProvider Field</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

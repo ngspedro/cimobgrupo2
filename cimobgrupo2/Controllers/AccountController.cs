@@ -15,18 +15,35 @@ using cimobgrupo2.Models.AccountViewModels;
 using cimobgrupo2.Services;
 using cimobgrupo2.Data;
 using Microsoft.Extensions.FileProviders;
+using cimobgrupo2.Extensions;
 
 namespace cimobgrupo2.Controllers
 {
+    /// <summary>Controlador para contas de acesso ao sistema</summary>
+    /// <remarks>Extende de BaseController</remarks>
     [Authorize]
     [Route("[controller]/[action]")]
     public class AccountController : BaseController
     {
+        /// <summary>Atributo para o User Manager</summary>
         private readonly UserManager<ApplicationUser> _userManager;
+
+        /// <summary>Atributo para o SignIn Manager</summary>
         private readonly SignInManager<ApplicationUser> _signInManager;
+
+        /// <summary>Atributo para o Email Sender</summary>
         private readonly IEmailSender _emailSender;
+
+        /// <summary>Atributo para o Logger</summary>
         private readonly ILogger _logger;
 
+        /// <summary>Construtor com parametros - AccountController</summary>
+        /// <param name="userManager">User Manager</param>
+        /// <param name="signInManager">SignIn Manager</param>
+        /// <param name="emailSender">Email Sender</param>
+        /// <param name="logger">Logger</param>
+        /// <param name="context">Context da Bd</param>
+        /// <param name="fileProvider">File Provider</param>
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
@@ -41,6 +58,9 @@ namespace cimobgrupo2.Controllers
             _logger = logger;
         }
 
+        /// <summary>Action que prepara e mostra a view para fazer login</summary>
+        /// <param name="returnUrl">Return Url</param>
+        /// <returns>View para fazer login</returns>
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
@@ -54,6 +74,10 @@ namespace cimobgrupo2.Controllers
             return View();
         }
 
+        /// <summary>Action que trata do processo de login e redirecciona para a área pessoal (sessão iniciada)</summary>
+        /// <param name="model">LoginViewModel preenchido com os dados submetidos no formulário de login</param>
+        /// <param name="returnUrl">Return Url</param>
+        /// <returns>View da área pessoal se o login foi feito com sucesso. (Caso contrário fica na mesma página)</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -82,6 +106,9 @@ namespace cimobgrupo2.Controllers
             return View(model);
         }
 
+        /// <summary>Action que prepara e mostra a view para fazer registo</summary>
+        /// <param name="returnUrl">Return Url</param>
+        /// <returns>View para fazer registo</returns>
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -92,6 +119,10 @@ namespace cimobgrupo2.Controllers
             return View();
         }
 
+        /// <summary>Action que trata do processo de registo</summary>
+        /// <param name="model">RegisterViewModel preenchido com os dados submetidos no formulário de registo</param>
+        /// <param name="returnUrl">Return Url</param>
+        /// <returns>Redireciona para a acção de login com a mensagem de que a conta tem que ser ativada, caso o processo de registo seja bem sucedido.</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -106,7 +137,9 @@ namespace cimobgrupo2.Controllers
                     DataNascimento = model.DataNascimento,
                     Email = model.Email,
                     Contato = model.Contato,
-                    UserName = model.Username };
+                    UserName = model.Username,
+                    PasswordHashAux = PasswordHashExtensions.Encode(model.Password)
+                };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -142,6 +175,8 @@ namespace cimobgrupo2.Controllers
             return View(model);
         }
 
+        /// <summary>Action que trata do processo de logout</summary>
+        /// <returns>Redireciona para a acção de login</returns>
         [HttpPost] 
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -151,6 +186,10 @@ namespace cimobgrupo2.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        /// <summary>Action que trata do processo de confirmação de email</summary>
+        /// <param name="userId">Id do utilizador a ativar a conta</param>
+        /// <param name="code">Código de confirmação (usado para verificar se a ativação é legitima)</param>
+        /// <returns>View com resultado da ativação</returns>
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string code)
@@ -172,6 +211,8 @@ namespace cimobgrupo2.Controllers
             return View("ConfirmEmail");
         }
 
+        /// <summary>Action que prepara e mostra a view para inserção do email cuja conta se pretende recuperar</summary>
+        /// <returns>View para fazer pedido de recuperação</returns>
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
@@ -181,6 +222,9 @@ namespace cimobgrupo2.Controllers
             return View();
         }
 
+        /// <summary>Action que trata do processo de pedido de recuperação de conta</summary>
+        /// <param name="model">ForgotPasswordViewModel preenchido com o email da conta que se pretende recuperar</param>
+        /// <returns>Redirecciona para a acção ForgotPasswordConfirmation, se o processo for bem sucedido.</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -210,6 +254,8 @@ namespace cimobgrupo2.Controllers
             return View(model);
         }
 
+        /// <summary>Action que prepara e mostra a view com a mensagem de que tem que ir ao email clicar no link para repor a password</summary>
+        /// <returns>View com a mensagem</returns>
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
@@ -217,6 +263,10 @@ namespace cimobgrupo2.Controllers
             return View();
         }
 
+        /// <summary>Action que prepara e mostra a view na qual o utilizador pode repor a sua password (ao clicar no link de reposiçao no email)</summary>
+        /// <param name="userId">Id do user que está a repor a password</param>
+        /// <param name="code">Codigo de reposição de password (para efeitos de validação)</param>
+        /// <returns>View com o formulário de reposição de password</returns>
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPassword(string userId = null, string code = null)
@@ -232,6 +282,9 @@ namespace cimobgrupo2.Controllers
             return View(model);
         }
 
+        /// <summary>Action que trata do processo de reposição de password</summary>
+        /// <param name="model">ResetPasswordViewModel preenchido com a nova password e a sua confirmação</param>
+        /// <returns>Redirecciona para a acção ResetPasswordConfirmation, se o processo for bem sucedido.</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -248,9 +301,12 @@ namespace cimobgrupo2.Controllers
                 // Don't reveal that the user does not exist
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
+
+            user.PasswordHashAux = PasswordHashExtensions.Encode(model.Password);
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
+                await _userManager.UpdateAsync(user);
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
             else
@@ -262,6 +318,8 @@ namespace cimobgrupo2.Controllers
             return View();
         }
 
+        /// <summary>Action que prepara e mostra a view com a mensagem de sucesso na reposição de password</summary>
+        /// <returns>View com a mensagem</returns>
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPasswordConfirmation()
@@ -270,6 +328,8 @@ namespace cimobgrupo2.Controllers
         }
 
         #region SetHelp
+
+        /// <summary>Método que coloca a informação nas tooltips de ajuda do login</summary>
         private void SetHelpTooltipsLogin()
         {
             ViewData["Username"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "Username").Texto;
@@ -277,6 +337,7 @@ namespace cimobgrupo2.Controllers
             ViewData["RememberMe"] = _ajudas.Single(ai => ai.Action == "Login" && ai.Elemento == "RememberMe").Texto;
         }
 
+        /// <summary>Método que coloca a informação nas tooltips de ajuda do registo</summary>
         private void SetHelpTooltipsRegisto()
         {
             ViewData["Nome"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "Nome").Texto;
@@ -288,25 +349,24 @@ namespace cimobgrupo2.Controllers
             ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "Registo" && ai.Elemento == "ConfirmarPassword").Texto;
         }
 
+        /// <summary>Método que coloca a informação nas tooltips de ajuda do pedido de reposição de password</summary>
         private void SetHelpTooltipsForgotPassword()
         {
             ViewData["Email"] = _ajudas.Single(ai => ai.Action == "ForgotPassword" && ai.Elemento == "Email").Texto;
         }
 
+        /// <summary>Método que coloca a informação nas tooltips de ajuda da reposição de password</summary>
         private void SetHelpTooltipsResetPassword()
         {
             ViewData["Password"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "Password").Texto;
             ViewData["ConfirmarPassword"] = _ajudas.Single(ai => ai.Action == "ResetPassword" && ai.Elemento == "ConfirmarPassword").Texto;
         }
-
-        private void SetHelpModal(String Action)
-        {
-            ViewData["TextoModalAjuda"] = _ajudas.Single(ai => ai.Action == Action && ai.Elemento == "ModalAjuda").Texto;
-        }
         #endregion
 
         #region Helpers
 
+        /// <summary>Helper para adição de erros</summary>
+        /// <param name="result">IdentityResult</param>
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -315,6 +375,9 @@ namespace cimobgrupo2.Controllers
             }
         }
 
+        /// <summary>Helper para redirecionar</summary>
+        /// <param name="returnUrl">Url</param>
+        /// <returns>Redirecciona para o url fornecido por parametro, se válido. Caso contrário redireciona para o index do HomeController</returns>
         private IActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))

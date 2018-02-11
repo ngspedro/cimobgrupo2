@@ -9,24 +9,24 @@
 
         <div class="form-group">
             <label asp-for="Nome" class="control-label"></label>:
-            <input asp-for="Nome" class="form-control" />
+            <input asp-for="Nome" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Nome"]"/>
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Duracao" class="control-label"></label>:
-            <input asp-for="Duracao" class="form-control" />
+            <input asp-for="Duracao" class="form-control" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Duracao"]"/>
             <span asp-validation-for="Duracao" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Edital" class="control-label"></label>:
-            <input id="input-edital" name="file" type="file" class="file" data-show-preview="false">
+            <input id="input-edital" name="file" type="file" class="file" data-show-preview="false" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["EditalTooltip"]">
             <span asp-validation-for="Edital" class="text-danger"></span>
         </div>
         
         <div class="form-group">
             <label asp-for="Descricao" class="control-label"></label>:
-            <textarea asp-for="Descricao" class="form-control" style="min-height: 240px"></textarea>
+            <textarea asp-for="Descricao" class="form-control" style="min-height: 240px" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Descricao"]"></textarea>
             <span asp-validation-for="Descricao" class="text-danger"></span>
         </div>
     </div>

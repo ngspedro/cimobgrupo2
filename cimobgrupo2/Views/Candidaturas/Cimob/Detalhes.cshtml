@@ -82,7 +82,7 @@
     <div class="sec-title">
         <span class="glyphicon glyphicon-comment"></span><strong> Entrevistas Marcadas:</strong>
         <div class="pull-right">
-            <a data-target="#" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Marcar Entrevista</a>
+            <a data-target="#marcarEntrevista" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Marcar Entrevista</a>
         </div>
     </div>
     <br />
@@ -97,41 +97,47 @@
                         Hora
                     </th>
                     <th>
+                        Local
+                    </th>
+                    <th>
                         Estado
                     </th>
-                    <th class="no-sort"></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        20/10/2017
-                    </td>
-                    <td>
-                        09h30
-                    </td>
-                    <td>
-                        Concluída
-                    </td>
-                    <td class="text-center">
-                        <a asp-action="#" asp-controller="Entrevistas" asp-route-id="1">Detalhes</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        21/10/2017
-                    </td>
-                    <td>
-                        15h30
-                    </td>
-                    <td>
-                        Pendente
-                    </td>
-                    <td class="text-center">
-                        <a asp-action="#" asp-controller="Entrevistas" asp-route-id="1">Adiar</a> |
-                        <a asp-action="#" asp-controller="Entrevistas" asp-route-id="1">Avaliar</a>
-                    </td>
-                </tr>
+                @foreach (var item in Model.Entrevistas)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hora)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td class="text-center">
+                            @if (item.Estado == EstadoEntrevista.Pendente)
+                            {
+                                <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a> <span>|</span>
+                                <a asp-action="AvaliarEntrevistaModal" data-target="#avaliarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Avaliar</a> <span>|</span>
+                                <a asp-action="DesmarcarEntrevistaModal" data-target="#removerEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Desmarcar</a>
+
+                            }
+                            else
+                            {
+                                <a asp-action="EditarEntrevistaModal" data-target="#editarEntrevista" data-toggle="modal" asp-route-id="@item.EntrevistaId">Editar</a>
+
+                            }
+
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
@@ -142,7 +148,7 @@
         if (Model.EstadoId == 1)
         {
             <a type="button" data-target="#aceitarCandidatura" data-toggle="modal" class="button pull-right" id="btnAceitar" style="margin-bottom: 20px;">Aceitar Candidatura</a>
-            <a type="button" data-target="#recusarCandidatura" data-toggle="modal" class="button pull-right" id="btnRecusar">Recusar Candidatura</a>
+            <a type="button" data-target="#recusarCandidatura" data-toggle="modal" class="button pull-right" id="btnRecusar">Recusar Candidatura </a>
         }
     }
     
@@ -193,6 +199,57 @@
     </div>
 </div>
 
+<div class="modal fade" id="marcarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Marcar Entrevista</h4>
+            </div>
+            <form asp-action="MarcarEntrevista" method="post">
+                <input type="hidden" asp-for="CandidaturaId" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Data:</label>
+                                <input type="text" name="Data"  class="form-control" id="DataPicker" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Data"]">
+                            </div>
+                            <div class="form-group">
+                                <label>Hora:</label>
+                                <input type="time" name="Hora" class="form-control" id="txtHora" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Hora"]">
+                            </div>
+                            <div class="form-group">
+                                <label>Local:</label>
+                                <input type="text" name="Local" class="form-control" id="txtLocal" data-toggle="tooltip" data-placement-md="right" data-placement-xs="top" title="@ViewData["Local"]"/>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button id="btnConfirmar" type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+                   
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="avaliarEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="motivoRejeicao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -217,3 +274,45 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="removerEntrevista" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#tabela-entrevistas').DataTable({
+            "language": {
+                "url": "/lib/DataTables/pt.json"
+            },
+            "searching": false,
+            "pageLength": 5,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bAutoWidth": false
+        });
+    });
+
+        $(function () {
+            $('#DataPicker').datepicker({ dateFormat: 'dd/mm/yy' })
+            .change(dateChanged)
+            .on('changeDate', dateChanged);;
+    });
+
+    $('#avaliarEntrevista').on('hidden.bs.modal', function () {
+        // remove the bs.modal data attribute from it
+        $(this).removeData('bs.modal');
+        // and empty the modal-content element
+        $('#avaliarEntrevista .modal-content').empty();
+    });
+
+    $('#editarEntrevista').on('hidden.bs.modal', function () {
+        // remove the bs.modal data attribute from it
+        $(this).removeData('bs.modal');
+        // and empty the modal-content element
+        $('#editarEntrevista .modal-content').empty();
+    });
+</script>

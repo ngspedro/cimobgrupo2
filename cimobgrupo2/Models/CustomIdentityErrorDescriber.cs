@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace cimobgrupo2.Models
 {
+    /// <summary>Classe para redefinir as mensagens de erro predefinidas do Identity do asp</summary>
     public class CustomIdentityErrorDescriber : IdentityErrorDescriber
     {
+        /// <summary>Método para traduzir o erro em que a password precisa de uma maiuscula</summary>
+        /// <returns>IdentityError traduzido</returns>
         public override IdentityError PasswordRequiresUpper()
         {
             return new IdentityError
@@ -17,6 +20,8 @@ namespace cimobgrupo2.Models
             };
         }
 
+        /// <summary>Método para traduzir o erro em que a password precisa de pelo menos um caracter especial</summary>
+        /// <returns>IdentityError traduzido</returns>
         public override IdentityError PasswordRequiresNonAlphanumeric()
         {
             return new IdentityError
@@ -26,6 +31,8 @@ namespace cimobgrupo2.Models
             };
         }
 
+        /// <summary>Método para traduzir o erro em que a password precisa de pelo menos um numero</summary>
+        /// <returns>IdentityError traduzido</returns>
         public override IdentityError PasswordRequiresDigit()
         {
             return new IdentityError
@@ -35,6 +42,8 @@ namespace cimobgrupo2.Models
             };
         }
 
+        /// <summary>Método para traduzir o erro em que o utilizador já existe</summary>
+        /// <returns>IdentityError traduzido</returns>
         public override IdentityError DuplicateUserName(string userName)
         {
             return new IdentityError
@@ -44,6 +53,8 @@ namespace cimobgrupo2.Models
             };
         }
 
+        /// <summary>Método para traduzir o erro em que a password é demasiado curta</summary>
+        /// <returns>IdentityError traduzido</returns>
         public override IdentityError PasswordTooShort(int length)
         {
             return new IdentityError

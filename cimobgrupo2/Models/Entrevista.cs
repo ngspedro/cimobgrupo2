@@ -9,76 +9,71 @@ using System.Threading.Tasks;
 
 namespace cimobgrupo2.Models
 {
-    public class Entrevista
+    /// <summary>Enumerado para representar o estado de uma entrevista</summary>
+    public enum EstadoEntrevista
     {
+        Realizada, Pendente
+    }
+
+    /// <summary>Classe para representar uma entrevista do sistema</summary>
+    /// <remarks>Possui as propriedades necessárias para uma entrevista (data, hora, local, etc.)</remarks> 
+    public class Entrevista : IValidatableObject
+    {
+        /// <summary>Propriedade correspondente ao id da entrevista</summary>
         public int EntrevistaId { get; set; }
-        [ForeignKey("User")]
-        public int EstadoId { get; set; }
-        //[DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name=("Data da Entrevista"))]
-        public DateTime DataEntrevista { get; set; }
-        [DataType(DataType.Time)]
-        [DisplayFormat(DataFormatString = "{0:HH:mm:ss}", ApplyFormatInEditMode = true)]
-        [Display(Name = ("Hora da Entrevista"))]
-        public DateTime HoraEntrevista { get { return DataEntrevista;} } 
-        [Display(Name ="Estado")]
-        public virtual Estado Estado { get; set; }
-        [Required(ErrorMessage = "{0} é obrigatorio")]
-        public string Avaliacao{ get { return this.Avaliar(Estado); } }
+        [Required(ErrorMessage = "Data obrigatória.")]
+        /// <summary>Propriedade correspondente à data da entrevista</summary>
+        public string Data { get; set; }
+
+        /// <summary>Propriedade correspondente à hora da entrevista</summary>
+        [Required(ErrorMessage = "Hora obrigatória.")]
+        public string Hora { get; set; }
+
+        /// <summary>Propriedade correspondente ao local onde será realizada a entrevista</summary>
+        [Required(ErrorMessage = "Local obrigatório.")]
+        public string Local { get; set; }
+
+        /// <summary>Propriedade correspondente ao estado da entrevista</summary>
+        public EstadoEntrevista Estado { get; set; }
+
+        /// <summary>Propriedade correspondente à pontuação da entrevista, depois de realizada</summary>
+        public int? Pontuacao { get; set; }
+
+        /// <summary>Propriedade correspondente aos comentários adicionais, deopis da realização e pontuação da entrevista</summary>
+        public string Comentarios { get; set; }
+
+        /// <summary>Propriedade correspondente ao id da candidatura associada à entrevista</summary>
         public int CandidaturaId { get; set; }
+
+        /// <summary>Propriedade virtual correspondente ao objetivo da candidatura associada à entrevista</summary>
         public virtual Candidatura Candidatura { get; set; }
+
+        /// <summary>Construtor sem parametros</summary>
+        public Entrevista()
+        {
+
+        }
+
         /// <summary>
-        /// Verificação de datas ao inserir num determinado model.
+        /// Verificação de data ao inserir num determinado model.
         /// </summary>
         /// <param name="validationContext"></param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public IEnumerable<ValidationResult> ValidarData(ValidationContext validationContext)
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            DateTime expectedFormatDate;
+            var dataInserida = DateTime.Parse(Data);
+            var dataAtual = DateTime.Now;
             List<ValidationResult> res = new List<ValidationResult>();
-            if (DataEntrevista < DateTime.Today)
+            if (dataInserida<dataAtual)
             {
                 ValidationResult mss = new ValidationResult("A data inserida deve ser superior ou igual a de hoje");
+                
                 res.Add(mss);
             }
             return res;
-
-            if (!DateTime.TryParseExact(DataEntrevista.ToString("dd/MM/yyyy HH:mm"), "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture,
-                                        DateTimeStyles.None, out expectedFormatDate))
-            {
-                ValidationResult mss = new ValidationResult("A data inserida não está no formato indicado");
-                res.Add(mss);
-            }
-
         }
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        // para mostra o estado da avaliação 
-        public  string Avaliar(Estado value)
-        {
-            int id = value.EstadoId;
-                switch (id)
-                {
-                     case 1 :
-                        return "Entrevista com estado Pendente";
-                case 2:
-                    return " Entrevista com estado aceite"; 
-                    case 3:
-                        return "Entrevista com estado recusado";
-                case 4:
-                    return "Entrevista com estado de criação, aguardando outros detalhes";
-                case 5:
-                    return "Entrevista Avaliada e ser finalizado o processo";
-                    default:
-                        return "Não Existe a entrevsita por avaliar";
-                }
-            }
+    }
 
 
         }

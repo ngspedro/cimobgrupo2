@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="Sprint2Testes" Title="Sprint2Testes Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.AceitarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000B.html" LinkGroup="Sprint2Testes">AceitarCandidatura Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.AceitarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001A.html" LinkGroup="Sprint2Testes">AceitarCandidatura Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.AceitarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000029.html" LinkGroup="Sprint2Testes">AceitarCandidatura Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000001.html" LinkGroup="Sprint2Testes">Chrome Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.FazerCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000F.html" LinkGroup="Sprint2Testes">FazerCandidatura Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.FazerCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001E.html" LinkGroup="Sprint2Testes">FazerCandidatura Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.FazerCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000002D.html" LinkGroup="Sprint2Testes">FazerCandidatura Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000010.html" LinkGroup="Sprint2Testes">Firefox Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001F.html" LinkGroup="Sprint2Testes">InternetExplorer Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.PublicarResultados" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000E.html" LinkGroup="Sprint2Testes">PublicarResultados Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.PublicarResultados" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001D.html" LinkGroup="Sprint2Testes">PublicarResultados Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.PublicarResultados" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000002C.html" LinkGroup="Sprint2Testes">PublicarResultados Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.RecusarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000C.html" LinkGroup="Sprint2Testes">RecusarCandidatura Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.RecusarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001B.html" LinkGroup="Sprint2Testes">RecusarCandidatura Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.RecusarCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000002A.html" LinkGroup="Sprint2Testes">RecusarCandidatura Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000000.html" LinkGroup="Sprint2Testes">Sprint2Testes Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000002E.html" LinkGroup="Sprint2Testes">Sprint2Testes Reference</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VerMotivoRejeicao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000D.html" LinkGroup="Sprint2Testes">VerMotivoRejeicao Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VerMotivoRejeicao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000001C.html" LinkGroup="Sprint2Testes">VerMotivoRejeicao Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VerMotivoRejeicao" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000002B.html" LinkGroup="Sprint2Testes">VerMotivoRejeicao Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarCandidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000007.html" LinkGroup="Sprint2Testes">VisualizarCandidaturas Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarCandidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000016.html" LinkGroup="Sprint2Testes">VisualizarCandidaturas Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarCandidaturas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000025.html" LinkGroup="Sprint2Testes">VisualizarCandidaturas Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDetalhesCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000009.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidatura Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDetalhesCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000018.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidatura Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDetalhesCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000027.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidatura Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDetalhesCandidaturaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_000000000000000A.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidaturaInexistente Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDetalhesCandidaturaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000019.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidaturaInexistente Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDetalhesCandidaturaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000028.html" LinkGroup="Sprint2Testes">VisualizarDetalhesCandidaturaInexistente Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDetalhesPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000003.html" LinkGroup="Sprint2Testes">VisualizarDetalhesPrograma Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDetalhesPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000012.html" LinkGroup="Sprint2Testes">VisualizarDetalhesPrograma Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDetalhesPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000021.html" LinkGroup="Sprint2Testes">VisualizarDetalhesPrograma Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDetalhesProgramaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000004.html" LinkGroup="Sprint2Testes">VisualizarDetalhesProgramaInexistente Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDetalhesProgramaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000013.html" LinkGroup="Sprint2Testes">VisualizarDetalhesProgramaInexistente Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDetalhesProgramaInexistente" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000022.html" LinkGroup="Sprint2Testes">VisualizarDetalhesProgramaInexistente Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDocumentosAssociadosCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000008.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosCandidatura Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDocumentosAssociadosCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000017.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosCandidatura Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDocumentosAssociadosCandidatura" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000026.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosCandidatura Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarDocumentosAssociadosPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000006.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosPrograma Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarDocumentosAssociadosPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000015.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosPrograma Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarDocumentosAssociadosPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000024.html" LinkGroup="Sprint2Testes">VisualizarDocumentosAssociadosPrograma Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarEscolasAssociadasPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000005.html" LinkGroup="Sprint2Testes">VisualizarEscolasAssociadasPrograma Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarEscolasAssociadasPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000014.html" LinkGroup="Sprint2Testes">VisualizarEscolasAssociadasPrograma Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarEscolasAssociadasPrograma" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000023.html" LinkGroup="Sprint2Testes">VisualizarEscolasAssociadasPrograma Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Chrome.VisualizarProgramas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000002.html" LinkGroup="Sprint2Testes">VisualizarProgramas Method {Sprint2Testes.Chrome}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.Firefox.VisualizarProgramas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000011.html" LinkGroup="Sprint2Testes">VisualizarProgramas Method {Sprint2Testes.Firefox}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint2Testes.InternetExplorer.VisualizarProgramas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint2Testes.chm::/topic_0000000000000020.html" LinkGroup="Sprint2Testes">VisualizarProgramas Method {Sprint2Testes.InternetExplorer}</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

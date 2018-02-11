@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Index</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<style>
+		html,body {
+			margin: 0; padding: 0px;
+			height:100%; 
+			min-height:100%;
+			background-color: rgb(233,232,220);
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-style: normal;
+			font-weight: normal;
+			color: black;
+		}
+
+		body {font-size:75%;position:relative; margin-top:-1px; border-style: solid solid solid solid;	border-color: rgb(172,168,153);	border-width: 0px 0px 1px 0px;}
+		a { text-decoration:none; color:#06c }
+		form {padding:5px; margin:0px;}
+	</style>
+</head>
+<body style="direction: ltr;">
+	<form>
+	Look for:<br /><input style="width:100%" onKeyDown="check_input(this.value,get_match)" onKeyUp="check_input(this.value,get_match)"/>
+	</form>
+
+	<script>
+		var words = new Array(
+"ChangeAccountDetails Method {Sprint1Testes.Chrome}","ChangeAccountDetails Method {Sprint1Testes.Firefox}","ChangeAccountDetails Method {Sprint1Testes.InternetExplorer}","ChangeAccountPassword Method {Sprint1Testes.Chrome}","ChangeAccountPassword Method {Sprint1Testes.Firefox}","ChangeAccountPassword Method {Sprint1Testes.InternetExplorer}","Chrome Class","DeleteAccount Method {Sprint1Testes.Chrome}","DeleteAccount Method {Sprint1Testes.Firefox}","DeleteAccount Method {Sprint1Testes.InternetExplorer}","DeleteAccountPasswordErrada Method {Sprint1Testes.Chrome}","DeleteAccountPasswordErrada Method {Sprint1Testes.Firefox}","DeleteAccountPasswordErrada Method {Sprint1Testes.InternetExplorer}","Firefox Class","InternetExplorer Class","Login Method {Sprint1Testes.Chrome}","Login Method {Sprint1Testes.Firefox}","Login Method {Sprint1Testes.InternetExplorer}","LoginCredenciaisInvalidas Method {Sprint1Testes.Chrome}","LoginCredenciaisInvalidas Method {Sprint1Testes.Firefox}","LoginCredenciaisInvalidas Method {Sprint1Testes.InternetExplorer}","Registo Method {Sprint1Testes.Chrome}","Registo Method {Sprint1Testes.Firefox}","Registo Method {Sprint1Testes.InternetExplorer}","RegistoNotOver17 Method {Sprint1Testes.Chrome}","RegistoNotOver17 Method {Sprint1Testes.Firefox}","RegistoNotOver17 Method {Sprint1Testes.InternetExplorer}","Sprint1Testes Namespace","Sprint1Testes Reference"
+		);
+		
+		
+		var oldHighlight = 0;
+		var oldKey = "";
+		
+		function get_match(text) {
+		    var ltext = text.toLowerCase();
+		    for(i in words) {
+		        if(words[i].toLowerCase().indexOf(ltext) == "0") {
+		            return words[i];
+		        }
+		    }
+		    return "";
+		}
+		
+		function highlight(keyword) {
+		    if(oldHighlight) oldHighlight.className = "";
+		    var el = parent.frames['zindex'].document.getElementById("w_"+keyword);
+		    el.className="highlighted";
+		    oldHighlight = el;
+		}
+		
+		function check_input(text, matchfun) {
+		    if(text!=oldKey) {
+		        var keyword = matchfun(text);
+		        if(keyword) {       
+		            highlight(keyword);
+		            parent.frames['zindex'].document.getElementById('w_'+keyword).scrollIntoView();
+		        }
+		        oldKey = text;
+		    }
+		}
+	</script>
+</body>
+</html>
+

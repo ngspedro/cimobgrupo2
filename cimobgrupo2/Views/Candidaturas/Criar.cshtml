@@ -9,23 +9,34 @@
         @Html.Partial("_ResultMessage")
     </div>
 
-    <form asp-action="Criar" method="post" enctype="multipart/form-data">
+    <form asp-action="Submeter" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="CandidaturaId" />
         <div class="col-md-4 col-lg-4">
             <div class="col-lg-12">
                 <div class="form-group">
-                    <label asp-for="Programa" class="control-label"></label>:
-                    <select id="Programa" asp-for="ProgramaId" class="form-control" asp-items="ViewBag.Programas"></select>
+                    <label asp-for="Programa" class="control-label"></label>:  
+                    <a style="cursor: pointer "id="EscolherPrograma" class="pull-right" data-toggle="modal" data-target="#escolherPrograma">Escolher</a>
+                    <input id="Programa" asp-for="Programa.Nome" class="form-control" disabled />
                 </div>
                 <div class="form-group">
-                    <label asp-for="EscolaParceira" class="control-label"></label>:
-                    <select id="Escola" asp-for="EscolaParceiraId" class="form-control" asp-items="ViewBag.Escolas"></select>
+                    <label asp-for="EscolaParceira" class="control-label"></label>: 
+                    @if (Model.Programa != null)
+                    {
+                        <a style="cursor: pointer " id="EscolherEscola" class="pull-right" data-toggle="modal" data-target="#escolherEscola">Escolher</a>
+                    }
+                    <input id="Escola" asp-for="EscolaParceira.Nome" class="form-control" disabled/>
                 </div>
                 <div class="form-group">
                     <label asp-for="Curso" class="control-label"></label>:
-                    <select id="Curso" asp-for="CursoId" class="form-control" asp-items="ViewBag.Cursos"></select>
+                    @if (Model.Programa != null && Model.EscolaParceira != null)
+                    {
+                        <a style="cursor: pointer " id="EscolherCurso" class="pull-right" data-toggle="modal" data-target="#escolherCurso">Escolher</a>
+                    }
+                    
+                    <input id="Curso" asp-for="Curso.Nome" class="form-control" disabled/>
                 </div>
                 <div class="clearfix botoes">
-                    <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Confirmar</button>
+                    <button type="submit" class="pull-right" id="btnConfirmar" style="margin-bottom: 20px;">Submeter</button>
                     <button type="button" onclick="javascript:history.back(); return false;" class="pull-right" id="btnVoltar">Voltar</button>
 
                 </div>
@@ -65,7 +76,7 @@
                                 <td>
                                     @item.Name
                                 </td>
-                                <td class="text-center"><a asp-action="Download" asp-controller="File" asp-route-path="@item.Path"><span class="glyphicon glyphicon-download"></span></a></td>
+                                <td class="text-center"><a href="@Url.Action("Download", "File", new { tipo = "candidaturas", id = Model.UserId, nome = item.Name })"><span class="glyphicon glyphicon-download"></span></a></td>
                                 <td class="text-center">
                                     <input name="ficheiros[]" type="checkbox" value="@item.Path">
                                 </td>
@@ -138,13 +149,23 @@
             maxFilePreviewSize: 2000
         });
 
-        $('#tabela-ficheiros').DataTable({
-            "language": {
-                "url": "/lib/DataTables/pt.json"
-            }
-        });
-
+            $('#tabela-escolherPrograma').DataTable({
+                "language": {
+                    "url": "/lib/DataTables/pt.json"
+                }
+            });
+    $('#tabela-escolherEscola').DataTable({
+                "language": {
+                    "url": "/lib/DataTables/pt.json"
+                }
+            });
+    $('#tabela-escolherCurso').DataTable({
+                "language": {
+                    "url": "/lib/DataTables/pt.json"
+                }
+            });
     });
+
 </script>
 
 @section Scripts {

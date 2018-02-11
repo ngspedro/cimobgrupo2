@@ -1,232 +1,178 @@
-﻿using cimobgrupo2.Data;
-using cimobgrupo2.Models;
-using cimobgrupo2.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using cimobgrupo2.Models;
+using cimobgrupo2.Data;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace cimobgrupo2.Controllers
 {
+    /// <summary>Controlador para entrevistas</summary>
+    /// <remarks>Extende de BaseController</remarks>
     public class EntrevistasController : BaseController
     {
-        private readonly List<Entrevista>  _entrevistas;
-        private readonly IEmailSender _emailSender;
-        List<string> listFromUsers = new List<string>();
-        List<string> listaProgramas = new List<string>();
-        List<string> listaEstados = new List<string>();
+        /// <summary>Atributo para a lista de entrevistas</summary>
+        private List<Entrevista> _entrevistas;
 
-        public EntrevistasController(ApplicationDbContext _context, IEmailSender emailSender,
-            IFileProvider fileProvider):base(_context, fileProvider, "Entrevistas"){
-            _entrevistas= _context.Entrevistas.Include(e=> e.Candidatura).Include(e=> e.Estado).Include(e=>e.Candidatura.User)
-                .Include(e=>e.Candidatura.Programa).ToList();
-            _emailSender = emailSender;
+        /// <summary>Construtor com parametros - EntrevistasController</summary>
+        /// <param name="context">Context da Bd</param>
+        /// <param name="fileProvider">File Provider</param>
+        public EntrevistasController(ApplicationDbContext context, IFileProvider fileProvider) : base(context, fileProvider, "Entrevistas")
+        {
+            _entrevistas = context.Entrevistas.Include(e => e.Candidatura).ThenInclude(c => c.User).ToList();
         }
 
-        // GET: Entrevistas
-        public async Task<IActionResult> Index()
+
+        /// <summary>Action que prepara e mostra o index</summary>
+        /// <returns>Retorna a view</returns>
+        public IActionResult Index()
         {
-          
-                var applicationDbContext = _context.Entrevistas.Include(e => e.Candidatura.User).Include(e => e.Candidatura.Programa)
-                    .Include(e => e.Candidatura.Curso).Include(e => e.Candidatura.Entrevistas)
-                    .Include(e => e.Estado)
-                    .Include(e => e.Candidatura.Curso.EscolasParceiras)
-                    .ToList();
-                return View(ProperView("Index"), _entrevistas);
+            List<Candidatura> listaCandidaturas = _context.Candidaturas.Include(c => c.User).ToList();
+            ViewBag.ListOfUsers = listaCandidaturas;
+            SetHelpModal("Index");
+            SetHelpTooltips();
+            return View(ProperView("Index"), _context.Entrevistas.ToList());
         }
 
-        // GET: Entrevistas/Details/5
-        public async Task<IActionResult> Details(int? id)
+        /// <summary>Action responsável por exibir o modal de confirmação de desmarcar entrevista</summary>
+        /// <param name="id">Id da entrevista a desmarcar</param>
+        /// <returns>Partialview com o devido modal</returns>
+        public IActionResult DesmarcarEntrevistaModal(int? Id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var entrevista = await _context.Entrevistas
-                .Include(e => e.Candidatura).Include(e => e.Candidatura.User).Include(e => e.Candidatura.Programa)
-                .Include(e => e.Candidatura.Curso).Include(e => e.Candidatura.Curso.EscolasParceiras)
-                .Include(e => e.Estado)
-                .SingleOrDefaultAsync(m => m.EntrevistaId == id);
-            if (entrevista == null)
-            {
-                return NotFound();
-            }
+            return PartialView(ProperView("DesmarcarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
+        }
 
-            if (!User.IsInRole("Estudante"))
-            {
-                ViewBag.AgendarEntrevistas = _context.Entrevistas.Include(e => e.Candidatura.User).Include(e => e.Candidatura.Programa)
-                        .Include(e => e.Candidatura.Curso).Include(e => e.Candidatura.Entrevistas).
-                        Include(e => e.Candidatura.Curso.EscolasParceiras)
-                    .ThenInclude(e => e.EscolaParceira.Programas).ToList();
-                return View(ProperView("Details"), entrevista);
-            }
+        /// <summary>Action responsável pelo processo de desmarcar uma entrevista</summary>
+        /// <param name="EntrevistaId">Id da entrevista a desmarcar</param>
+        /// <returns>Redirecciona para a action index</returns>
+        public IActionResult DesmarcarEntrevista(int EntrevistaId)
+        {
+            _context.Entrevistas.Remove(_context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == EntrevistaId));
+            _context.SaveChanges();
+            SetSuccessMessage("Entrevista desmarcada.");
             return RedirectToAction(nameof(Index));
-                }
-
-        // GET: Entrevistas/MarcarEntrevista
-        public IActionResult MarcarEntrevista()
-        {
-            //listas de estados 
-            listaEstados = (from estados in _context.Estados select estados.Nome).ToList();
-            listaEstados.Sort();
-            ViewBag.ListaEstados = listaEstados;
-            //Entrevista entrevistaAux = _entrevistas.SingleOrDefault(e=>e);
-            ViewData["CandidaturaId"] = new SelectList(_context.Candidaturas, "CandidaturaId", "CandidaturaId");
-            ViewData["EstadoId"] = new SelectList(_context.Estados, "EstadoId", "EstadoId");
-            //ViewBag dos users 
-            
-            listFromUsers = (from users in _context.Users select users.Nome).ToList();
-            listFromUsers.Sort();
-            ViewBag.ListOfUsers = listFromUsers;
-            // ViewBag dos programas
-           
-            listaProgramas = (from programas in _context.Programas select programas.Nome).ToList();
-            listaProgramas.Sort();
-            ViewBag.ListaProgramas = listaProgramas;
-            return View(ProperView("MarcarEntrevista"));
         }
 
-        // POST: Entrevistas/MarcarEntrevista
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MarcarEntrevista([Bind("EntrevistaId,UserId, ProgramaId,DataEntrevista,Estado,CandidaturaId")] Entrevista entrevista)
+        /// <summary>Action responsável por exibir o modal de avaliação de entrevista</summary>
+        /// <param name="id">Id da entrevista a avaliar</param>
+        /// <returns>Partialview com o devido modal</returns>
+        public IActionResult AvaliarEntrevistaModal(int? Id)
         {
-            //listas de estados 
-            var aux = _entrevistas.Find(e=>e.EntrevistaId==entrevista.EntrevistaId);
-            if (entrevista == null)
-            {
-               return NotFound();
-            }
-            if (ModelState.IsValid)
-            {
-                _context.Add(entrevista);
-               await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(entrevista);
+            SetHelpTooltips();
+            return PartialView(ProperView("AvaliarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 
-        // GET: Entrevistas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        /// <summary>Action responsável pelo processo de avaliaçãode uma entrevista</summary>
+        /// <param name="EntrevistaId">Id da entrevista a avaliar</param>
+        /// <param name="Pontuacao">Pontuação a atribuir à entrevista</param>
+        /// <param name="Comentarios">Comentarios a adicionar à avaliaçao da entrevista</param>
+        /// <returns>Redirecciona para a action index</returns>
+        public IActionResult AvaliarEntrevista(int EntrevistaId, int Pontuacao, string Comentarios)
         {
-            Entrevista entrevista = _context.Entrevistas.SingleOrDefault(e=>e.EntrevistaId== id);
-            listaEstados = (from estados in _context.Estados select estados.Nome).ToList();
-            listaEstados.Sort();
-            ViewBag.ListaEstados = listaEstados;
-            return View(ProperView("Edit"), entrevista);
-
-        }
-
-        // POST: Entrevistas/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("EntrevistaId,DataEntrevista, CandidaturaId,Estado")] Entrevista entrevista)
-        {
-            if (ModelState.IsValid)
+            Entrevista Entrevista = _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == EntrevistaId);
+            if (Pontuacao >= 0 && Pontuacao <= 10)
             {
-                Entrevista novaEntrevista = _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == entrevista.EntrevistaId);
-                string nomeUser= _context.Candidaturas.Where(c => c.CandidaturaId == entrevista.CandidaturaId).SingleOrDefault()?.User.Nome;
-                string nomeProgram= _context.Candidaturas.Where(p => p.CandidaturaId == entrevista.CandidaturaId).SingleOrDefault()?.Programa.Nome;
-                novaEntrevista.Candidatura.User.Nome = nomeUser;
-                novaEntrevista.Candidatura.Programa.Nome = nomeUser;
-                novaEntrevista.DataEntrevista = entrevista.DataEntrevista;
-                novaEntrevista.Estado = entrevista.Estado;
+                Entrevista.Estado = EstadoEntrevista.Realizada;
+                Entrevista.Pontuacao = Pontuacao;
+                Entrevista.Comentarios = Comentarios;
+                SetSuccessMessage("Entrevista avaliada.");
                 _context.SaveChanges();
-                SetSuccessMessage("Entrevista editada");
                 return RedirectToAction(nameof(Index));
             }
+
             SetErrorMessage("003");
-            return View(entrevista);
-
-        }
-
-
-
-        // GET: Entrevistas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var entrevista = await _context.Entrevistas
-                .Include(e => e.Candidatura)
-                .SingleOrDefaultAsync(m => m.EntrevistaId == id);
-            if (entrevista == null)
-            {
-                return NotFound();
-            }
-
-            return View(entrevista);
-        }
-
-        // POST: Entrevistas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var entrevista = await _context.Entrevistas.SingleOrDefaultAsync(m => m.EntrevistaId == id);
-            _context.Entrevistas.Remove(entrevista);
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EntrevistaExists(int id)
+        /// <summary>Action responsável por exibir o modal de edição de entrevista</summary>
+        /// <param name="id">Id da entrevista a editar</param>
+        /// <returns>Partialview com o devido modal</returns>
+        public IActionResult EditarEntrevistaModal(int? Id)
         {
-            return _context.Entrevistas.Any(e => e.EntrevistaId == id);
+            SetHelpTooltips();
+            return PartialView(ProperView("EditarEntrevistaModal"), _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == Id));
         }
 
-        public IActionResult Adiar(int EntrevistaId)
+        /// <summary>Action responsável pelo processo de edição de uma entrevista</summary>
+        /// <param name="EntrevistaId">Id da entrevista a avaliar</param>
+        /// <param name="Data">Nova Data</param>
+        /// <param name="Hora">Nova Hora</param>
+        /// <param name="Local">Novo Local</param>
+        /// <param name="Pontuacao">Nova Pontuação</param>
+        /// <param name="Comentarios">Novos Comentários</param>
+        /// <returns>Redirecciona para a action index</returns>
+        public IActionResult EditarEntrevista(int EntrevistaId, string Data, string Hora, string Local, int Pontuacao, string Comentarios)
         {
-            Entrevista entrevista = _entrevistas.SingleOrDefault(p => p.EntrevistaId == EntrevistaId);
-            if (entrevista != null)
+            Entrevista Entrevista = _context.Entrevistas.SingleOrDefault(e => e.EntrevistaId == EntrevistaId);
+
+            bool sucesso = false;
+            if (Entrevista.Estado == EstadoEntrevista.Pendente)
             {
-                entrevista.Estado = _context.Estados.SingleOrDefault(e => e.Nome == "Recusada");
+                if (Data != null && Hora != null && Local != null)
+                {
+                    Entrevista.Data = Data;
+                    Entrevista.Hora = Hora;
+                    Entrevista.Local = Local;
+                    sucesso = true;
+                }
+            }
+            else
+            {
+                if (Pontuacao >= 0 && Pontuacao <= 10)
+                {
+                    Entrevista.Pontuacao = Pontuacao;
+                    Entrevista.Comentarios = Comentarios;
+                    sucesso = true;
+                }
+            }
+
+            if (sucesso)
+            {
+                SetSuccessMessage("Entrevista editada.");
                 _context.SaveChanges();
-                SetSuccessMessage("Entrevista adiada");
-                return RedirectToAction(nameof(Details), new { id = EntrevistaId });
             }
-
+            else
+            {
+                SetErrorMessage("003");
+            }
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> DetalhesEstudante( int? id)
+        /// <summary>Action responsável pela marcação de uma nova entrevista</summary>
+        /// <param name="Entrevista">Bind dos campos preenchidos no formulário para um objeto Entrevista</param>
+        /// <param name="CandidaturaId">Id da candidatura à qual se pretende associar</param>
+        /// <returns>Redirecciona para a action index</returns>
+        public IActionResult MarcarEntrevista(int CandidaturaId, [Bind("Data", "Hora", "Local")] Entrevista Entrevista)
         {
-            if (id == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                Entrevista.CandidaturaId = CandidaturaId;
+                Entrevista.Estado = EstadoEntrevista.Pendente;
+                _context.Add(Entrevista);
+                _context.SaveChanges();
+                SetSuccessMessage("Entrevista marcada.");
             }
-            var entrevista = await _context.Entrevistas
-                .Include(e => e.Candidatura.User).Include(e => e.Candidatura.Programa)
-                .Include(e => e.Candidatura.Curso.EscolasParceiras)
-                .Include(e => e.Estado)
-                .SingleOrDefaultAsync(m => m.EntrevistaId ==id);
-            if (entrevista == null)
+            else
             {
-                return NotFound();
+                SetErrorMessage("003");
             }
 
-            if (User.IsInRole("Estudante"))
-            {
-                ViewBag.ConfirEntrevista = _context.Entrevistas.Include(e => e.Candidatura.User).Include(e => e.Candidatura.Programa)
-
-                        .Include(e => e.Candidatura.Curso).Include(e => e.Candidatura.Entrevistas).Include(e => e.Estado)
-                        .Include(e => e.Candidatura.Curso.EscolasParceiras)
-                    .ThenInclude(e => e.EscolaParceira.Programas).ToList();
-                return View(ProperView("DetalhesEstudante"), entrevista);
-            }
             return RedirectToAction(nameof(Index));
-
         }
+
+        /// <summary>Método que coloca a informação nas tooltips dos campos relacionados com entrevistas</summary>
+        private void SetHelpTooltips()
+        {
+            ViewData["Candidato"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Candidato").Texto;
+            ViewData["Data"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Data").Texto;
+            ViewData["Hora"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Hora").Texto;
+            ViewData["Local"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Local").Texto;
+            ViewData["Pontuacao"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Pontuacao").Texto;
+            ViewData["Comentarios"] = _ajudas.Single(ai => ai.Action == "*" && ai.Elemento == "Comentarios").Texto;
         }
     }
-
+}

@@ -119,5 +119,6 @@
     <add key="VBdocman_cimobgrupo2"><![CDATA[default]]></add>
     <add key="VBdocman_Sprint1Testes"><![CDATA[default]]></add>
     <add key="VBdocman_Sprint2Testes"><![CDATA[default]]></add>
+    <add key="VBdocman_Sprint3Testes"><![CDATA[default]]></add>
   </appSettings>
 </configuration>

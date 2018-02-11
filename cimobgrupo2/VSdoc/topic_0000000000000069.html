@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>FileController.GetMimeTypes Method</title>
+	<title>FileController.GetFile Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">FileController.GetMimeTypes Method</h1>
+  	<h1 class="title">FileController.GetFile Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,7 +74,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Método para obter uma lista dos tipos de ficheiro permitidos
+        Método responsável por obter um ficheiro, num determinado caminho
 
 
         <p /><strong>Namespace:</strong>
@@ -137,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Private Function GetMimeTypes() As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/xfhwa508.aspx">Dictionary</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function GetFile( _&nbsp;<br />   ByVal <i>path</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, _&nbsp;<br />   ByVal <i>fileName</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a> _&nbsp;<br />) As <a target="_top" href="topic_00000000000000C4.html" onclick="this.target='';return true;">FileDetails</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/xfhwa508.aspx">Dictionary</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>, <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>&gt; GetMimeTypes()</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="topic_00000000000000C4.html" onclick="this.target='';return true;">FileDetails</a> GetFile(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>path</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>fileName</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -216,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">private: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/xfhwa508.aspx">Dictionary</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^, <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^&gt;^ GetMimeTypes() </pre>			
+					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br /><a target="_top" href="topic_00000000000000C4.html" onclick="this.target='';return true;">FileDetails</a>^ GetFile(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>path</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>fileName</i>&nbsp;<br />) </pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -255,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
+					<pre xml:space="preserve" class="brush: js">public function GetFile(&nbsp;<br />    <i>path</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>,&nbsp;<br />    <i>fileName</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>&nbsp;<br />) : <a target="_top" href="topic_00000000000000C4.html" onclick="this.target='';return true;">FileDetails</a>;</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -266,12 +266,41 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
+<h4 class="subHeading">
+	Parameters</h4><dl paramName="path">
+	<dt>
+		<span class="parameter">
+			path
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
+		<p>
+			Caminho onde o ficheiro está presente 
+		</p>
+	</dd>
+</dl>
+<dl paramName="fileName">
+	<dt>
+		<span class="parameter">
+			fileName
+		</span>
+	</dt>
+	<dd>
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
+		<p>
+			Nome do ficheiro a ser extraído 
+		</p>
+	</dd>
+</dl>
+
+<p />
 
 	<h4 class="subHeading">
 		Return Value</h4>
-	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/xfhwa508.aspx">Dictionary</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>, <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a>&gt; 
+	Type: <a target="_top" href="topic_00000000000000C4.html" onclick="this.target='';return true;">FileDetails</a> 
 		<p>
-		Lista de tipos 
+		FileDetails do ficheiro, se existe 
 	</p>
 	
 
@@ -361,7 +390,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000060.html">FileController Class</a><br />
+			<a href="topic_0000000000000065.html">FileController Class</a><br />
 
 
 

@@ -371,12 +371,6 @@ namespace cimobgrupo2.Data
 
             if (!context.Entrevistas.Any())
             {
-                /*context.Entrevistas.Add(new Entrevista
-                {
-                    DataEntrevista = DateTime.ParseExact("2018/04/20 13:34:00 ", "yyyy/MM/dd HH:mm:ss",
-                CultureInfo.InvariantCulture),
-                    CandidaturaId = 1, EstadoId=4
-                });*/
                 context.Entrevistas.Add(new Entrevista { Data = "2017/12/06", Hora = "16:30", CandidaturaId = 1 });
                 context.Entrevistas.Add(new Entrevista { Data = "2017/12/27", Hora = "09:45", CandidaturaId = 2 });
                 context.Entrevistas.Add(new Entrevista { Data = "2018/01/29", Hora = "14:30", CandidaturaId = 3 });

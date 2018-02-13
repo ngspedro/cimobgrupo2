@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="Sprint3Testes" Title="Sprint3Testes Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.AvaliarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000C.html" LinkGroup="Sprint3Testes">AvaliarEntrevista Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso.CommonCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000002.html" LinkGroup="Sprint3Testes">CommonCode Method {Sprint3Testes.Curso}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.CommonCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000008.html" LinkGroup="Sprint3Testes">CommonCode Method {Sprint3Testes.Entrevista}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.CommonCode" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000F.html" LinkGroup="Sprint3Testes">CommonCode Method {Sprint3Testes.Escola}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000001.html" LinkGroup="Sprint3Testes">Curso Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.DesmarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000D.html" LinkGroup="Sprint3Testes">DesmarcarEntrevista Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.DetalhesEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000014.html" LinkGroup="Sprint3Testes">DetalhesEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso.EditarCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000005.html" LinkGroup="Sprint3Testes">EditarCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.EditarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000B.html" LinkGroup="Sprint3Testes">EditarEntrevista Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.EditarEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000012.html" LinkGroup="Sprint3Testes">EditarEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso.EliminarCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000006.html" LinkGroup="Sprint3Testes">EliminarCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.EliminarEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000013.html" LinkGroup="Sprint3Testes">EliminarEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000007.html" LinkGroup="Sprint3Testes">Entrevista Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000E.html" LinkGroup="Sprint3Testes">Escola Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.MarcarEntrevista" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_000000000000000A.html" LinkGroup="Sprint3Testes">MarcarEntrevista Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.NovaEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000011.html" LinkGroup="Sprint3Testes">NovaEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso.NovoCurso" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000004.html" LinkGroup="Sprint3Testes">NovoCurso Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000000.html" LinkGroup="Sprint3Testes">Sprint3Testes Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000015.html" LinkGroup="Sprint3Testes">Sprint3Testes Reference</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Curso.VisualizarCursos" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000003.html" LinkGroup="Sprint3Testes">VisualizarCursos Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Entrevista.VisualizarEntrevistas" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000009.html" LinkGroup="Sprint3Testes">VisualizarEntrevistas Method</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="Sprint3Testes.Escola.VisualizarEscola" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:Sprint3Testes.chm::/topic_0000000000000010.html" LinkGroup="Sprint3Testes">VisualizarEscola Method</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

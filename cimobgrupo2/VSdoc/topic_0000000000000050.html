@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>EntrevistasController.EditarEntrevista Method</title>
+	<title>EntrevistasController.AvaliarEntrevistaModal Method</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">EntrevistasController.EditarEntrevista Method</h1>
+  	<h1 class="title">EntrevistasController.AvaliarEntrevistaModal Method</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,7 +74,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Action responsável pelo processo de edição de uma entrevista
+        Action responsável por exibir o modal de avaliação de entrevista
 
 
         <p /><strong>Namespace:</strong>
@@ -137,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function EditarEntrevista( _&nbsp;<br />   ByVal <i>EntrevistaId</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>, _&nbsp;<br />   ByVal <i>Data</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, _&nbsp;<br />   ByVal <i>Hora</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, _&nbsp;<br />   ByVal <i>Local</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, _&nbsp;<br />   ByVal <i>Pontuacao</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>, _&nbsp;<br />   ByVal <i>Comentarios</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a> _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a></pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Function AvaliarEntrevistaModal( _&nbsp;<br />   ByVal <i>Id</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">Integer</a>) _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a> EditarEntrevista(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>EntrevistaId</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>Data</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>Hora</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>Local</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>Pontuacao</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>Comentarios</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a> AvaliarEntrevistaModal(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt; <i>Id</i>&nbsp;<br />)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -216,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>^ EditarEntrevista(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>EntrevistaId</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>Data</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>Hora</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>Local</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> <i>Pontuacao</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>Comentarios</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>^ AvaliarEntrevistaModal(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>^&gt; <i>Id</i>&nbsp;<br />) </pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -255,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">public function EditarEntrevista(&nbsp;<br />    <i>EntrevistaId</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>,&nbsp;<br />    <i>Data</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>,&nbsp;<br />    <i>Hora</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>,&nbsp;<br />    <i>Local</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>,&nbsp;<br />    <i>Pontuacao</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>,&nbsp;<br />    <i>Comentarios</i> : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>&nbsp;<br />) : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>;</pre>			
+					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -267,81 +267,16 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 <h4 class="subHeading">
-	Parameters</h4><dl paramName="EntrevistaId">
+	Parameters</h4><dl paramName="Id">
 	<dt>
 		<span class="parameter">
-			EntrevistaId
+			Id
 		</span>
 	</dt>
 	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
+		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a>&gt; 
 		<p>
-			Id da entrevista a avaliar 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Data">
-	<dt>
-		<span class="parameter">
-			Data
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Nova Data 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Hora">
-	<dt>
-		<span class="parameter">
-			Hora
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Nova Hora 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Local">
-	<dt>
-		<span class="parameter">
-			Local
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Novo Local 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Pontuacao">
-	<dt>
-		<span class="parameter">
-			Pontuacao
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.int32.aspx">int</a> 
-		<p>
-			Nova Pontuação 
-		</p>
-	</dd>
-</dl>
-<dl paramName="Comentarios">
-	<dt>
-		<span class="parameter">
-			Comentarios
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Novos Comentários 
+			 
 		</p>
 	</dd>
 </dl>
@@ -352,7 +287,7 @@ function replaceTitleAndUrl(win, title, url) {
 		Return Value</h4>
 	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a> 
 		<p>
-		Redirecciona para a action index 
+		Partialview com o devido modal 
 	</p>
 	
 
@@ -442,7 +377,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000047.html">EntrevistasController Class</a><br />
+			<a href="topic_000000000000004A.html">EntrevistasController Class</a><br />
 
 
 

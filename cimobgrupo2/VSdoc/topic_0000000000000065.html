@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>FileController.GetFiles Method</title>
+	<title>FileController Class</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">FileController.GetFiles Method</h1>
+  	<h1 class="title">FileController Class</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,7 +74,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Método responsável por obter uma lista de ficheiros presentes num diretório
+        Controlador para ficheiros
 
 
         <p /><strong>Namespace:</strong>
@@ -137,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">Public Function GetFiles( _&nbsp;<br />   ByVal <i>path</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>, _&nbsp;<br />   Optional ByVal <i>nameException</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a> = null _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>(Of <a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">FileDetails</a>)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Public Class FileController&nbsp;<br />    Inherits <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.controller.aspx">Controller</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">FileDetails</a>&gt; GetFiles(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>path</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> <i>nameException</i> = null&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">public class FileController : <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.controller.aspx">Controller</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -216,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">FileDetails</a>^&gt;^ GetFiles(&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>path</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">String</a>^ <i>nameException</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">public ref class FileController : public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft::aspnetcore::mvc::controller.aspx">Controller</a>^</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -255,7 +255,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeJScript">
-					<pre xml:space="preserve" class="brush: js">JScript does not support generic types and methods.</pre>			
+					<pre xml:space="preserve" class="brush: js">public class FileController&nbsp;<br />   extends <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.controller.aspx">Controller</a></pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -266,43 +266,6 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="path">
-	<dt>
-		<span class="parameter">
-			path
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Caminho de onde queremos a lista de ficheiros 
-		</p>
-	</dd>
-</dl>
-<dl paramName="nameException">
-	<dt>
-		<span class="parameter">
-			nameException
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/system.string.aspx">string</a> 
-		<p>
-			Nome de um ficheiro que não se quer na lista 
-		</p>
-	</dd>
-</dl>
-
-<p />
-
-	<h4 class="subHeading">
-		Return Value</h4>
-	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_00000000000000BE.html" onclick="this.target='';return true;">FileDetails</a>&gt; 
-		<p>
-		Lista dos vários ficheiros presentes nesse caminho (Lista de FileDetails) 
-	</p>
-	
 
 
 
@@ -322,8 +285,390 @@ function replaceTitleAndUrl(win, title, url) {
 
 
 
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Constructors</a></span>
+		<div><hr /></div>
+	</div>
+
+	<div id="ConstructorsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
 
 
+	
+			<tr class="
+	
+	
+	">
+	  <td>
+    <img alt="Public constructor" title="Public constructor" src="msdn2017/pubmethod.png"></img>
+
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000067.html">FileController(IFileProvider)</a>
+
+	  </td>
+	  <td>
+	
+	Construtor com parametros - FileController
+	
+		</td>
+	</tr>
+	
+
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
+
+
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Methods</a></span>
+		<div><hr /></div>
+	</div>
+
+	<div id="MethodsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2017/pubmethod.png"></img>
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000006C.html">Delete(string, string)</a>
+
+	</td>
+	<td>
+
+Action responsável pela eliminação de um ficheiro
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2017/pubmethod.png"></img>
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000006B.html">Download(string, string, string)</a>
+
+	</td>
+	<td>
+
+Action responsável pelo download de um ficheiro
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Private method" title="Private method" src="msdn2017/privmethod.png"></img>
+    
+
+    
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000006D.html">GetContentType(string)</a>
+
+	</td>
+	<td>
+
+Método para obter o tipo de conteudo (extensao) de um ficheiro
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2017/pubmethod.png"></img>
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_0000000000000069.html">GetFile(string, string)</a>
+
+	</td>
+	<td>
+
+Método responsável por obter um ficheiro, num determinado caminho
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2017/pubmethod.png"></img>
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000006A.html">GetFiles(string, string)</a>
+
+	</td>
+	<td>
+
+Método responsável por obter uma lista de ficheiros presentes num diretório
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+   <img alt="Private method" title="Private method" src="msdn2017/privmethod.png"></img>
+    
+
+    
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_000000000000006E.html">GetMimeTypes()</a>
+
+	</td>
+	<td>
+
+Método para obter uma lista dos tipos de ficheiro permitidos
+
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+	<tr class="
+
+
+">
+	<td>
+<img alt="Public method" title="Public method" src="msdn2017/pubmethod.png"></img>
+	  
+
+    
+	</td>
+	<td>
+	<a href="topic_0000000000000068.html">UploadFile(string, IFormFile)</a>
+
+	</td>
+	<td>
+
+Método responsável por dar upload num ficheiro
+
+	</td>
+</tr>
+
+
+
+
+
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<!-- Classes -->
+
+<!-- Classes End -->
+
+<!-- Standard Modules -->
+
+<!-- Standard Modules End -->
+
+  
+
+
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Fields</a></span>
+		<div><hr /></div>
+	</div>
+
+	<div id="FieldsSection" class="section">	
+  <table class="memberListTable">
+    <tr>
+      <th></th>
+      <th>
+        Name
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+
+	<tr class="
+	
+	
+	">
+	  <td>
+	   	    <img alt="Private field" title="Private field" src="msdn2017/privfield.png"></img>
+	    
+	
+	    
+	    
+	
+	    
+	  </td>
+	  <td>
+	    <a href="topic_0000000000000066.html">fileProvider</a>
+	  </td>
+	  <td>
+	
+	Atributo para o File Provider
+	
+		</td>
+	</tr>
+
+  </table>
+
+  <a href="#mainBody">
+    Top
+  </a>
+
+	</div>					
+</div>
+
+
+
+<div class="section_container">
+	<div class="section_heading">
+		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">Remarks</a></span>
+		<div><hr /></div>
+	</div>
+
+	<div id="remarksSection" class="section">	
+			Extende de BaseController
+	</div>					
+</div>
 
 
 
@@ -382,6 +727,7 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>					
 </div>
 
+
 <div class="section_container">
 	<div class="section_heading">
 		<span><a href="javascript:void(0)" title="Collapse" onclick="toggleSection(this);">See Also</a></span>
@@ -390,14 +736,10 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_0000000000000060.html">FileController Class</a><br />
+	<a href="topic_0000000000000000.html">cimobgrupo2.Controllers Namespace</a><br />
 
 
-
-<a href="topic_0000000000000000.html">cimobgrupo2.Controllers Namespace</a><br />
-
-
-			
+	
 
 		</div>
 	</div>					

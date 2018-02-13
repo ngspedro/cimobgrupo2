@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="GENERATOR" content="VSdocman - documentation generator; http://www.helixoft.com" />
-	<title>ProgramasController.Adicionar (Programa, IFormFile) Method</title>
+	<title>_programas Field</title>
 
 	<link rel="stylesheet" type="text/css" href="msdn2017/msdn2017.css"></link>
 	<script src="msdn2017/msdn2017.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@ function replaceTitleAndUrl(win, title, url) {
 <!--HEADER START-->
   <div id="header">
   	<div id="runningHeaderText">cimobgrupo2 Reference</div>
-  	<h1 class="title">ProgramasController.Adicionar (Programa, IFormFile) Method</h1>
+  	<h1 class="title">_programas Field</h1>
   	<div id="headerLinks">
 
 	<a href="#seeAlsoSection">See Also</a>
@@ -74,7 +74,7 @@ function replaceTitleAndUrl(win, title, url) {
       <div id="mainBody">
         <p />
        
-        Action que trata da criação de um programa e da sua adição à bd
+        Atributo para a lista de programas
 
 
         <p /><strong>Namespace:</strong>
@@ -137,7 +137,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeVB">
-					<pre xml:space="preserve" class="brush: vb">&lt;HttpPost()&gt; _&nbsp;<br />Public Function Adicionar( _&nbsp;<br />   &lt;Bind(&quot;ProgramaId,Nome,Duracao,Descricao&quot;)&gt; _&nbsp;<br />   ByVal <i>Programa</i> As <a target="_top" href="topic_0000000000000120.html" onclick="this.target='';return true;">Programa</a>, _&nbsp;<br />   ByVal <i>file</i> As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> _&nbsp;<br />) As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>(Of <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>)</pre>			
+					<pre xml:space="preserve" class="brush: vb">Private _programas As <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>(Of <a target="_top" href="topic_000000000000012F.html" onclick="this.target='';return true;">Programa</a>)</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -176,7 +176,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCsharp">
-					<pre xml:space="preserve" class="brush: csharp">[HttpPost()]&nbsp;<br />public <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>&gt; Adicionar(&nbsp;<br />   [Bind(&quot;ProgramaId,Nome,Duracao,Descricao&quot;)]&nbsp;<br />   <a target="_top" href="topic_0000000000000120.html" onclick="this.target='';return true;">Programa</a> <i>Programa</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> <i>file</i>&nbsp;<br />)</pre>			
+					<pre xml:space="preserve" class="brush: csharp">private <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_000000000000012F.html" onclick="this.target='';return true;">Programa</a>&gt; _programas</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -216,7 +216,7 @@ function replaceTitleAndUrl(win, title, url) {
 				</div>
 				
 				<div class="codeSnippetCode codeCpp">
-					<pre xml:space="preserve" class="brush: cpp">[HttpPost()]&nbsp;<br />public: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>^&gt;^ Adicionar(&nbsp;<br />   [Bind(&quot;ProgramaId,Nome,Duracao,Descricao&quot;)]&nbsp;<br />   <a target="_top" href="topic_0000000000000120.html" onclick="this.target='';return true;">Programa</a>^ <i>Programa</i>,&nbsp;<br />   <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a>^ <i>file</i>&nbsp;<br />) </pre>			
+					<pre xml:space="preserve" class="brush: cpp">private: &nbsp;<br /><a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_000000000000012F.html" onclick="this.target='';return true;">Programa</a>^&gt;^ _programas;</pre>			
 				</div>
 				<div class="codeSnippetCode codeNA">
 					<pre xml:space="preserve">This language is not supported or no code example is available.</pre>			
@@ -266,42 +266,10 @@ function replaceTitleAndUrl(win, title, url) {
 	</div>
 
 
-<h4 class="subHeading">
-	Parameters</h4><dl paramName="Programa">
-	<dt>
-		<span class="parameter">
-			Programa
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="topic_0000000000000120.html" onclick="this.target='';return true;">Programa</a> 
-		<p>
-			Bind dos campos do formulário preenchidos pelo utilizador, num objeto Programa 
-		</p>
-	</dd>
-</dl>
-<dl paramName="file">
-	<dt>
-		<span class="parameter">
-			file
-		</span>
-	</dt>
-	<dd>
-		Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.http.iformfile.aspx">IFormFile</a> 
-		<p>
-			Edital do programa 
-		</p>
-	</dd>
-</dl>
-
-<p />
 
 	<h4 class="subHeading">
-		Return Value</h4>
-	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/dd321424.aspx">Task</a>&lt;<a target="_top" href="http://msdn2.microsoft.com/en-us/library/microsoft.aspnetcore.mvc.iactionresult.aspx">IActionResult</a>&gt; 
-		<p>
-		Redireciona para a acção Index, se adicionada com sucesso. 
-	</p>
+		Field Value</h4>
+	Type: <a target="_top" href="http://msdn2.microsoft.com/en-us/library/6sh2ey19.aspx">List</a>&lt;<a target="_top" href="topic_000000000000012F.html" onclick="this.target='';return true;">Programa</a>&gt; 
 	
 
 
@@ -390,7 +358,7 @@ function replaceTitleAndUrl(win, title, url) {
 
 	<div id="seeAlsoSection" class="section">	
 		<div>
-			<a href="topic_000000000000007A.html">ProgramasController Class</a><br />
+			<a href="topic_000000000000007F.html">ProgramasController Class</a><br />
 
 
 
@@ -417,4 +385,3 @@ function replaceTitleAndUrl(win, title, url) {
 		</script>	
   </body>
 </html>
-

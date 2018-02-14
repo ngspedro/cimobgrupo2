@@ -81,9 +81,14 @@
 <div class="col-md-8 col-lg-8">
     <div class="sec-title">
         <span class="glyphicon glyphicon-comment"></span><strong> Entrevistas Marcadas:</strong>
+@{
+    if (Model.EstadoId == 1)
+    {
         <div class="pull-right">
             <a data-target="#marcarEntrevista" data-toggle="modal" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Marcar Entrevista</a>
         </div>
+    }
+}
     </div>
     <br />
     <div class="table-responsive">

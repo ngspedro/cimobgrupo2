@@ -211,7 +211,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Marcar Entrevista</h4>
             </div>
-            <form asp-action="MarcarEntrevista" method="post">
+            <form asp-controller="Candidaturas" asp-action="MarcarEntrevista" method="post">
                 <input type="hidden" asp-for="CandidaturaId" />
                 <div class="modal-body">
                     <div class="row">

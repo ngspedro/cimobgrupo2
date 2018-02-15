@@ -146,6 +146,7 @@ namespace cimobgrupo2.Controllers
         /// <param name="Entrevista">Bind dos campos preenchidos no formulário para um objeto Entrevista</param>
         /// <param name="CandidaturaId">Id da candidatura à qual se pretende associar</param>
         /// <returns>Redirecciona para a action index</returns>
+        [HttpPost]
         public IActionResult MarcarEntrevista(int CandidaturaId, [Bind("Data", "Hora", "Local")] Entrevista Entrevista)
         {
             if (ModelState.IsValid)

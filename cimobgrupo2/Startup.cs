@@ -92,6 +92,9 @@ namespace cimobgrupo2
             CreateRole(serviceProvider, "Admin");
             CreateUser(serviceProvider, "nunoadmin@gmail.com", "nuno pedro", "nunoadmin", "@Abc123", "961222222", "07/06/1996", "Admin");
             CreateUser(serviceProvider, "teste@cimob.com", "teste cimob", "testecimob", "@Abc123", "961234567", "01/01/1900", "CIMOB");
+
+            for (var i = 1; i <= 5; i++)
+                CreateUser(serviceProvider, "teste" + i + "@gmail.com", "userteste" + i, "userteste" + i, "@Abc123", "961234567", "01/01/1900", "Estudante");
         }
 
 

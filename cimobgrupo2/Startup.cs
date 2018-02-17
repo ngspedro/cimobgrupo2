@@ -97,8 +97,6 @@ namespace cimobgrupo2
             CreateUser(serviceProvider, "nunoadmin@gmail.com", "nuno pedro", "nunoadmin", "@Abc123", "961222222", "07/06/1996", "Admin");
             CreateUser(serviceProvider, "teste@cimob.com", "teste cimob", "testecimob", "@Abc123", "961234567", "01/01/1900", "CIMOB");
         }
-
-
         private void CreateRole(IServiceProvider serviceProvider, string role)
         {
             var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();

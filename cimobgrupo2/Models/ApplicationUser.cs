@@ -18,7 +18,6 @@ namespace cimobgrupo2.Models
 
         /// <summary>Propriedade correspondente ao contacto do utilizador</summary>
         public String Contato { get; set; }
-
         /// <summary>Propriedade correspondente à password hashed para acesso no wpf</summary>
         public String PasswordHashAux { get; set; }
     }

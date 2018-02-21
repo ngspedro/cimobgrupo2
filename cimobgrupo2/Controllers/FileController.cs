@@ -14,11 +14,10 @@ namespace cimobgrupo2.Controllers
 {
     /// <summary>Controlador para ficheiros</summary>
     /// <remarks>Extende de BaseController</remarks>
-    public class FileController : Controller
+    public class FileController: Controller
     {
         /// <summary>Atributo para o File Provider</summary>
         private readonly IFileProvider fileProvider;
-
         /// <summary>Construtor com parametros - FileController</summary>
         /// <param name="fileProvider">File Provider</param>
         public FileController(IFileProvider fileProvider)

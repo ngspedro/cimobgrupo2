@@ -11,7 +11,6 @@ namespace cimobgrupo2.Models.FilesViewModels
     {
         /// <summary>Propriedade correspondente ao nome do ficheiro</summary>
         public string Name { get; set; }
-
         /// <summary>Propriedade correspondente ao caminho do ficheiro</summary>
         public string Path { get; set; }
     }
